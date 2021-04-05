@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    .first {
+      font-family: "Lucida Grande","Lucida Sans Unicode", Tahoma, sans-serif;
+      background-color: #b3d4fc;
+      width: 450px;
+    }
+    #mot {
+      background-color: #ff6a2d;
+      width: 450px;
+      text-align: center;
+    }
+    .second{
+      font-family: "Lucida Grande","Lucida Sans Unicode", Tahoma, sans-serif;
+      background-color: #fcee6a;
+      width: 450px;
+    }
+    #hai {
+      background-color: #7aff85;
+      width: 450px;
+    }
+  </style>
+</head>
+<body>
+<!--<form method="get" action="simpleform.html" class = "wufoo">-->
+<!--  <h2>Order Form</h2>-->
+<!--  <p>What would you like to buy?</p>-->
+<!--  <select>-->
+<!--    <option value = "  ">A</option>-->
+<!--    <option>B (+  0.5$)</option>-->
+<!--    <option>C (+  0.5$)</option>-->
+<!--  </select>-->
+<!--  <p>How many would you like to order?</p>-->
+<!--  <input type="radio" name="rd"/> 1 - $10 <br/>-->
+<!--  <input type="radio" name="rd"/> 2 - $20 <br/>-->
+<!--  <input type="radio" name="rd"/> 3 - $25 <br/>-->
+<!--  <p>Name <span style="color: red">*</span> </p>-->
+<!--  <input type = "text" name="firstname" placeholder="FirstName" size="15"/>-->
+<!--  <input type = "text" name="lastname" placeholder="LastName" size="15"/>-->
+<!--  <p>Email</p>-->
+<!--  <input type = "text" name="email" size="35"/>-->
+<!--  <p>Phone Number</p>-->
+<!--  <input type = "text" name="phone1" size="5"/> - -->
+<!--  <input type = "text" name="phone2" size="5"/> - -->
+<!--  <input type = "text" name="phone3" size="5"/>-->
+<!--  <p><input type = "button" name="btSubmit" value="Submit"/></p>-->
+<!--</form>-->
+<!--tim kiem-->
+<!--<form action="https://www.google.com.vn/search">-->
+<!--  <input type="text" name="q"/>-->
+<!--  <input type="submit" value="Tìm kiếm"/>-->
+<!--</form>-->
+<!--baitap tao form-->
+<form action="simpleform.html" method="get" class="first">
+  <h2 id="mot">Sở thích của bạn</h2>
+  Họ và tên: <input type="text" name="yourname"> <br> <br>
+  Email: <input type="text" name="email" size="24" style="margin-left: 20px"> <br> <br>
+  Sở thích <input type="checkbox" name="hobby"> Thể thao
+  <input type="checkbox" name="hobby"> Âm nhạc
+  <input type="checkbox" name="hobby"> Đọc sách <br>
+  <input type="checkbox" name="hobby" style="margin-left: 50px"> Lướt web
+  <input type="checkbox" name="hobby"> Chơi game
+  <input type="checkbox" name="hobby"> Điện ảnh <br>
+  <input type="checkbox" name="hobby" style="margin-left: 50px"> Du lịch <br> <br>
+  <input type="button" name="submit" value="Gửi thông tin" style="margin-left: 50px">
+  <input type="reset" name="reset" value="Nhập lại">
+</form>
+<form action="simpleform.html" method="get" class="second">
+  <h2 id="hai">Đăng ký học viên</h2>
+  Họ Và Tên: <input type="text"> <br>
+  Ngày Sinh: <input type="text"> <br>
+  Giới Tính: <label ><input type="radio" name="gender"/> Nam</label>
+            <label><input type="radio"  name="gender"/> Nữ </label><br>
+  Địa Chỉ: <textarea  cols="25" rows="5" style="margin-left: 20px"></textarea> <br>
+  Lớp: <select style="margin-left: 40px">
+  <option>--Chọn lớp--</option></select> <br>
+  Email: <input type="text" style="margin-left: 30px"> <br>
+  Điện thoại: <input type="text"> <br>
+  <input type="submit" value="Đăng ký" style="margin-left: 50px">
+  <input type="reset" value="Nhập lại">
+</form>
+
+
+</body>
+</html>
