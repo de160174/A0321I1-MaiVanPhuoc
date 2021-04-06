@@ -1,0 +1,30 @@
+/*!*css cho ban co vua*!*/
+/*table.chessboard{*/
+/*  background: orange;*/
+/*  padding: 20px;*/
+/*}*/
+/*th{*/
+/*  font-family: 'Patua One', cursive;*/
+/*  font-size:16px;*/
+/*  font-weight:400;*/
+/*  text-align:center;*/
+/*  padding:20px;*/
+/*}*/
+/*td{*/
+/*  width: 70px; height: 70px;*/
+/*  background-color: black;*/
+/*}*/
+/*tr:nth-child(even) td:nth-child(even),*/
+/*tr:nth-child(odd) td:nth-child(odd) {*/
+/*  background: white;*/
+/*}*/
+
+
+/*css cho lich*/
+th{
+  width: 80px;
+}
+td{
+  text-align: center;
+  border: 2px solid gray;
+}
