@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    body{
+      padding: 150px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Caculator</h2>
+  <form>
+    <input type="number" id="n1">
+    <input type="number" id="n2"> <br> <br>
+    <button type="button" onclick="add();">Cộng</button>
+    <button type="button" onclick="sub();">Trừ</button>
+    <button type="button" onclick="mul();">Nhân</button>
+    <button type="button" onclick="div();">Chia</button>
+  </form>
+</body>
+<script>
+  let in1=document.getElementById('n1') ;
+  let in2=document.getElementById('n2');
+  function add() {
+    let result = parseInt(in1.value) + parseInt(in2.value) ;
+    alert('kết quả là ' + result);
+  }
+  function sub() {
+    let result = in1.value - in2.value ;
+    alert('kết quả là ' + result);
+  }
+  function mul() {
+    let result = in1.value * in2.value ;
+    alert('kết quả là ' + result);
+  }
+  function div() {
+    let result = in1.value / in2.value;
+    alert('kết quả là ' + result);
+  }
+</script>
+</html>

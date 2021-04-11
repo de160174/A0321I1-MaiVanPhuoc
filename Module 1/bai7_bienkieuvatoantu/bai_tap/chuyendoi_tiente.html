@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    body{
+      padding: 150px;
+    }
+  </style>
+</head>
+<body>
+<form>
+  <h3>Amount </h3> <input type="number" id='soTien'>
+  <h3>From currency</h3>
+  <select id="from">
+    <option value="mot">VNĐ</option>
+    <option value="hai">USD</option>
+  </select>
+    <h3>To currency</h3>
+    <select id="to">
+      <option value="ba">USD</option>
+      <option value="bon">VNĐ</option>
+</select>
+  <button type="button" style="background-color: blueviolet" onclick="convertMoney();">Convert</button>
+  <br>
+  <label id="kq">result:  </label>
+</form>
+
+</body>
+<script>
+  function convertMoney() {
+    let input = document.getElementById('soTien') ;
+    let x1 = document.getElementById("from").selectedIndex;
+    let x = document.getElementById("from").options;
+    let y1 = document.getElementById("to").selectedIndex;
+    let y = document.getElementById("to").options;
+    if(x[x1].text == 'VNĐ'  && y[y1].text =='USD'){
+      let result =input.value/23000 ;
+      document.getElementById('kq').innerText = 'result: ' + result;
+    }else if (x[x1].text == 'USD'  && y[y1].text =='VNĐ'){
+      let result =input.value*23000 ;
+      document.getElementById('kq').innerText = 'result: ' + result;
+    }else {
+      alert('vui lòng nhập lại');
+    }
+  }
+</script>
+</html>
