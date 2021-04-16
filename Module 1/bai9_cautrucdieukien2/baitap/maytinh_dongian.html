@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    body{
+      margin: 50px;
+    }
+    button{
+      width: 80px; height: 80px;
+      padding: 20px;
+      margin: 5px;
+    }
+    .screen{
+      width: 50%;
+      height: 50px;
+    }
+  </style>
+</head>
+<body>
+<div class="screen">
+  <span class="overlay"></span>
+  <span class="input">0</span>
+</div> <br>
+<button type="button" class="it" value="1">1</button>
+<button type="button" class="it" value="2">2</button>
+<button type="button" class="it" value="3">3</button>
+<button type="button" class="it" onclick="add();">+</button>
+<br><button type="button" class="it" value="4">4</button>
+<button type="button" class="it" value="5">5</button>
+<button type="button" class="it" value="6">6</button>
+<button type="button" class="it" onclick="sub();">-</button>
+<br><button type="button" class="it" value="7">7</button>
+<button type="button" class="it" value="8">8</button>
+<button type="button" class="it" value="9">9</button>
+<button type="button" class="it" onclick="mul();">*</button>
+<br><button type="button" class="it" onclick="clear();">C</button>
+<button type="button" class="it" value="0">0</button>
+<button type="button" class="it" onclick="cal();">=</button>
+<button type="button" class="it" onclick="div();">/</button>
+
+<script>
+  var input=document.querySelector('.input');
+  var item= Array.from(document.querySelectorAll('.it'));
+  item.forEach(function (btn) {
+    btn.addEventListener('click',function () {
+      if(input.innerHTML=='0')
+      input.innerHTML='';
+      if(btn.innerHTML=='C')
+      input.innerHTML='0';
+      else if(btn.innerHTML=='=')
+        input.innerHTML=eval(input.innerHTML);
+      else input.innerHTML+=btn.innerHTML;
+    })
+  })
+
+</script>
+</body>
+</html>

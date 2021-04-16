@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img id="doremon" src="doremon.png" style="position: relative; top: 0px; left: 0px">
+<script>
+  function upArrow() {
+    let element=document.getElementById('doremon');
+    element.style.top=parseInt(element.style.top) -5 +'px';
+  }
+  function downArrow() {
+    let element=document.getElementById('doremon');
+    element.style.top=parseInt(element.style.top) +5 +'px';
+  }
+  function leftArrow() {
+    let element=document.getElementById('doremon');
+    element.style.left=parseInt(element.style.left) -5 +'px';
+  }
+  function rightArrow() {
+    let element=document.getElementById('doremon');
+    element.style.left=parseInt(element.style.left) +5 +'px';
+  }
+  function selection(event) {
+    switch (event.keyCode) {
+      case 37:
+        leftArrow();
+        break;
+      case 39:
+        rightArrow();
+        break;
+      case 38:
+        upArrow();
+        break;
+      case 40:
+        downArrow();
+        break;
+    }
+  }
+  function doc() {
+    window.addEventListener('keydown',selection);
+  }
+  doc();
+</script>
+</body>
+
+</html>

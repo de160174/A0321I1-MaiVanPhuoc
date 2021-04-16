@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    body{
+      padding: 200px;
+    }
+    #no{
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <h2>Do you love me?</h2>
+  <button onclick="say();">Yes</button>
+  <button onmouseover="chay();" id="no">No</button>
+  <script>
+    function say() {
+      alert('<3');
+    }
+    function chay() {
+      let element=document.getElementById('no');
+      let trai=Math.round(Math.random() * (window.innerWidth));
+      let tren=Math.round(Math.random() * (window.innerHeight));
+      element.style.left= + trai + 'px';
+      element.style.top=  + tren + 'px';
+    }
+  </script>
+</body>
+</html>

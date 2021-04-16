@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    body{
+      padding: 0 150px;
+    }
+    img {
+      width: 600px;
+      height: 150px;
+    }
+    div{
+      width: 600px;
+    }
+  </style>
+</head>
+<body onclick="check();">
+    <div id="img">
+      <div><img id="slider1" src="https://demo.codegym.vn/8/puzzlegame/img/monkey_part1x1.jpg" onclick="next();"></div>
+      <div><img id="slider2" src="https://demo.codegym.vn/8/puzzlegame/img/monkey_part2x1.jpg" onclick="next2();"></div>
+      <div><img id="slider3" src="https://demo.codegym.vn/8/puzzlegame/img/monkey_part3x1.jpg" onclick="next3();"></div>
+      <div><img id="slider4" src="https://demo.codegym.vn/8/puzzlegame/img/monkey_part4x1.jpg" onclick="next4();"></div>
+      <div><img id="slider5" src="https://demo.codegym.vn/8/puzzlegame/img/monkey_part5x1.jpg" onclick="next5();"></div>
+    </div>
+    <script>
+      let images = [
+        "https://demo.codegym.vn/8/puzzlegame/img/monkey_part1x1.jpg",
+        "https://demo.codegym.vn/8/puzzlegame/img/panda_swap_part1x1.jpg",
+        "https://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part1x1.jpg"
+      ];
+      let images2 = [
+        "https://demo.codegym.vn/8/puzzlegame/img/monkey_part2x1.jpg",
+        "https://demo.codegym.vn/8/puzzlegame/img/panda_swap_part2x1.jpg",
+        "https://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part2x1.jpg"
+      ];
+      let images3 = [
+        "https://demo.codegym.vn/8/puzzlegame/img/monkey_part3x1.jpg",
+        "https://demo.codegym.vn/8/puzzlegame/img/panda_swap_part3x1.jpg",
+        "https://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part3x1.jpg"
+      ];
+      let images4 = [
+        "https://demo.codegym.vn/8/puzzlegame/img/monkey_part4x1.jpg",
+        "https://demo.codegym.vn/8/puzzlegame/img/panda_swap_part4x1.jpg",
+        "https://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part4x1.jpg"
+      ];
+      let images5 = [
+        "https://demo.codegym.vn/8/puzzlegame/img/monkey_part5x1.jpg",
+        "https://demo.codegym.vn/8/puzzlegame/img/panda_swap_part5x1.jpg",
+        "https://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part5x1.jpg"
+      ];
+      let num = 0;
+      let slider1 = document.getElementById("slider1");
+      let slider2 = document.getElementById("slider2");
+      let slider3 = document.getElementById("slider3");
+      let slider4 = document.getElementById("slider4");
+      let slider5 = document.getElementById("slider5");
+      let n1 = Math.round(Math.random() * (images.length-1));
+      let n2 = Math.round(Math.random() * (images2.length-1));
+      let n3 = Math.round(Math.random() * (images3.length-1));
+      let n4 = Math.round(Math.random() * (images4.length-1));
+      let n5 = Math.round(Math.random() * (images5.length-1));
+      slider1.src = images[n1];
+      slider2.src = images2[n2];
+      slider3.src = images3[n3];
+      slider4.src = images4[n4];
+      slider5.src = images5[n5];
+
+      function next() {
+        let slider1 = document.getElementById("slider1");
+        num++;
+        if(num >= images.length) {
+          num = 0;
+        }
+        slider1.src = images[num];
+      }
+      function next2() {
+        let slider2 = document.getElementById("slider2");
+        num++;
+        if(num >= images2.length) {
+          num = 0;
+        }
+        slider2.src = images2[num];
+      }
+      function next3() {
+        let slider3 = document.getElementById("slider3");
+        num++;
+        if(num >= images3.length) {
+          num = 0;
+        }
+        slider3.src = images3[num];
+      }
+      function next4() {
+        let slider4 = document.getElementById("slider4");
+        num++;
+        if(num >= images4.length) {
+          num = 0;
+        }
+        slider4.src = images4[num];
+      }
+      function next5() {
+        let slider5 = document.getElementById("slider5");
+        num++;
+        if(num >= images5.length) {
+          num = 0;
+        }
+        slider5.src = images5[num];
+      }
+      function check() {
+        if(slider1.getAttribute('src')==="https://demo.codegym.vn/8/puzzlegame/img/monkey_part1x1.jpg"
+          && slider2.getAttribute('src')==="https://demo.codegym.vn/8/puzzlegame/img/monkey_part2x1.jpg"
+          && slider3.getAttribute('src')==="https://demo.codegym.vn/8/puzzlegame/img/monkey_part3x1.jpg"
+          && slider4.getAttribute('src')==="https://demo.codegym.vn/8/puzzlegame/img/monkey_part4x1.jpg"
+          && slider5.getAttribute('src')==="https://demo.codegym.vn/8/puzzlegame/img/monkey_part5x1.jpg"){
+              document.getElementById('img').style.boxShadow='4px 4px 9px red';
+        }
+        if(slider1.getAttribute('src')==="https://demo.codegym.vn/8/puzzlegame/img/panda_swap_part1x1.jpg"
+          && slider2.getAttribute('src')==="https://demo.codegym.vn/8/puzzlegame/img/panda_swap_part2x1.jpg"
+          && slider3.getAttribute('src')==="https://demo.codegym.vn/8/puzzlegame/img/panda_swap_part3x1.jpg"
+          && slider4.getAttribute('src')==="https://demo.codegym.vn/8/puzzlegame/img/panda_swap_part4x1.jpg"
+          && slider5.getAttribute('src')==="https://demo.codegym.vn/8/puzzlegame/img/panda_swap_part5x1.jpg"){
+          document.getElementById('img').style.boxShadow='4px 4px 9px red';
+        }
+        if(slider1.getAttribute('src')==="https://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part1x1.jpg"
+          && slider2.getAttribute('src')==="https://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part2x1.jpg"
+          && slider3.getAttribute('src')==="https://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part3x1.jpg"
+          && slider4.getAttribute('src')==="https://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part4x1.jpg"
+          && slider5.getAttribute('src')==="https://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part5x1.jpg"){
+          document.getElementById('img').style.boxShadow='4px 4px 9px red';
+        }
+      }
+
+</script>
+</body>
+</html>
