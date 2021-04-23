@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  // Bài 1: Chuyển từ độ C sang độ F.
+  // let c=parseInt(prompt("nhập nhiệt theo độ C"));
+  // let f= c* 9/5 +32;
+  // alert("Nhiệt sau khi được đổi qua F là " +f);
+  // Bài 2: Chuyển từ mét sang feet
+  // let m=parseInt(prompt("nhập chiều dài theo met"));
+  // let ft =m * 3.2808;
+  // alert("chiều dài sau khi đổi sang feet là " +ft);
+  // Bài 3: Tính diện tích hình vuông khi biết cạnh a.
+  // let a=parseInt(prompt("nhập cạnh a"));
+  // let dt=a*a;
+  // alert("diện tích hình luông là " +dt);
+  // Bài 4: Tính diện tích hình  chữ nhật khi biết 02 cạnh a, b.
+  // let a=parseInt(prompt("nhập chiều dài a"));
+  // let b=parseInt(prompt("nhập chiều rộng b"));
+  // let dt=(a+b)*2;
+  // alert("diện tích hình luông là " +dt);
+  // Tính diện tích tam giác vuông khi biết 02 cạnh kề a, b.
+  // let a=parseInt(prompt("nhập chiều dài a"));
+  // let b=parseInt(prompt("nhập chiều rộng b"));
+  // let dt=1/2*(a*b);
+  // alert("diện tích hình tam giác là " +dt);
+  // Giải phương trình bậc 1.
+  // alert("phương trình có dạng a*x+b=0");
+  // let a=parseInt(prompt("nhập a"));
+  // let b=parseInt(prompt("nhập b"));
+  // if (a==0){
+  //   if(b==0){
+  //     alert("phươn trình vô số nghiệm");
+  //   }else {
+  //     alert("phương trình vô nghiệm");
+  //   }
+  // }else {
+  //   alert("phương trình có nghiệm " +(-b/a));
+  // }
+  // Bài 7: Giải phương trình bậc 2.
+  // alert("phương trình có dạng a*x*x+b*x=c=0");
+  // let a=parseInt(prompt("nhập a"));
+  // let b=parseInt(prompt("nhập b"));
+  // let c=parseInt(prompt("nhập c"));
+  // let del=b*b-4*a*c;
+  // if(del>0){
+  //   alert("phương trình có 2 nghiệm phân biệt " +((-b-Math.sqrt(del))/(2*a))+ " và " +((-b+Math.sqrt(del))/(2*a)));
+  // }else if(del=0){
+  //   alert("phương trình có nghiệm kép " +(-b/(2*a)));
+  // }else{
+  //   alert("phương trình vô nghiệm");
+  // }
+  // Bài 8: Kiểm tra xem một số nhập vào có phải là tuổi của một người không. Một số nguyên là tuổi của một người khi nhỏ 120 và lơn hơn 0.
+  // let age=parseInt(prompt("mời nhập tuổi của bạn"));
+  // if(age<120 && age>0){
+  //   alert("OK")
+  // }else {
+  //   alert("mời nhập lại tuổi của bạn")
+  // }
+  // Bài 9: Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác. Điều kiện để a,b,c là cạnh của một tam giác
+  // let a=parseInt(prompt("nhập a"));
+  // let b=parseInt(prompt("nhập b"));
+  // let c=parseInt(prompt("nhập c"));
+  // if (a>0&&b>0&&c>0 || a + b > c|| b + c > a ||a + c > b){
+  //   alert("3 cạnh là 1 tam giác")
+  // }else {
+  //   alert("3 cạnh không tạo tam giác")
+  // }
+  // Bài 10: Viết chương trình tính giá điện.
+  // let sanluong=parseInt(prompt("Nhập sản lượng điện tiêu thụ theo KWh"));
+  // let tiendien=0;
+  // if(sanluong>0 && sanluong<50){
+  //   tiendien=50*1678;
+  // }else if (sanluong<100){
+  //   tiendien=50*1734;
+  // }else if (sanluong<150){
+  //   tiendien=50*2014;
+  // }else if(sanluong<200){
+  //   tiendien=50*2536;
+  // }else {
+  //   tiendien=50*2834;
+  // }
+  // let tongcong=tiendien+ tiendien*0.1;
+  // alert("tổng cộng số tiền phải chi trả là " +tongcong+" ngàn đồng");
+  // Bài 11: Viết chương trình tính thuế thu nhập cá nhân.
+  let thunhap=parseInt(prompt("Nhập tiền lương tháng theo triệu đồng"));
+  let thue;
+  let tong=0;
+  if(thunhap<5){
+    thue= thunhap*0.05;
+  }else if (thunhap<10){
+    thue=0.25+ thunhap*0.1;
+  }else if (thunhap<18){
+    thue=0.75+ thunhap*0.15;
+  }else if (thunhap<32){
+    thue=1.95+ thunhap*0.2;
+  }else if (thunhap<52){
+    thue=4.75+ thunhap*0.25;
+  }else if (thunhap<80){
+    thue=9.75+ thunhap*0.3;
+  }else{
+    thue=18.15+ thunhap*0.35;
+  }
+  tong=thunhap - thue;
+  alert("thu nhập cá nhân của bạn sau thuế là " +tong)
+</script>
+</body>
+</html>

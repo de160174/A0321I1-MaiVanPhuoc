@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>JavaScript Loops</h2>
+<p id="demo"></p>
+<script>
+  // Bài 1: Viết chương trình hiển thị chuỗi “The number is N” 5 lần sử dụng vòng lặp for. Với N sẽ hiển thị từ 0 đến 5.
+  // let text = "";
+  // let i;
+  // for (i = 0; i < 5; i++) {
+  //   text += "The number is " + i + "<br>";
+  // }
+  // document.getElementById("demo").innerHTML = text;
+  // Bài 2: Viết chương trình nhập vào một số bất kỳ lớn hơn 0. Tính tổng các phần tử từ 1 đến số vừa nhập vào.
+  // let num=parseInt(prompt("mời nhập số bất kỳ"));
+  // let total=0;
+  // for(let i=1;i<=num;i++){
+  //   total+=i;
+  // }
+  // alert(total)
+  // Viết chương trình nhận vào một số từ hộp thoại, việc nhập kết thúc
+  // khi người dùng nhập vào giá trị -1. Mỗi giá trị nhập được sẽ được hiển thị ra và thực hiện tính tổng các giá trị đó.
+  // let num=prompt("mời nhập số bất kỳ");
+  // let total=0;
+  // while( num != -1 ) {
+  //   num = parseInt(prompt("Enter a number: "));
+  //   alert(num);
+  //   total += num;
+  // }
+  // alert(total)
+  // let i = 1;
+  //
+  // while (i < 100) {
+  //   document.write("<hr width = " + i + "%>");
+  //   i++;
+  // }
+  // Sử dụng vòng lặp do while để viết lại chương trình yêu cầu nhập các số từ 1 -> 10 ở ví dụ trong phần vòng lặp while.
+  // let value = null;
+  // do {
+  //   value = prompt("Nhập vào số từ 1 -> 10");
+  // } while (value < 1 || value > 10);
+  // alert("Số bạn vừa nhập là " + value);
+  let sout;
+  sout = "<table border='1' width='300' cellspacing='0' cellpadding='3'>"
+  for (i = 1; i <= 10; i++) {
+    sout = sout + "<tr>";
+    for (j = 1; j <= 10; j++) {
+      sout = sout + "<td>" + i * j + "</td>";
+    }
+    sout = sout + "</tr>";
+  }
+  sout = sout + "</table>";
+  document.write(sout);
+</script>
+</body>
+</html>

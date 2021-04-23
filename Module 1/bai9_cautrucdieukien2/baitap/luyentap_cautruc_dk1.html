@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+  // <!--Bài 1: Nhập vào hai số a và b, và kiểm tra xem a có chia hết cho b hay không-->
+  // let a =parseInt(prompt("mời nhập số a"));
+  // let b =parseInt(prompt("mời nhập số b"));
+  // if(a%b==0){
+  //   alert("số a chia hết cho số b");
+  // }else
+  //   alert("không chia hết cho b");
+  // Bài 2: Nhập tuổi và in ra kết quả nếu tuổi học sinh đó không đủ điều kiện vào học lớp 10.
+  // let age =parseInt(prompt("mời nhập tuổi của học sinh"));
+  // if (age<16){
+  //   alert("tuổi của học sinh đó là " +age);
+  // }else if(age<18){
+  //   alert("học sinh đủ tuổi học lớp 10");
+  // }else{alert("quá già không học đc nữa!!")}
+  // Bài 3: Nhập một số nguyên bất kỳ và in kết quả ra màn hình để nói cho người dùng biết số đó là lớn hay nhỏ hơn 0
+  // let number =parseInt(prompt("mời nhập số nguyên "));
+  // if (number>0){alert("đó là số lớn hơn 0")}
+  // else {alert("số nhỏ hơn 0")}
+  // Bài 4: Nhập 3 số nguyên và tìm giá trị lớn nhất của ba số nguyên đó
+  // let a =parseInt(prompt("mời nhập số a"));
+  // let b =parseInt(prompt("mời nhập số b"));
+  // let c =parseInt(prompt("mời nhập số c"));
+  // let max=a;
+  // if(b>c && b>a){alert("số lớn nhất là " +b)}
+  // else {
+  //   if (c > a) {
+  //     alert("số lớn nhất là " + c);
+  //   }else {
+  //     alert("số lơn nhất là " +max);
+  //   }
+  // }
+  // Bài 5: Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ
+  // let cc=parseInt(prompt("nhập điểm chuyên cần"));
+  // let gk=parseInt(prompt("nhập điểm giữa kỳ"));
+  // let ck=parseInt(prompt("nhập điểm cuối kỳ"));
+  // let result= cc*0.2+gk*0.3+ck*0.5;
+  // let message=(result>=8.5)? "Loại A" : (result>=7)? "Loại B" : (result>=5.5)? "Loại C" : (result>=4)? "Loại D" : "Loại F";
+  // alert(message);
+  // Bài 6: Tính hoa hồng nhận được tuỳ theo mức doanh số bán hàng
+  // let hoadon=parseInt(prompt("mời nhập số tiền của hóa đơn"));
+  // let tiennhan=parseInt(prompt("tiền luong của bạn "));
+  // let hoahong;
+  // if(hoadon<200000){
+  //   hoahong= hoadon*0.03;
+  // }else if(hoadon<500000){
+  //   hoahong=hoadon*0.05;
+  // }else {hoahong=hoadon*0.1}
+  // let thuclanh=tiennhan+hoahong
+  // alert("số tiền thực lãnh là " +thuclanh);
+  // Bài 7: Tính cước điện thoại cho một hộ gia đình với các thông số đã cho
+  // Phí thuê bao bắt buộc là 25 nghìn.
+  // 600 đồng cho mỗi gọi của 50 phút đầu tiên.
+  // 400 đồng cho mỗi phút gọi của 150 phút tiếp theo.
+  // 200 đồng cho bất kỳ mỗi phút nào sau 200 phút đầu tiên.
+  let phi=25000;
+  let phut=parseInt(prompt("nhập số phút đã gọi"))
+  if(phut<50){
+    phi=phi +phut*600;
+  }else if(phut >50 && phut<200){
+    phi = phi+ phut*400;
+  }else {phi=phi+phut*200}
+  alert("số tiền nhà đó gọi hàng tháng là " +phi);
+</script>
+</body>
+</html>
