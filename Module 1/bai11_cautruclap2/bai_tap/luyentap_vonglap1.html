@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<p id="result"></p>-->
+<!--<button onclick="game();">Chơi</button>-->
+<script>
+  // Bài 1: Sử dụng vòng lặp để đếm từ 1 đến 100. Khi số là 99, hiển thị hộp thoại thông báo là đã hoàn thành.
+  // for(let i=1;i<=100;i++){
+  //   document.write("số " +i+ "<br>")
+  //   if(i==99){
+  //     alert("Đã hoàn thành")
+  //   }
+  // }
+  // Bài 2: Sử dụng hàm prompt() để lấy thông tin nhiệt độ hiện tại được nhập bởi người truy cập.
+  //   Nếu nhiệt độ nhập vào trên 100, yêu cầu người dùng giảm nhiệt độ. Nếu nhiệt độ dưới 20, yêu cầu người dùng tăng nhiệt độ.
+  // let nhiet=parseInt(prompt("Nhiệt độ bên ngoài là bao nhiêu "));
+  // if(nhiet>100){
+  //   alert("bạn nên giảm nhiệt độ")
+  // }if(nhiet<20) {
+  //   alert("bạn nên tăng nhiệt độ")
+  // }
+  //   while (nhiet>100 || nhiet<20) {
+  //     alert("mời bạn nhập lại nhiệt độ");
+  //     nhiet = parseInt(prompt("Nhiệt độ bên ngoài là bao nhiêu "));
+  //     alert("Nhiệt độ là " + nhiet);
+  //   }
+  // Bài 3: Hiển thị ra 20 số trong dãy fibonacci đầu tiên.
+  // function fibo(n) {
+  //   var s = 0;
+  //   if(n == 0){
+  //     return(s);
+  //   }
+  //   if(n == 1) {
+  //     s += 1;
+  //     return(s);
+  //   }
+  //   else {
+  //     return(fibo(n - 1) + fibo(n - 2));
+  //   }
+  // }
+  // function show() {
+  //   for(let i = 0; i <= 20; i++) {
+  //     document.write("số fibo thứ " +i+ " là "+fibo(i)+ "<br>");
+  //   }
+  // }
+  // show();
+  // Bài 4: Tìm số đầu tiên trong dãy fibonacci chia hết cho 5.
+  // let num=parseInt(prompt("bạn muốn in bao nhiêu số "));
+  // alert("các số fibo chia hết cho 5");
+  // function fibo(n) {
+  //   var s = 0;
+  //   if(n == 0){
+  //     return(s);
+  //   }
+  //   if(n == 1) {
+  //     s += 1;
+  //     return(s);
+  //   }
+  //   else {
+  //     return(fibo(n - 1) + fibo(n - 2));
+  //   }
+  // }
+  // function show() {
+  //   for(let i = 0; i <= num; i++) {
+  //     if(fibo(i)%5==0){
+  //       document.write("số fibo thứ  " +i+ " là "+fibo(i)+ "<br>");
+  //     }
+  //   }
+  // }
+  // show();
+  // Bài 5: Tính tổng của 20 số đầu tiên trong dãy fibonacci.
+  // function fibo(n) {
+  //   var s = 0;
+  //   if(n == 0){
+  //     return(s);
+  //   }
+  //   if(n == 1) {
+  //     s += 1;
+  //     return(s);
+  //   }
+  //   else {
+  //     return(fibo(n - 1) + fibo(n - 2));
+  //   }
+  // }
+  // function show() {
+  //
+  //   let sum = 0;
+  //   for (let i = 0; i <= 20; i++) {
+  //     sum = sum + fibo(i);
+  //   }
+  //   document.write("tổng của 20 số đầu tiên trong dãy fibonacci là " +sum);
+  // }
+  // show();
+  // Bài 6: Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên.
+  // let sum=0;
+  // let dem=0;
+  // while (dem<30){
+  //   for(let i=0;i<500;i++){
+  //     if(i%7==0 && dem<30){
+  //       sum+=i;
+  //       dem++;
+  //     }
+  // }
+  //
+  // }document.write("tổng của 30 số đầu tiên là " +sum);
+  // Bài 7: Hãy viết một chương trình in ra các số từ 1 đến 100. Nhưng nếu số chia hết cho 3 thì in ra "Fizz",
+  //   5 thì in ra "Buzz" thay vì in ra số đó. Và nếu số đó chia hết cho cả 3 và 5 thì in ra chữ "FizzBuzz".
+  // let result = 0;
+  // for (let i=1; i<100; i++){
+  //   result =+ i;
+  //   if(result % 3 == 0 && result % 5 ==0){
+  //     document.write("FizzBuzz"+"<br>");
+  //   }else if(result % 3 == 0){
+  //     document.write("Fizz"+"<br>");
+  //   }else if(result % 5 == 0){
+  //     document.write("Buzz"+"<br>");
+  //   }else {
+  //     document.write("số "+result+"<br>");
+  //   }
+  // }
+  
+</script>
+</body>
+</html>

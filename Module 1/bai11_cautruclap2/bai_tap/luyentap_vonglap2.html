@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  // Bài 1: In dãy Finonaci
+  // let num=parseInt(prompt("bạn muốn in ra dãy bao nhiêu số"));
+  // function fibo(n) {
+  //   var s = 0;
+  //   if(n == 0){
+  //     return(s);
+  //   }
+  //   if(n == 1) {
+  //     s += 1;
+  //     return(s);
+  //   }
+  //   else {
+  //     return(fibo(n - 1) + fibo(n - 2));
+  //   }
+  // }
+  // function show() {
+  //   for(let i = 0; i <= num; i++) {
+  //     document.write("số fibo thứ " +i+ " là "+fibo(i)+ "<br>");
+  //   }
+  // }
+  // show();
+  // Bài 2: Tính giai thừa của một số nguyên dương
+  // let number=parseInt(prompt("Mời nhập số cần tính giai thừa"));
+  // let gt = 1;
+  // for (let i = 1; i <= number; i++){
+  //   gt *= i;
+  // }
+  // alert("kết quả là " +gt);
+  // Bài 3: In tam giác vuông. Các góc vuông nằm ở các vị trí khác nhau
+  // for (let i=0;i<5;i++){
+  //   for (let j=0;j<=i;j++){
+  //     document.write("*")
+  //   }
+  //   document.write("<br>")
+  // }
+  // document.write("//////<br>")
+  // for (let i=5;i>0;i--){
+  //   for (let j=1;j<=i;j++){
+  //     document.write("*")
+  //   }
+  //   document.write("<br>")
+  // }
+  // document.write("//////<br>")
+  // Bài 4: In hình chữ nhật
+  // for (let i = 0; i < 7; i++){
+  //   for (let j = 0; j <= 20; j++){
+  //     if (i==0 || i==6  && j <=20){
+  //       document.write("*")
+  //     }else if(j==0||j==20){
+  //       document.write("*")
+  //     }else {
+  //       document.write(""+'&nbsp'+'&nbsp')
+  //     }
+  //   }
+  //   document.write("<br>")
+  // }
+  // ve trai tim
+  for(let i = 1; i < 7; i++) {
+    for(let j = 1; j <= 7; j++) {
+      if(!((i == 1 && (j == 1 || j == 4 || j == 7))
+        || (i == 4 && (j == 1 || j == 7))
+        || (i == 5 && (j <= 2 || j >= 6))
+        || (i == 6 && (j <= 3 || j >= 5)))) {
+        document.write("  *  ");
+      } else {
+        document.write("&nbsp"+"&nbsp");
+      }
+    }
+    document.write("<br>");
+  }
+
+</script>
+
+</body>
+</html>

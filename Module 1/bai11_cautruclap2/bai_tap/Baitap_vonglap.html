@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3 id="result"></h3>
+<script>
+  // bang cuu chuong
+  // let result;
+  // result="<table border='1'>";
+  // for(let i=1;i<10;i++){
+  //   result=result+'<tr>';
+  //   for(let j=2;j<10;j++){
+  //     result=result+'<td>'+j+ " x " +i+ " = " +j*i+'</td>';
+  //   }
+  //   result=result+'</tr>';
+  // }
+  // result = result + "</table>";
+  // document.write(result);
+  let number=parseInt(prompt("bạn muốn in bao nhiêu số ra màn hình"));
+  function check(n) {
+    // Nếu n bé hơn 2 tức là không phải số nguyên tố
+    if (n < 2) {
+      return 0;
+    }
+      for (let i = 2; i <= Math.sqrt(n); i++) {
+        if (n % i == 0) {
+          return 0;
+        }
+      }
+      return 1;
+    }
+    let count = 0;
+    let prime='';
+    let N = 2;
+    while (count < number) {
+      if (check(N) == 1) {
+        prime = prime+' '+N;
+        count++;
+      }
+      N++;
+    }
+    document.getElementById('result').innerText = +number + " số nguyên tố đầu tiên là " + prime;
+</script>
+</body>
+</html>
