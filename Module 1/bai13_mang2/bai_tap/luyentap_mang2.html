@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  // Viết chương trình khởi tạo mảng 2 chiều, gồm một bộ các phần tử có sẵn,  in ra các phần tử trong mảng.
+  //   let a = [
+  //   [1, 2, 1, 24],
+  //   [8, 11, 9, 4],
+  //   [7, 0, 7, 27],
+  //   [7, 4, 28, 14],
+  //   [3, 10, 26, 7]
+  // ];
+  //   for (let i=0;i<a.length;i++){
+  //     document.write("row" +i+ "<br>")
+  //     for(let j in a[i]){
+  //       document.write(a[i][j]+ "<br>");
+  //     }
+  //   }
+  // Bài 2: Viết một chương trình để in các ký tự trong một mảng theo thứ tự đảo ngược.
+  // let arr=[1,1,9,"S","O","S"];
+  // let result=arr.reverse();
+  // alert(result.join(""))
+  // Bài 3: Viết một chương trình khai báo một mảng ký tự và kích thước của mảng. Chương trình này đếm số ký tự số trong mảng.
+  // let arr=["S","O","S",9,1,1];
+  // let count=0;
+  // for(let i=0;i<arr.length;i++){
+  //   if(arr[i]>0){
+  //     count++;
+  //   }
+  // }document.write("mảng có " +count+ " ký tự số");
+  // Bài 4: Viết một chương trình để đếm số từ trong một chuỗi
+  // let char=prompt("mời bạn nhập chuỗi");
+  // if(char==""){
+  //   alert(prompt("mời bạn nhập lại chuỗi"));
+  // }else {
+  //   document.write("có " +char.trim().split(/\s+/).length+ " từ")
+  // }
+  // Bài 5: Viết một chương trình nhập vào 2 chuỗi, sau đó kiểm tra xem hai chuỗi có giống nhau hay không.
+  // let char1=prompt("mời bạn nhập chuỗi thứ 1");
+  // let char2=prompt("mời bạn nhập chuỗi thứ 2");
+  // if(char1==char2){
+  //   alert("hai chuỗi giống nhau");
+  // }else {
+  //   alert("hai chuỗi khác nhau");
+  // }
+  // Bài 6: Viết chương trình nhập vào một mảng ký tự, tìm tất cả các ký tự trong mảng là (-) và thay thế các ký tự này bởi ký tự ( _ )
+  let arr=["S","-","O","-","S","-",9,1,1];
+  let  arr2=[];
+  for(let i in arr){
+    if(arr[i]=="-"){
+      arr2.push("_")
+    }else {
+      arr2.push(arr[i])
+    }
+  }document.write(arr2.join(""))
+</script>
+</body>
+</html>

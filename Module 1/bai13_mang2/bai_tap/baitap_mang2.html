@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+  <input type="text" id="nhap">
+  <button onclick="search();">Search</button>
+</form>
+<script>
+  let eng=["dog","cat","monkey","mouse","tiger","ant"];
+  let vie=["chó","mèo","khỉ","chuột","hổ","kiến"];
+  function search() {
+    for(let i=0;i<eng.length;i++){
+      if(document.getElementById("nhap").value===eng[i]){
+        alert(vie[i]);
+      }
+    }
+    alert(vie[i])
+  }
+</script>
+</body>
+</html>
