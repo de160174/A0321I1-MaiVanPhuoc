@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="">
+  <p>
+    <label>Foot to meter</label>
+    <input id="inputf" type="number"
+           oninput="ConverterFtoM(this.value)"
+           onchange="ConverterFtoM(this.value)">
+  </p>
+  <p>Kết quả: <span id="outputm"></span></p>
+</form><form action="">
+  <p>
+    <label>Meter to footer</label>
+    <input id="inputm" type="number"
+           oninput="ConverterMtoF(this.value)"
+           onchange="ConverterMtoF(this.value)">
+  </p>
+  <p>Kết quả: <span id="outputf"></span></p>
+</form>
+<script>
+  function ConverterMtoF(meter) {
+    meter=parseFloat(meter);
+    document.getElementById("outputf").innerHTML= 3.279 * meter ;
+  }
+  function ConverterFtoM(foot) {
+    foot=parseFloat(foot);
+    document.getElementById("outputm").innerHTML=0.305 * foot;
+  }
+</script>
+</body>
+</html>

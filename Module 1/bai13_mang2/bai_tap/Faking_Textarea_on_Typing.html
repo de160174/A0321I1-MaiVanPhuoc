@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    body {
+      padding: 200px 300px;
+    }
+  </style>
+</head>
+<body>
+<h2>Type anything slowly</h2>
+<textarea name="" id="input" cols="30" rows="10" oninput="fake()"></textarea>
+<script>
+  let arr = ["T", "Ô", "I", "M", "U", "Ố", "N", "Q", "U", "A", "M", "O", "D", "U", "L", "E","!","!","!"];
+  let str = "";
+
+  function fake() {
+    let text = document.getElementById("input").value;
+    let j = text.length;
+    if (j > 0) {
+      for (let i = 0; i < j; i++) {
+        str = str + arr[i];
+        if (i === 19) {
+          document.getElementById("input").value = "";
+          str="";
+        }
+      }
+    }
+    document.getElementById("input").value = str;
+    str="";
+    setTimeout("fake()", 1);
+  }
+
+
+</script>
+</body>
+</html>
