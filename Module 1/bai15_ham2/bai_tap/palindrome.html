@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let input=prompt("nhập chuỗi muốn kiểm tra")
+  function isPalindrome(str) {
+    let chuoi=str.toLowerCase().replace(/[^a-zA-Z0-9]+/g,'');
+    let count=0;
+    if(chuoi==""){
+      alert("chuỗi trống");
+      return false;
+    }
+    if(chuoi.length%2==0){
+      count=(chuoi.length)/2;
+    }else {
+      if(chuoi.length===1){
+        return true;
+      }else {
+        count=(chuoi.length-1)/2
+      }
+    }
+    for (let i=0;i<count;i++){
+      if (chuoi[i]!=chuoi.slice(-1-i)[0]){
+        return false;
+      }
+    }
+
+    return true;
+  }
+  document.write(isPalindrome(input));
+</script>
+</body>
+</html>

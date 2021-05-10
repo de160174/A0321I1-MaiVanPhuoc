@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  // Bài 1: Viết hàm tính bình phương của một số bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.
+  // let num=parseInt(prompt("mời nhập 1 số"));
+  // function binhPhuong(num) {
+  //   let result=num*num;
+  //   return result;
+  // }
+  // alert(binhPhuong(num));
+  // Bài 2: Viết hàm tính diện tích, hàm tính chu vi hình tròn.
+  // let R=parseInt(prompt("mời nhập bán kính"))
+  // function dt() {
+  //   let result=Math.PI*R*R;
+  //   return result;
+  // }
+  // function cv(){
+  //   let result=2*R*Math.PI;
+  //   return result;
+  // }
+  // alert("diện tích hình tròn bằng "+dt());
+  // alert("chu vi hình tròn bằng "+cv());
+  // Bài 3: Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào.
+  // let num=parseInt(prompt("mời nhập 1 số"));
+  // function gt() {
+  //   let giaithua=1;
+  //   for (let i=1;i<=num;i++){
+  //     giaithua = giaithua*i;
+  //   }return giaithua;
+  // }
+  // alert(gt(num));
+  // Bài 4: Viết hàm kiểm tra xem ký tự nhập vào có phải là ký tự số không. Nếu là ký tự số hàm trả về true, ngược lại trả về false.
+  // let input=prompt("mời bạn nhập vào 1 ký tự bất kỳ");
+  // function check() {
+  //   if(isNaN(input)){
+  //     return false;
+  //   }else {
+  //     return true;
+  //   }
+  // }
+  // document.write(check());
+  // Bài 5: Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất.
+  // alert("mời bạn nhập 3 số nguyên bất kỳ");
+  // let a=parseInt(prompt());
+  // let b=parseInt(prompt());
+  // let c=parseInt(prompt());
+  // let min=a;
+  // function findMin() {
+  //   if (min>b&&min<c){
+  //     min=b;
+  //     return min;
+  //   }else if(min>c){
+  //       min=c;
+  //       return min;
+  //   }else {
+  //     min=a;
+  //     return min;
+  //   }
+  // }
+  // alert("số nhỏ nhất trong ba số là " +findMin())
+  // Bài 6: Viết hàm nhận vào một số, kiểm tra xem nếu số đưa vào có phải là nguyên dương không. Nếu là nguyên dương trả về true, ngược lại trả về false.
+  // let num=parseInt(prompt("nhập số nguyên bất kỳ"));
+  // function check() {
+  //   if (num>0){
+  //     return true;
+  //   }else {
+  //    return false;
+  //   }
+  // }
+  // document.write(check());
+  // Bài 7: Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó.
+  // function replace() {
+  //   let temp=a;
+  //   a=b;
+  //   b=temp;
+  // }
+  // let a=1;
+  // let b=2;
+  // replace(a,b);
+  // document.write("a = " +a+ " và b = " +b);
+  // Bài 8: Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên đó.
+  // let arr=[2,6,-3,1,-9];
+  // function dao() {
+  //   arr.reverse();
+  // }
+  // dao();
+  // document.write(arr);
+  // Bài 9: Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ,
+  //   kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không. Nếu có trả về số lần xuất hiện của ký tự đó, nếu không trả về -1.
+  let arr=['c','!','(','c','c','%'];
+  let chuoi=prompt("bạn hãy nhập vào một ký tự");
+  let kiemtra=true;
+  let count=0;
+  function check() {
+    for (let i=0;i<arr.length;i++){
+      if (chuoi===arr[i]){
+        count++;
+      }
+    }
+    if(kiemtra==true){
+      alert(-1);
+    }
+  }
+  check();
+  document.write(count+ " lần xuất hiện trong mảng");
+</script>
+</body>
+</html>
