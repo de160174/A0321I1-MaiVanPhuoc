@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  class Temperature{
+    constructor(c) {
+      this.c=c;
+    }
+    getDo(){
+      return this.c;
+    }
+    convertToF() {
+      return c * 1.8 + 32;
+    }
+    convertToK(){
+      return c+273.15;
+    }
+  }
+  let nhietdo= new Temperature(25);
+  let c=nhietdo.getDo();
+  let doF=nhietdo.convertToF();
+  let doK=nhietdo.convertToK();
+  alert("độ F sau khi dược chuyển đổi là " +doF);
+  alert("độ K sau khi được chuyển đổi là " +doK);
+</script>
+</body>
+</html>

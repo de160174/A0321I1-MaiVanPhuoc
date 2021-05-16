@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="900px" height="400px" style="border:1px solid #d3d3d3;"></canvas>
+<script>
+  class Rectangle{
+    constructor(cd,cr) {
+      this.cd = cd;
+      this.cr = cr;
+    }
+      getCD(){
+        return this.cd;
+      }
+      setCD(cd){
+        this.cd=cd;
+      }
+      getCR(){
+        return this.cr;
+      }
+      setCR(cr){
+        this.cr=cr;
+      }
+      getCV() {
+        return (cd + cr) * 2;
+      }
+      getDT(){
+        return cd*cr;
+      }
+
+  }
+  let rectangle = new Rectangle(60,40);
+  let cd=rectangle.getCD();
+  let cr=rectangle.getCR();
+  let area=rectangle.getDT();
+  let peri=rectangle.getCV();
+  alert("dien tich va chu vi dau la "+area+ " va " +peri);
+  rectangle.setCD(90);
+  rectangle.setCR(70);
+  cd=rectangle.getCD();
+  cr=rectangle.getCR();
+  let areas=rectangle.getDT();
+  let perimeter=rectangle.getCV();
+  alert("dien tich va chu vi sau la "+areas+ " va " +perimeter);
+
+
+  function createRectangle(){
+    var ctx = document.getElementById("myCanvas").getContext("2d");
+    ctx.fillStyle = "#fe4";
+    ctx.fillRect(50,50,rectangle.cd,rectangle.cr);
+  }
+  createRectangle();
+</script>
+</body>
+</html>
