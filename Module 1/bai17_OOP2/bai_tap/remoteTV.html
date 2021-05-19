@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  class Remote{
+    constructor(id,kenh,amluong) {
+      this.id=id;
+      this.kenh=kenh;
+      this.amluong=amluong;
+    }
+    chuyenKenh(tivi,chanel){
+      tivi.kenh=chanel;
+    }
+    chinhVolume(tivi,amluong){
+      tivi.amluong=amluong;
+    }
+    getStaus(tivi,status){
+      tivi.status=status;
+    }
+  }
+  class Tivi{
+    constructor(kenh,amluong,status) {
+      this.kenh=kenh;
+      this.amluong=amluong;
+      this.status=status;
+    }
+    getKenh(){
+      console.log("dang phat kenh " +this.kenh);
+    }
+    getVolume(){
+      console.log("co am luong la " +this.amluong);
+    }
+    getStatus(){
+      console.log("tivi dang " +this.status);
+    }
+  }
+  let lg=new  Tivi(1,10,"On");
+  let remote=new Remote(1);
+  lg.getStatus();
+  lg.getKenh();
+  lg.getVolume();
+  remote.chuyenKenh(lg,3);
+  lg.getKenh();
+  remote.chinhVolume(lg,12);
+  lg.getVolume();
+  remote.getStaus(lg,"Off");
+  lg.getStatus();
+
+</script>
+</body>
+</html>

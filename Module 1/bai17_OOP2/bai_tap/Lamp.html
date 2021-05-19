@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  class ElectricLamp{
+    constructor(status) {
+      this.status=status;
+    }
+    turnOn(){
+      this.status=true;
+    }
+    turnOff(){
+      this.status=false;
+    }
+  }
+  class SwitchButton{
+    constructor(status,lamp) {
+      this.status=status;
+      this.lamp=lamp;
+    }
+    connectToLamp(ElectricLamp){
+      this.lamp=ElectricLamp;
+    }
+    switchOn(){
+      this.lamp.turnOn();
+    }
+    switchOff(){
+      this.lamp.turnOff();
+    }
+  }
+  let electricLamp=new ElectricLamp();
+  let switchButton=new SwitchButton();
+  switchButton.connectToLamp(electricLamp);
+  let count=0;
+  while(count<10){
+    alert("da bat " +count+ " lan");
+    switchButton.switchOff();
+    switchButton.switchOn();
+    count++;
+  }
+</script>
+</body>
+</html>

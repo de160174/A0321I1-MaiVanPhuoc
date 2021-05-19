@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  class Mouse{
+    constructor(name,weight,speedd,status) {
+      this.name=name;
+      this.weight=weight;
+      this.speedd=speedd;
+      this.status="live";
+    }
+    getSpeed(){
+      return this.speed;
+    }
+    say(){
+      console.log("chits chits");
+    }
+  }
+  class Cat{
+    constructor(name,weight,speed,status) {
+      this.name=name;
+      this.weight=weight;
+      this.speed=speed;
+      this.status=status;
+    }
+    say(){
+      console.log("mewo mewo");
+    }
+    getSpeed(){
+      return this.speed;
+    }
+    getWeight(){
+      return this.weight;
+    }
+    catchMouse(mouse){
+      if(this.speed > mouse.speedd){
+        console.log("meo bat chuot");
+        return true;
+      }
+      else {
+        return false;
+      }
+
+    }
+    eatMouse(mouse){
+      if(mouse.status=="live"){
+        console.log("dang an thit");
+        this.weight++;
+      }else {
+        console.log("chuot da chet khong an duoc");
+      }
+    }
+  }
+  let tom=new Cat("Tom",5,10,"live");
+  let jerry=new Mouse("Jerry",2,8,"live");
+  tom.say();
+  jerry.say();
+  tom.catchMouse(jerry);
+  tom.eatMouse(jerry);
+  tom.getWeight();
+</script>
+</body>
+</html>
