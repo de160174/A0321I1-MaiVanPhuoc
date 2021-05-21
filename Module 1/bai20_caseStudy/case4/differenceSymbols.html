@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let str=prompt("bạn hãy nhập 1 chuỗi");
+  let temp=[];
+  let strArr=str.split('');
+  strArr.map(difference =>{
+    if(!temp.includes(difference)){
+      temp.push(difference)
+    }
+  })
+  console.log(temp.length);
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let h=parseInt(prompt("nhập chiều cao h"));
+  for(let row=1;row<=h;row++){
+    for(let col=1;col<=h;col++){
+      if(col==1||row==h||col==row){
+        document.write("*");
+      }else{
+        document.write("&nbsp&nbsp");
+      }
+    }
+    document.write("<br>");
+  }
+</script>
+</body>
+</html>

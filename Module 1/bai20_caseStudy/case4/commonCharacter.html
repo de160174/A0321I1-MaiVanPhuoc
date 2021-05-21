@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let count=0;
+  let str1=prompt("bạn hãy nhập chuỗi 1");
+  let str2=prompt("bạn nhãy nhập chuỗi 2");
+  str1=str1.split('');
+  str2=str2.split('');
+  str1.map(e =>{
+    if(str2.includes(e)){
+      str2.splice(str2.indexOf(e),1);
+      count++;
+    }
+  })
+  console.log(count);
+</script>
+</body>
+</html>

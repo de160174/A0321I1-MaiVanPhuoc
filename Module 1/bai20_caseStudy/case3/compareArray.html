@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function compare(arr1,arr2) {
+    let temp=[];
+    arr1=arr1.toString().split(',').map(Number);
+    arr2=arr2.toString().split(',').map(Number);
+    for(let i in arr1){
+      if(arr2.indexOf(arr1[i])===-1){
+        temp.push(arr1[i]);
+      }
+      for (i in arr2){
+        if(arr1.indexOf(arr2[i])===-1){
+          temp.push(arr2[i]);
+        }
+      }
+      return temp;
+    }
+  }
+  console.log(compare([1,2,3],[1,2,3,4,5]));
+</script>
+</body>
+</html>

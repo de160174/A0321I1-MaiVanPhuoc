@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  // let str=prompt("bạn hãy nhập chuỗi bất kì");
+  // str=str.trim();
+  // str=str.toLowerCase();
+  // str=str.replace("\\s+", " ");
+  // function uppercase(str){
+  //   let temp=str.toLowerCase().split('');
+  //   for(let i=0;i<temp.length;i++) {
+  //     temp[i] = temp[i].charAt(0).toUpperCase() + temp[i].substring(1);
+  //   }
+  //   return temp.join('');
+  //
+  // }
+  // document.write(uppercase(str));
+  let a = prompt("Nhập vào chuỗi tên") //TRUONG TAN   HAI
+  let b = a.toLowerCase();
+  alert(b)
+  let c =  b.split(" "); //["truong","","tan","","","","hai"]
+  alert(c)
+  let kq = "";
+  for (let i=0;i<c.length;i++){
+    if(c[i] == ""){
+      continue;
+    } else {
+      for(let j=0; j< c[i].length; j++){
+        if(j==0){
+          kq += c[i].charAt(j).toUpperCase(); //T
+        } else {
+          kq += c[i].charAt(j); //Tr
+        }
+      }
+    }
+    kq += " ";
+  }
+  alert(kq);
+</script>
+</body>
+</html>

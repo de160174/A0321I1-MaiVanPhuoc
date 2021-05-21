@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let arr = ["Cafe","Cam vắt","Nước ép cà rốt","Nước ép cà chua","Nước lọc","Nước dừa"];
+  confirm("ban hay chon 1 nuoc uong va nhan 7 de thoat chuong trinh");
+  let num=prompt("1. Cafe \n 2. Cam vắt \n 3. Nước ép cà rốt \n 4. Nước ép cà chua \n 5. Nước lọc \n 6. Nước dừa \n 7. Thoát chương trình");
+  let dongia=0;
+  let soluong=0;
+  let tongtien=0;
+  switch (num) {
+    case "1":
+      dongia=17000;
+      soluong=prompt("ban hay nhap so luong muon mua");
+      tongtien=soluong*dongia;
+      document.write("tong so tien ban phai tra " +tongtien);
+      break;
+    case "2":
+      dongia=30000;
+      soluong=prompt("ban hay nhap so luong muon mua");
+      tongtien=soluong*dongia;
+      document.write("tong so tien ban phai tra " +tongtien);
+      break;
+    case "3":
+      dongia=25000;
+      soluong=prompt("ban hay nhap so luong muon mua");
+      tongtien=soluong*dongia;
+      document.write("tong so tien ban phai tra " +tongtien);
+      break;
+    case "4":
+      dongia=24000;
+      soluong=prompt("ban hay nhap so luong muon mua");
+      tongtien=soluong*dongia;
+      document.write("tong so tien ban phai tra " +tongtien);
+      break;
+    case "5":
+      dongia=5000;
+      soluong=prompt("ban hay nhap so luong muon mua");
+      tongtien=soluong*dongia;
+      document.write("tong so tien ban phai tra " +tongtien);
+      break;
+    case "6":
+      dongia=40000;
+      soluong=prompt("ban hay nhap so luong muon mua");
+      tongtien=soluong*dongia;
+      document.write("tong so tien ban phai tra " +tongtien);
+      break;
+    case "7":
+      break;
+    default:
+      num=prompt("bạn hãy nhập lại sản phẩm muốn mua \n 1. Cafe \n 2. Cam vắt \n 3. Nước ép cà rốt \n 4. Nước ép cà chua \n 5. Nước lọc \n 6. Nước dừa \n 7. Thoát chương trình");
+  }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let row=prompt("mời nhập số hàng");
+  let col=prompt("mời nhập số cột");
+  let arr=new Array(row);
+  for(let i=0;i<row;i++){
+    arr[i]= new Array(col);
+    for (let j=0;j<col;j++){
+      let value=parseInt(prompt("a[" +i+ "," +j+ "] = ")) ;
+      arr[i][j]=value;
+    }
+  }
+  for (let i=0;i<row;i++){
+    for (let j=0;j<col;j++){
+      document.write(arr[i][j] +" ");
+    }
+    document.write("<br>")
+  }
+</script>
+</body>
+</html>

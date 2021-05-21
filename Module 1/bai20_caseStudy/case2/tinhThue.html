@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let luong=parseInt(prompt("mời nhập lương của bạn"));
+  let thue;
+
+  if(luong>15000000){
+    thue=0.2;
+  }else if(luong>7000000&&luong<15000000){
+    thue=0.1;
+  }else {
+    thue=0.05;
+  }
+  let thuclanh=luong*(1-thue);
+  document.write("lương thực lãnh là " +thuclanh);
+</script>
+</body>
+</html>
