@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let row = prompt("mời nhập số hàng");
+  let col = prompt("mời nhập số cột");
+  let arr = new Array(row);
+  for (let i = 0; i < row; i++) {
+    arr[i] = new Array(col);
+    for (let j = 0; j < col; j++) {
+      let value = parseInt(prompt("a[" + i + "," + j + "] = "));
+      arr[i][j] = value;
+    }
+  }
+  for (let i = 0; i < row; i++) {
+    for (let j = 0; j < col; j++) {
+      document.write(arr[i][j] + " ");
+    }
+    document.write("<br>")
+  }
+  let min=arr[0][0];
+  let max=arr[0][0];
+  for (let i=0;i<arr.length;i++){
+    for (let j=0;j<arr[i].length;j++){
+      if (arr[i][j]>max){
+        max=arr[i][j];
+      }else if(arr[i][j]<min){
+        min=arr[i][j];
+      }
+    }
+  }
+  document.write("giá trị lớn nhất trong mảng là " +max+ "<br>");
+  document.write("giá trị nhỏ nhất trong mảng là " +min);
+</script>
+</body>
+</html>

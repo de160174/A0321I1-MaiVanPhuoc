@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let row = prompt("mời nhập số hàng");
+  let col = prompt("mời nhập số cột");
+  let arr = new Array(row);
+  for (let i = 0; i < row; i++) {
+    arr[i] = new Array(col);
+    for (let j = 0; j < col; j++) {
+      let value = parseInt(prompt("a[" + i + "," + j + "] = "));
+      arr[i][j] = value;
+    }
+  }
+  for (let i = 0; i < row; i++) {
+    for (let j = 0; j < col; j++) {
+      document.write(arr[i][j] + " ");
+    }
+    document.write("<br>")
+  }
+
+  let prime = true;
+  let count = 0;
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr.length; j++) {
+      if (arr[i][j] == 1) {
+        prime = false;
+      } else if (arr[i][j] == 2) {
+        prime = true;
+      } else {
+        for (let k = 2; k < arr[i][j]; k++) {
+          if (arr[i][j] % k == 0) {
+            prime = false;
+            break;
+          }
+        }
+      }
+      if (prime) {
+        document.write(arr[i][j] + " là số nguyên tố" + "<br>");
+        count++
+      } else {
+        document.write(arr[i][j] + " không phải số nguyên tố" + "<br>");
+      }
+      prime = true;
+    }
+
+
+  }
+  document.write("có " + count + " số nguyên tố" + "<br>");
+
+
+</script>
+</body>
+</html>

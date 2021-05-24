@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    body{
+      padding: 50px;
+    }
+    input {
+      width: 50px;
+      margin-bottom: 20px;
+    }
+
+  </style>
+</head>
+<body>
+<h2>Vé số Vietlot</h2>
+<input type="text" id="1" disabled>
+<input type="text" id="2" disabled>
+<input type="text" id="3" disabled>
+<input type="text" id="4" disabled>
+<input type="text" id="5" disabled>
+<input type="text" id="6" disabled><br>
+<button onclick="chon();">Mua vé</button>
+<button onclick="check()">Xem kết quả</button>
+<script>
+  class Vietlot {
+    constructor(first,second,third,fourth,fifth,sixth) {
+      this.first = first;
+      this.second = second;
+      this.third = third;
+      this.fourth = fourth;
+      this.fifth = fifth;
+      this.sixth = sixth;
+    }
+    getFirst() {
+      return this.first;
+    }
+    setFirst(first) {
+      this.first = first;
+    }
+    getSecond() {
+      return this.second;
+    }
+    setSecond(second) {
+      this.second = second;
+    }
+    getThird() {
+      return this.third;
+    }
+    setThird(third) {
+      this.third = third;
+    }
+    getFourth() {
+      return this.fourth;
+    }
+    setFourth(fourth) {
+      this.fourth = fourth;
+    }
+    getFifth() {
+      return this.fifth;
+    }
+    setFifth(fifth) {
+      this.fifth = fifth;
+    }
+    getSixth() {
+      return this.sixth;
+    }
+    setSixth(sixth) {
+      this.sixth = sixth;
+    }
+  }
+
+  let xoSo = new Vietlot();
+
+  function chon() {
+    let input = prompt("bạn hãy chọn \n 1.Bạn hãy tự chọn số \n 2.Hệ thống tự random")
+    if (input == 1) {
+      chonThuCong();
+    } else if (input == 2) {
+      chonRandom();
+    }
+  }
+  function chonThuCong() {
+    let input1=prompt("Bạn hãy nhập số 0-99");
+    xoSo.setFirst(input1);
+    document.getElementById('1').value=xoSo.getFirst();
+    let input2=prompt("Bạn hãy nhập số 0-99");
+    xoSo.setSecond(input2);
+    document.getElementById('2').value=xoSo.getSecond();
+    let input3=prompt("Bạn hãy nhập số 0-99");
+    xoSo.setThird(input3);
+    document.getElementById('3').value=xoSo.getThird();
+    let input4=prompt("Bạn hãy nhập số 0-99");
+    xoSo.setFourth(input4);
+    document.getElementById('4').value=xoSo.getFourth();
+    let input5=prompt("Bạn hãy nhập số 0-99");
+    xoSo.setFifth(input5);
+    document.getElementById('5').value=xoSo.getFifth();
+    let input6=prompt("Bạn hãy nhập số 0-99");
+    xoSo.setSixth(input6);
+    document.getElementById('6').value=xoSo.getSixth();
+  }
+  function chonRandom() {
+    xoSo.setFirst(Math.floor(Math.random()*100));
+    document.getElementById('1').value=xoSo.getFirst();
+    xoSo.setSecond(Math.floor(Math.random()*100));
+    document.getElementById('2').value=xoSo.getSecond();
+    xoSo.setThird(Math.floor(Math.random()*100));
+    document.getElementById('3').value=xoSo.getThird();
+    xoSo.setFourth(Math.floor(Math.random()*100));
+    document.getElementById('4').value=xoSo.getFourth();
+    xoSo.setFifth(Math.floor(Math.random()*100));
+    document.getElementById('5').value=xoSo.getFifth();
+    xoSo.setSixth(Math.floor(Math.random()*100));
+    document.getElementById('6').value=xoSo.getSixth();
+  }
+  function check() {
+    if(document.getElementById('1').value==1&&document.getElementById('2').value==2&&
+      document.getElementById('3').value==3&&document.getElementById('4').value==4&&
+      document.getElementById('5').value==5&&document.getElementById('6').value==6){
+      alert("Bạn đã giành được jackpot 2 tỷ đồng");
+    }else if (document.getElementById('2').value==2&&
+      document.getElementById('3').value==3&&document.getElementById('4').value==4&&
+      document.getElementById('5').value==5&&document.getElementById('6').value==6){
+      alert("Bạn giành được giải nhì và 10.000.000vnd");
+    }else if(document.getElementById('4').value==4&&
+      document.getElementById('5').value==5&&document.getElementById('6').value==6){
+      alert("Bạn giành được giải khuyến khích và 2.000.000vnd")
+    }
+    else {
+      alert("Chúc bạn may mắn lần sau");
+    }
+  }
+</script>
+</body>
+</html>
