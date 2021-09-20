@@ -21,8 +21,8 @@ CREATE TABLE `dichvu` (
   PRIMARY KEY (`IDDichVu`),
   KEY `IDKieuThue` (`IDKieuThue`),
   KEY `IDLoaiDichVu` (`IDLoaiDichVu`),
-  CONSTRAINT `dichvu_ibfk_1` FOREIGN KEY (`IDKieuThue`) REFERENCES `kieuthue` (`IDKieuThue`),
-  CONSTRAINT `dichvu_ibfk_2` FOREIGN KEY (`IDLoaiDichVu`) REFERENCES `loaidichvu` (`IDLoaiDichVu`)
+  CONSTRAINT `dichvu_ibfk_1` FOREIGN KEY (`IDKieuThue`) REFERENCES `kieuthue` (`IDKieuThue`) on update cascade on delete cascade,
+  CONSTRAINT `dichvu_ibfk_2` FOREIGN KEY (`IDLoaiDichVu`) REFERENCES `loaidichvu` (`IDLoaiDichVu`) on update cascade on delete cascade
 );
 INSERT INTO `dichvu` 
 VALUES (1,'Iron',15,2,10,3500,2,3,'sẵn sàng'),
@@ -60,22 +60,23 @@ CREATE TABLE `hopdong` (
   KEY `IDNhanVien` (`IDNhanVien`),
   KEY `IDKhachHang` (`IDKhachHang`),
   KEY `IDDichVu` (`IDDichVu`),
-  CONSTRAINT `hopdong_ibfk_1` FOREIGN KEY (`IDNhanVien`) REFERENCES `nhanvien` (`IDNhanVien`),
-  CONSTRAINT `hopdong_ibfk_2` FOREIGN KEY (`IDKhachHang`) REFERENCES `khachhang` (`IDKhachHang`),
-  CONSTRAINT `hopdong_ibfk_3` FOREIGN KEY (`IDDichVu`) REFERENCES `dichvu` (`IDDichVu`)
+  CONSTRAINT `hopdong_ibfk_1` FOREIGN KEY (`IDNhanVien`) REFERENCES `nhanvien` (`IDNhanVien`) on update cascade on delete cascade,
+  CONSTRAINT `hopdong_ibfk_2` FOREIGN KEY (`IDKhachHang`) REFERENCES `khachhang` (`IDKhachHang`) on update cascade on delete cascade,
+  CONSTRAINT `hopdong_ibfk_3` FOREIGN KEY (`IDDichVu`) REFERENCES `dichvu` (`IDDichVu`) on update cascade on delete cascade
 );
 INSERT INTO `hopdong` 
-VALUES (1,1,1,1,'2020-11-25','2021-01-01',10000,35000),
-		(2,2,2,2,'2021-02-07','2021-03-26',10000,25000),
-        (3,3,3,3,'2020-11-19','2021-02-15',10000,28000),
-        (4,4,4,4,'2020-12-20','2021-04-30',10000,30000),
-        (5,5,5,5,'2021-03-18','2021-06-06',10000,24000),
-        (6,9,9,5,'2020-10-29','2021-01-17',10000,29000),
-        (7,7,7,7,'2021-02-09','2021-05-21',10000,23000),
-        (8,8,8,8,'2020-12-14','2021-04-30',10000,35000),
-        (9,9,9,1,'2021-03-16','2021-08-04',10000,27000),
-        (10,10,10,2,'2020-11-05','2021-02-10',10000,30000),
-        (11,1,1,3,'2019-03-30','2020-01-01',10000,35000);
+VALUES (1,1,1,1,'2020-11-25','2021-01-01',10000),
+		(2,2,2,2,'2021-02-07','2021-03-26',10000),
+        (3,3,3,3,'2020-11-19','2021-02-15',10000),
+        (4,4,4,4,'2020-12-20','2021-04-30',10000),
+        (5,5,5,5,'2021-03-18','2021-06-06',10000),
+        (6,9,9,5,'2020-10-29','2021-01-17',10000),
+        (7,7,7,7,'2021-02-09','2021-05-21',10000),
+        (8,8,8,8,'2020-12-14','2021-04-30',10000),
+        (9,9,9,1,'2021-03-16','2021-08-04',10000),
+        (10,10,10,2,'2020-11-05','2021-02-10',10000),
+        (11,1,1,3,'2019-03-30','2020-01-01',10000);
+
 CREATE TABLE `hopdongchitiet` (
   `IDHopDongChiTiet` int NOT NULL,
   `IDHopDong` int NOT NULL,
@@ -84,8 +85,8 @@ CREATE TABLE `hopdongchitiet` (
   PRIMARY KEY (`IDHopDongChiTiet`),
   KEY `IDDichVuDiKem` (`IDDichVuDiKem`),
   KEY `IDHopDong` (`IDHopDong`),
-  CONSTRAINT `hopdongchitiet_ibfk_1` FOREIGN KEY (`IDDichVuDiKem`) REFERENCES `dichvudikem` (`IDDichVuDiKem`),
-  CONSTRAINT `hopdongchitiet_ibfk_2` FOREIGN KEY (`IDHopDong`) REFERENCES `hopdong` (`IDHopDong`)
+  CONSTRAINT `hopdongchitiet_ibfk_1` FOREIGN KEY (`IDDichVuDiKem`) REFERENCES `dichvudikem` (`IDDichVuDiKem`) on update cascade on delete cascade,
+  CONSTRAINT `hopdongchitiet_ibfk_2` FOREIGN KEY (`IDHopDong`) REFERENCES `hopdong` (`IDHopDong`) on update cascade on delete cascade
 );
 INSERT INTO `hopdongchitiet` 
 VALUES (1,1,1,2),
@@ -109,7 +110,7 @@ CREATE TABLE `khachhang` (
   `DiaChi` varchar(45) NOT NULL,
   PRIMARY KEY (`IDKhachHang`),
   KEY `IDLoaiKhach` (`IDLoaiKhach`),
-  CONSTRAINT `khachhang_ibfk_1` FOREIGN KEY (`IDLoaiKhach`) REFERENCES `loaikhach` (`IDLoaiKhach`)
+  CONSTRAINT `khachhang_ibfk_1` FOREIGN KEY (`IDLoaiKhach`) REFERENCES `loaikhach` (`IDLoaiKhach`) on update cascade on delete cascade
 );
 
 INSERT INTO `khachhang` 
@@ -167,9 +168,9 @@ CREATE TABLE `nhanvien` (
   KEY `IDViTri` (`IDViTri`),
   KEY `IDTrinhDo` (`IDTrinhDo`),
   KEY `IDBoPhan` (`IDBoPhan`),
-  CONSTRAINT `nhanvien_ibfk_1` FOREIGN KEY (`IDViTri`) REFERENCES `vitri` (`IDViTri`),
-  CONSTRAINT `nhanvien_ibfk_2` FOREIGN KEY (`IDTrinhDo`) REFERENCES `trinhdo` (`IDTrinhDo`),
-  CONSTRAINT `nhanvien_ibfk_3` FOREIGN KEY (`IDBoPhan`) REFERENCES `bophan` (`IDBoPhan`)
+  CONSTRAINT `nhanvien_ibfk_1` FOREIGN KEY (`IDViTri`) REFERENCES `vitri` (`IDViTri`) on update cascade on delete cascade,
+  CONSTRAINT `nhanvien_ibfk_2` FOREIGN KEY (`IDTrinhDo`) REFERENCES `trinhdo` (`IDTrinhDo`) on update cascade on delete cascade,
+  CONSTRAINT `nhanvien_ibfk_3` FOREIGN KEY (`IDBoPhan`) REFERENCES `bophan` (`IDBoPhan`) on update cascade on delete cascade
 );
 
 INSERT INTO `nhanvien` 
@@ -199,4 +200,3 @@ CREATE TABLE `vitri` (
   PRIMARY KEY (`IDViTri`)
 );
 INSERT INTO `vitri` VALUES (1,'Lễ tân'),(2,'phục vụ'),(3,'chuyên viên'),(4,'giám sát'),(5,'quản lý'),(6,'giám đốc');
-
