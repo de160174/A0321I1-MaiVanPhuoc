@@ -1,0 +1,43 @@
+nav{
+    font-family: "SegoeUI,Helvetica,Arial,sans-serif";
+    font-size: 14px;
+}
+nav a{
+    color: #262626;
+}
+nav a:hover{
+    border-bottom: 1px solid black;
+    color: #262626;
+}
+.container {
+    text-align: center;
+    font-family: "Segoe UI";
+    margin-top: 15px;
+    padding: 5px;
+}
+.container-fluid{
+    padding: 10px;
+}
+.image{
+   margin-left: 75px;
+    padding: 15px 0;
+}
+.img-brand{
+    padding: 15px 70px;
+}
+.text-brand{
+    padding: 10px 27px;
+}
+.text{
+    color: black;
+    padding: 0 10px;
+}
+.text:hover{
+    text-decoration: none;
+    color: black;
+}
+.text-logo{
+    color: black;
+    padding: 0 40px;
+    font-size: 40px;
+}
