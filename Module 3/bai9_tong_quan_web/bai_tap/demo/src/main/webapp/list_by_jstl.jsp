@@ -21,6 +21,8 @@
         <th>Date of birth</th>
         <th>Gender</th>
         <th>Degree</th>
+        <th>Edit</th>
+        <th>Delete</th>
     </tr>
     <%--for(Student student: studentListServlet)--%>
     <c:forEach var="student" items="${studentListServlet}" varStatus="loop">
@@ -30,8 +32,8 @@
 
                <%--tương đương với student.getId()--%>
             <td>${loop.count}</td>
-            <%--Vì jstt sẽ tự động gọi phương get tương ứng
-            Gửi lại chỗ c:out và ${}--%>
+                <%--Vì jstt sẽ tự động gọi phương get tương ứng
+                Gửi lại chỗ c:out và ${}--%>
             <td><c:out value="${student.id}"></c:out></td>
             <td><c:out value="${student.name}"></c:out></td>
             <td>${student.dateOfBirth}</td>
@@ -57,6 +59,8 @@
                     </c:otherwise>
                 </c:choose>
             </td>
+            <td><a href="/student?action=update&id=${student.id}">Edit</a></td>
+            <td><a href="/student?action=delete&id=${student.id}">Delete</a></td>
         </tr>
     </c:forEach>
 </table>
