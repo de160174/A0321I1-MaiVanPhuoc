@@ -1,0 +1,45 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url("../image/bg.jpg");
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: center;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #007bff;
+    color: white;
+}
+.message{
+    color:green;
+}
+.header {
+    font-family:"Courier New";
+    font-size: 4rem;
+    font-weight:  100;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #f35626;
+    background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: hue 10s infinite linear;
+}
+
+@-webkit-keyframes hue {
+    from {
+        -webkit-filter: hue-rotate(0deg);
+    }
+    to {
+        -webkit-filter: hue-rotate(-360deg);
+    }
+}
