@@ -59,7 +59,7 @@
             <div class="form-group row">
                 <label for="quantity" class="col-sm-2 col-form-label">Quantity</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="quantity" name="quantity" placeholder="Enter Quantity...">
+                    <input type="number" class="form-control" required id="quantity" name="quantity" placeholder="Enter Quantity...">
                 </div>
             </div>
             <div class="row">

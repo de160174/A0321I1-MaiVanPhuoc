@@ -41,38 +41,50 @@
             <div class="form-group row">
                 <label for="name" class="col-sm-2 col-form-label">Name</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" name="name" id="name"
+                    <input type="text" class="form-control" name="name" required id="name"
                            value="${employee.employee_name}">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="date" class="col-sm-2 col-form-label">Day of Birth</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="date" name="date" value="${employee.employee_birthday}">
+                    <input type="date" class="form-control" id="date" name="date" value="${employee.employee_birthday}">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="card" class="col-sm-2 col-form-label">ID Card</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="card" name="card" value="${employee.employee_id_card}">
+                    <c:if test="${messEmployeeIDCard != null}">
+                        <small class="form-text text-danger">${messEmployeeIDCard}</small>
+                    </c:if>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="salary" class="col-sm-2 col-form-label">Salary</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="salary" name="salary" value="${employee.employee_salary}">
+                    <c:if test="${messEmployeeSalary != null}">
+                        <small class="form-text text-danger">${messEmployeeSalary}</small>
+                    </c:if>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="phone" class="col-sm-2 col-form-label">Phone</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="phone" name="phone" value="${employee.employee_phone}">
+                    <c:if test="${messEmployeePhone != null}">
+                        <small class="form-text text-danger">${messEmployeePhone}</small>
+                    </c:if>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="email" class="col-sm-2 col-form-label">Email</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="email" name="email" value="${employee.employee_email}">
+                    <c:if test="${messEmployeeEmail != null}">
+                        <small class="form-text text-danger">${messEmployeeEmail}</small>
+                    </c:if>
                 </div>
             </div>
             <div class="form-group row">

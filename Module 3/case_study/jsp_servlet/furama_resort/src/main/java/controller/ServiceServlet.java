@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 @WebServlet(name = "ServiceServlet",urlPatterns = "/service")
 public class ServiceServlet extends HttpServlet {
@@ -41,16 +42,16 @@ public class ServiceServlet extends HttpServlet {
         Double pool= Double.valueOf(request.getParameter("pool"));
         int floor= Integer.parseInt(request.getParameter("floor"));
         Service service=new Service(id,name,area,cost,people,room,desc,pool,floor,rent,type);
-        this.services.create(service);
-        RequestDispatcher dispatcher=request.getRequestDispatcher("service/create.jsp");
-        request.setAttribute("message", "New service was created");
-        try {
-            dispatcher.forward(request,response);
-        } catch (ServletException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+        Map<String,String> stringMap=this.services.create(service);
+        if(stringMap.isEmpty()){
+            listService(request,response);
+        }else{
+            request.setAttribute("messServiceID", stringMap.get("service_id"));
+            request.setAttribute("messServiceCost", stringMap.get("service_cost"));
+            request.setAttribute("messNumber", stringMap.get("number_of_floor"));
+            showCreate(request,response);
         }
+        request.setAttribute("message", "New service was created");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

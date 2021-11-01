@@ -39,25 +39,31 @@
             <div class="form-group row">
                 <label for="start" class="col-sm-2 col-form-label">Start date</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="start" name="start" placeholder="Enter Start date YYYY-MM-DD HH:MM:SS...">
+                    <input type="datetime-local" class="form-control" id="start" name="start" placeholder="Enter Start date YYYY-MM-DD HH:MM:SS...">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="end" class="col-sm-2 col-form-label">End date</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="end" name="end" placeholder="Enter End date YYYY-MM-DD HH:MM:SS...">
+                    <input type="datetime-local" class="form-control" id="end" name="end" placeholder="Enter End date YYYY-MM-DD HH:MM:SS...">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="deposit" class="col-sm-2 col-form-label">Deposit</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="deposit" name="deposit" placeholder="Enter Deposit...">
+                    <c:if test="${messDeposit != null}">
+                        <small class="form-text text-danger">${messDeposit}</small>
+                    </c:if>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="total" class="col-sm-2 col-form-label">Total Money</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="total" name="total" placeholder="Enter total money...">
+                    <c:if test="${messTotal != null}">
+                        <small class="form-text text-danger">${messTotal}</small>
+                    </c:if>
                 </div>
             </div>
 

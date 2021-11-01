@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @WebServlet(name = "CustomerServlet",urlPatterns = "/customer")
 public class CustomerServlet extends HttpServlet {
@@ -66,16 +68,22 @@ public class CustomerServlet extends HttpServlet {
         customer.setCustomer_phone(phone);
         customer.setCustomer_email(email);
         customer.setCustomer_address(address);
-        this.customerService.update(customer);
-        request.setAttribute("customer", customer);
-        request.setAttribute("message", "Customer information was updated");
-        try {
-            request.getRequestDispatcher("customer/edit.jsp").forward(request, response);
-        } catch (ServletException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        try{
+            Map<String,String> stringMap=this.customerService.update(customer);
+            if(stringMap.isEmpty()){
+                listUser(request,response);
+            }else{
+                request.setAttribute("messCustomerID", stringMap.get("customer_id"));
+                request.setAttribute("messCustomerIDCard", stringMap.get("customer_id_card"));
+                request.setAttribute("messCustomerPhone", stringMap.get("customer_phone"));
+                request.setAttribute("messCustomerEmail", stringMap.get("customer_email"));
+                showEdit(request,response);
+            }
+        }catch (ServletException | IOException e) {
             e.printStackTrace();
         }
+        request.setAttribute("customer", customer);
+        request.setAttribute("message", "Customer information was updated");
     }
 
     private void createCustomer(HttpServletRequest request, HttpServletResponse response) {
@@ -89,16 +97,21 @@ public class CustomerServlet extends HttpServlet {
         String email=request.getParameter("email");
         String address=request.getParameter("address");
         Customer customer=new Customer(id,type,name,date,gender,card,phone,email,address);
-        this.customerService.create(customer);
-        RequestDispatcher dispatcher=request.getRequestDispatcher("customer/create.jsp");
-        request.setAttribute("message", "New customer was created");
-        try {
-           dispatcher.forward(request,response);
-        } catch (ServletException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        try{
+            Map<String,String> stringMap=this.customerService.create(customer);
+            if(stringMap.isEmpty()){
+                listUser(request,response);
+            }else{
+                request.setAttribute("messCustomerID", stringMap.get("customer_id"));
+                request.setAttribute("messCustomerIDCard", stringMap.get("customer_id_card"));
+                request.setAttribute("messCustomerPhone", stringMap.get("customer_phone"));
+                request.setAttribute("messCustomerEmail", stringMap.get("customer_email"));
+                showCreate(request,response);
+            }
+        }catch (ServletException | IOException e) {
             e.printStackTrace();
         }
+        request.setAttribute("message", "New customer was created");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

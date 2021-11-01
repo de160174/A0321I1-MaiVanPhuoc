@@ -72,7 +72,7 @@
                     <td><c:out value="${customer.attach_service_id}"/></td>
                     <td><c:out value="${customer.attach_service_name}"/></td>
                     <td>
-                        <a class="btn btn-success" href="/customer?action=edit&id=${customer.customer_id}">Edit</a>
+                        <a class="btn btn-success" href="/service?action=edit&id=${customer.customer_id}">Edit</a>
                     </td>
                     <td>
                         <a class="btn btn-danger" href="" onclick="submitDelete('${customer.customer_id}','${customer.customer_name}')"

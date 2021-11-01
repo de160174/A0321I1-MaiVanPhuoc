@@ -31,32 +31,38 @@
     <div>
         <form method="post">
             <div class="form-group row">
-                <label for="id" class="col-sm-2 col-form-label">CustomerID</label>
+                <label for="id" class="col-sm-2 col-form-label">ServiceID</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="id" name="id" placeholder="Enter ServiceID...">
+                    <c:if test="${messServiceID != null}">
+                        <small class="form-text text-danger">${messServiceID}</small>
+                    </c:if>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="name" class="col-sm-2 col-form-label">Service Name</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name...">
+                    <input type="text" class="form-control" id="name" name="name" required placeholder="Enter Name...">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="area" class="col-sm-2 col-form-label">Service Area</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="area" name="area" placeholder="Enter Area...">
+                    <input type="number" class="form-control" id="area" name="area" placeholder="Enter Area...">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="cost" class="col-sm-2 col-form-label">Service cost</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="cost" name="cost" placeholder="Enter cost...">
+                    <c:if test="${messServiceCost != null}">
+                        <small class="form-text text-danger">${messServiceCost}</small>
+                    </c:if>
                 </div>
             </div><div class="form-group row">
                 <label for="people" class="col-sm-2 col-form-label">Max people </label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="people" name="people" placeholder="Enter max people...">
+                    <input type="number" class="form-control" id="people" name="people" placeholder="Enter max people...">
                 </div>
             </div>
             <div class="form-group row">
@@ -95,13 +101,16 @@
             <div class="form-group row">
                 <label for="pool" class="col-sm-2 col-form-label">Pool Area</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="pool" name="pool" placeholder="Enter Pool Area...">
+                    <input type="number" class="form-control" id="pool"  name="pool" placeholder="Enter Pool Area...">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="floor" class="col-sm-2 col-form-label">Number of floor</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="floor" name="floor" placeholder="Enter Number of floor...">
+                    <c:if test="${messNumber != null}">
+                        <small class="form-text text-danger">${messNumber}</small>
+                    </c:if>
                 </div>
             </div>
             <div class="row">

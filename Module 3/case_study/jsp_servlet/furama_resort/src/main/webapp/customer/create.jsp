@@ -34,6 +34,9 @@
                 <label for="id" class="col-sm-2 col-form-label">CustomerID</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="id" name="id" placeholder="Enter CustomerID...">
+                    <c:if test="${messCustomerID != null}">
+                        <small class="form-text text-danger">${messCustomerID}</small>
+                    </c:if>
                 </div>
             </div>
             <div class="form-group row">
@@ -51,13 +54,13 @@
             <div class="form-group row">
                 <label for="name" class="col-sm-2 col-form-label">Name</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name...">
+                    <input type="text" class="form-control" id="name" name="name" required placeholder="Enter Name...">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="date" class="col-sm-2 col-form-label">Day of Birth</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="date" name="date" placeholder="Enter day of birth...">
+                    <input type="date" class="form-control" id="date" name="date" required placeholder="Enter day of birth...">
                 </div>
             </div>
             <div class="form-group row">
@@ -75,24 +78,33 @@
                 <label for="card" class="col-sm-2 col-form-label">ID Card</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="card" name="card" placeholder="Enter IDCard...">
+                    <c:if test="${messCustomerIDCard != null}">
+                        <small class="form-text text-danger">${messCustomerIDCard}</small>
+                    </c:if>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="phone" class="col-sm-2 col-form-label">Phone</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter Phone...">
+                    <c:if test="${messCustomerPhone != null}">
+                        <small class="form-text text-danger">${messCustomerPhone}</small>
+                    </c:if>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="email" class="col-sm-2 col-form-label">Email</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="email" name="email" placeholder="Enter Email...">
+                    <c:if test="${messCustomerEmail != null}">
+                        <small class="form-text text-danger">${messCustomerEmail}</small>
+                    </c:if>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="address" class="col-sm-2 col-form-label">Address</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="address" name="address" placeholder="Enter Address...">
+                    <input type="text" class="form-control" id="address" required name="address" placeholder="Enter Address...">
                 </div>
             </div>
             <div class="row">

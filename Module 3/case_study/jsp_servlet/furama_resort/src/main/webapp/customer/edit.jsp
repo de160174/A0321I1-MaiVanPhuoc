@@ -35,6 +35,9 @@
                 <div class="col-sm-10">
                     <input type="text" class="form-control" disabled="true" name="id" id="id"
                            value="${customer.customer_id}">
+                    <c:if test="${messCustomerID != null}">
+                        <small class="form-text text-danger">${messCustomerID}</small>
+                    </c:if>
                 </div>
             </div>
             <div class="form-group row">
@@ -52,14 +55,14 @@
             <div class="form-group row">
                 <label for="name" class="col-sm-2 col-form-label">Name</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" name="name" id="name"
+                    <input type="text" class="form-control" name="name" id="name" required
                            value="${customer.customer_name}">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="date" class="col-sm-2 col-form-label">Day of Birth</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="date" name="date" value="${customer.customer_birthday}">
+                    <input type="date" class="form-control" id="date" name="date" required value="${customer.customer_birthday}">
                 </div>
             </div>
             <div class="form-group row">
@@ -77,24 +80,33 @@
                 <label for="card" class="col-sm-2 col-form-label">ID Card</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="card" name="card" value="${customer.customer_id_card}">
+                    <c:if test="${messCustomerIDCard != null}">
+                        <small class="form-text text-danger">${messCustomerIDCard}</small>
+                    </c:if>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="phone" class="col-sm-2 col-form-label">Phone</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="phone" name="phone" value="${customer.customer_phone}">
+                    <c:if test="${messCustomerPhone != null}">
+                        <small class="form-text text-danger">${messCustomerPhone}</small>
+                    </c:if>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="email" class="col-sm-2 col-form-label">Email</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="email" name="email" value="${customer.customer_email}">
+                    <c:if test="${messCustomerEmail != null}">
+                        <small class="form-text text-danger">${messCustomerEmail}</small>
+                    </c:if>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="address" class="col-sm-2 col-form-label">Address</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="address" name="address" value="${customer.customer_address}">
+                    <input type="text" class="form-control" id="address" name="address" required value="${customer.customer_address}">
                 </div>
             </div>
             <div class="row">

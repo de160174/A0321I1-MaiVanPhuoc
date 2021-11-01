@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 @WebServlet(name = "EmployeeServlet",urlPatterns = "/employee")
 public class EmployeeServlet extends HttpServlet {
@@ -76,16 +77,19 @@ public class EmployeeServlet extends HttpServlet {
         employee.setEducation_degree_id(degree);
         employee.setDivision_id(division);
         employee.setUsername(username);
-        this.employeeService.update(employee);
+        Map<String,String> stringMap=this.employeeService.update(employee);
+        if(stringMap.isEmpty()){
+            listEmployee(request,response);
+        }else{
+            request.setAttribute("messEmployeeIDCard", stringMap.get("employee_id_card"));
+            request.setAttribute("messEmployeeSalary", stringMap.get("employee_salary"));
+            request.setAttribute("messEmployeePhone", stringMap.get("employee_phone"));
+            request.setAttribute("messEmployeeEmail", stringMap.get("employee_email"));
+            showEdit(request,response);
+        }
         request.setAttribute("employee", employee);
         request.setAttribute("message", "employee information was updated");
-        try {
-            request.getRequestDispatcher("employee/edit.jsp").forward(request, response);
-        } catch (ServletException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
     }
 
     private void createEmployee(HttpServletRequest request, HttpServletResponse response) {
@@ -102,16 +106,18 @@ public class EmployeeServlet extends HttpServlet {
         String division=request.getParameter("division");
         String username=request.getParameter("username");
         Employee employee=new Employee(id,name,date,card,salary,phone,email,address,position,degree,division,username);
-        this.employeeService.create(employee);
-        RequestDispatcher dispatcher=request.getRequestDispatcher("employee/create.jsp");
-        request.setAttribute("message", "New employee was created");
-        try {
-            dispatcher.forward(request,response);
-        } catch (ServletException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+        Map<String,String> stringMap=this.employeeService.create(employee);
+        if(stringMap.isEmpty()){
+            listEmployee(request,response);
+        }else{
+            request.setAttribute("messEmployeeIDCard", stringMap.get("employee_id_card"));
+            request.setAttribute("messEmployeeSalary", stringMap.get("employee_salary"));
+            request.setAttribute("messEmployeePhone", stringMap.get("employee_phone"));
+            request.setAttribute("messEmployeeEmail", stringMap.get("employee_email"));
+            showCreate(request,response);
         }
+        request.setAttribute("message", "New employee was created");
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

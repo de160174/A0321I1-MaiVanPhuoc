@@ -33,49 +33,61 @@
             <div class="form-group row">
                 <label for="id" class="col-sm-2 col-form-label">EmployeeID</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="id" name="id" placeholder="Enter EmployeeID...">
+                    <input type="text" class="form-control" id="id" name="id" required placeholder="Enter EmployeeID...">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="name" class="col-sm-2 col-form-label">Name</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name...">
+                    <input type="text" class="form-control" id="name" name="name" required placeholder="Enter Name...">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="date" class="col-sm-2 col-form-label">Day of Birth</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="date" name="date" placeholder="Enter day of birth YYYY-MM-DD...">
+                    <input type="date" class="form-control" id="date" required name="date" placeholder="Enter day of birth YYYY-MM-DD...">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="card" class="col-sm-2 col-form-label">ID Card</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="card" name="card" placeholder="Enter IDCard...">
+                    <c:if test="${messEmployeeIDCard != null}">
+                        <small class="form-text text-danger">${messEmployeeIDCard}</small>
+                    </c:if>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="salary" class="col-sm-2 col-form-label">Salary</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="salary" name="salary" placeholder="Enter salary...">
+                    <c:if test="${messEmployeeSalary != null}">
+                        <small class="form-text text-danger">${messEmployeeSalary}</small>
+                    </c:if>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="phone" class="col-sm-2 col-form-label">Phone</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter Phone...">
+                    <c:if test="${messEmployeePhone != null}">
+                        <small class="form-text text-danger">${messEmployeePhone}</small>
+                    </c:if>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="email" class="col-sm-2 col-form-label">Email</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="email" name="email" placeholder="Enter Email...">
+                    <c:if test="${messEmployeeEmail != null}">
+                        <small class="form-text text-danger">${messEmployeeEmail}</small>
+                    </c:if>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="address" class="col-sm-2 col-form-label">Address</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="address" name="address" placeholder="Enter Address...">
+                    <input type="text" class="form-control" id="address" required name="address" placeholder="Enter Address...">
                 </div>
             </div>
             <div class="form-group row">

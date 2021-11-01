@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 @WebServlet(name = "ContractServlet",urlPatterns = "/contract")
 public class ContractServlet extends HttpServlet {
@@ -48,16 +49,15 @@ public class ContractServlet extends HttpServlet {
         String customer=request.getParameter("customer");
         String service=request.getParameter("service");
         Contract contract=new Contract(id,start,end,deposit,total,employee,customer,service);
-        this.contractService.create(contract);
-        RequestDispatcher dispatcher=request.getRequestDispatcher("contract/create.jsp");
-        request.setAttribute("message", "New contract was created");
-        try {
-            dispatcher.forward(request,response);
-        } catch (ServletException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+        Map<String,String> stringMap=this.contractService.create(contract);
+        if(stringMap.isEmpty()){
+            listContract(request,response);
+        }else{
+            request.setAttribute("messDeposit", stringMap.get("contract_deposit"));
+            request.setAttribute("messTotal", stringMap.get("contract_total_money"));
+            showCreate(request,response);
         }
+        request.setAttribute("message", "New contract was created");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
