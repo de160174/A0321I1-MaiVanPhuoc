@@ -61,9 +61,11 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/furama_resort" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../exam" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
@@ -246,6 +248,7 @@
       <workItem from="1635237410967" duration="7462000" />
       <workItem from="1635250851107" duration="3083000" />
       <workItem from="1635302459550" duration="1731000" />
+      <workItem from="1635774978474" duration="28000" />
     </task>
     <servers />
   </component>
@@ -285,10 +288,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="113" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1635164666453" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1635304199332">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1635775006335">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1635304199332" />
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1635775006335" />
     <state width="1024" height="169" key="GridCell.Tab.0.bottom" timestamp="1635304199342">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
