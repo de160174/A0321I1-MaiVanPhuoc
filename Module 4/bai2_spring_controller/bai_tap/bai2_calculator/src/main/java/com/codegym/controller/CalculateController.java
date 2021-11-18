@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class CalculateController {
     @Autowired
     private CalculateService calculateService;
+
     @GetMapping("")
     public String getIndex(){
         return "index";
