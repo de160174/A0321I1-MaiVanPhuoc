@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create song</title>
+</head>
+<body>
+<h1>Create song</h1>
+<p>
+    <a href="/">Song list</a>
+</p>
+<form action="/create" method="post" th:object="${song}">
+    <table>
+        <tr>
+            <th>Song name:</th>
+            <td><input type="text" th:field="*{nameSong}"></td>
+            <td th:if="${#fields.hasErrors('nameSong')}" th:errors="*{nameSong}">Name Error</td>
+        </tr>
+        <tr>
+            <th>Singer:</th>
+            <td><input type="text" th:field="*{singer}"></td>
+            <td th:if="${#fields.hasErrors('singer')}" th:errors="*{singer}">Name Error</td>
+        </tr>
+        <tr>
+            <th>Category:</th>
+            <td><input type="text" th:field="*{categorySong}"></td>
+            <td th:if="${#fields.hasErrors('categorySong')}" th:errors="*{categorySong}">Name Error</td>
+        </tr>
+<!--        <tr>-->
+<!--            <th>Category:</th>-->
+<!--            <td><select th:field="*{category}">-->
+<!--                <option th:each="cate : ${categories}" th:value="${cate.categoryId}" th:text="${cate.categoryName}"></option>-->
+<!--            </select>-->
+<!--            </td>-->
+<!--        </tr>-->
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Create"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
