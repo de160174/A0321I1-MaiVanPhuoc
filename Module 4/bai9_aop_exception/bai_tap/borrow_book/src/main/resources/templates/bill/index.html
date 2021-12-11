@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Bill List</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+<h1>Bill</h1>
+<a href="/" class="btn btn-warning">Return Library</a>
+<table class="table">
+    <tr>
+        <th scope="col">Bill ID</th>
+        <th scope="col">Book ID</th>
+        <th scope="col">Name Book</th>
+        <th scope="col">Author</th>
+        <th scope="col">Status</th>
+        <th scope="col">Action</th>
+    </tr>
+    <th:block th:each="b : ${bill}">
+        <tr>
+            <td scope="row" th:text="${b.idBill}"></td>
+            <td th:text="${b.book.idBook}"></td>
+            <td th:text="${b.book.nameBook}"></td>
+            <td th:text="${b.book.author}"></td>
+            <td>
+                <span th:if="${b.status==false}">Đang mượn</span>
+                <span th:if="${b.status==true}">Đã trả</span>
+            </td>
+            <td><a class="btn btn-info" th:if="${b.status==false}" th:href="@{/bill/show/{id}(id=${b.idBill})}">Detail</a></td>
+        </tr>
+    </th:block>
+</table>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Library</title>
+</head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<body>
+<div>
+    <a href="/bill/" class="btn btn-secondary">Bill List</a>
+</div>
+    <table class="table">
+        <caption>Book Library</caption>
+        <thead>
+        <tr>
+            <th scope="col">Id Book</th>
+            <th scope="col">Name</th>
+            <th scope="col">Author</th>
+            <th scope="col">Quantity</th>
+            <th scope="col" colspan="2">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="book : ${books}">
+            <td scope="row" th:text="${book.idBook}"></td>
+            <td th:text="${book.nameBook}"></td>
+            <td th:text="${book.author}"></td>
+            <td th:text="${book.quantity}"></td>
+            <td><a th:href="@{/detail/{id}(id=${book.idBook})}" class="btn btn-info">Detail</a></td>
+            <td><a th:href="@{/showDelete/{id}(id=${book.idBook})}" class="btn btn-danger">Delete</a></td>
+        </tr>
+        </tbody>
+    </table>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

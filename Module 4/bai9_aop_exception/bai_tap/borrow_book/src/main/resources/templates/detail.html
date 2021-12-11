@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Information</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+<form method="get" th:object="${book}">
+    <fieldset>
+        <legend>Book Information</legend>
+        <input type="hidden" name="id" th:value="${book.idBook}">
+        <table>
+            <tr>
+                <td>Id Book</td>
+                <td th:text="${book.idBook}"></td>
+            </tr>
+            <tr>
+                <td>Name Book</td>
+                <td th:text="${book.nameBook}"></td>
+            </tr>
+            <tr>
+                <td>Author</td>
+                <td th:text="${book.author}"></td>
+            </tr>
+            <tr>
+                <td>Quantity</td>
+                <td th:text="${book.quantity}"></td>
+            </tr>
+            <tr>
+                <td>
+                    <a class="btn btn-info" th:href="@{/borrow/{id}(id=${book.idBook})}">Borrow Book</a>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+</form>
+<a href="/" class="btn btn-secondary">Back to list</a>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

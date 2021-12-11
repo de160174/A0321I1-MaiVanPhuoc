@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Bill Information</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+<form method="post" action="/bill/return" th:object="${bill}">
+    <fieldset>
+        <legend>Book Information</legend>
+        <input type="hidden" name="id" th:value="${bill.book.idBook}">
+        <table class="table">
+            <tr>
+                <td>Id Bill</td>
+                <td>
+                    <input type="hidden" th:field="*{idBill}">
+                </td>
+            </tr>
+            <tr>
+                <td>Name Book</td>
+                <td th:text="${bill.book.nameBook}">
+                    <input type="hidden" th:field="*{book}">
+                </td>
+            </tr>
+            <tr>
+                <td>Author</td>
+                <td th:text="${bill.book.author}">
+                </td>
+            </tr>
+            <tr>
+                <td>Status</td>
+                <td>
+                    <span th:if="${bill.status==false}">Đang mượn</span>
+                    <span th:if="${bill.status==true}">Đã trả</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                   <button class="btn btn-success" type="submit">Return Book</button>
+                </td>
+            </tr>
+            <input hidden name="idBook" th:value="${bill.book.idBook}"/>
+        </table>
+    </fieldset>
+</form>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
