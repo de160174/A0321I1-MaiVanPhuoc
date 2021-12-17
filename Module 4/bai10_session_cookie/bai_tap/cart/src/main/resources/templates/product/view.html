@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Product</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+<p>
+    <a th:href="@{/}">Back to Product List</a>
+</p>
+<div>
+    <div style="width: 500px; text-align: center; float: left">
+        <div style="border: 1px solid gray">
+            <img width="250px" height="300px" th:src="@{/image/{image}(image = ${product.image})}">
+        </div>
+        <div style="border: 1px solid gray; text-align: center">
+            <p>Mã SP: <span id="b" th:text="${product.productId}"></span></p>
+            Giá cũ: <strike th:text="${product.priceOld}"></strike>vnđ<br/>
+            Giá ưu đãi: <span style="color: red" th:text="${product.priceNew}"></span>vnđ<br/>
+            <a class="btn btn-warning" th:href="@{/buy/{id}(id=${product.productId})}">Thêm vào giỏ</a>
+        </div>
+    </div>
+    <div style="float: left">
+        <h3 id="a" th:text="${product.productName}"></h3>
+        <span th:text="${product.description}"></span>
+    </div>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</html>
