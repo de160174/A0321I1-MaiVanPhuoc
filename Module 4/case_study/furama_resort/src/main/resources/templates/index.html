@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Furama Resort Danang – A Culinary Beach Resort In Vietnam</title>
+    <link rel="shortcut icon" href="https://furamavietnam.com/wp-content/uploads/2018/07/favicon.png"
+          type="image/x-icon">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/queries.css">
+    <link rel="stylesheet" href="/css/animation.css">
+    <!-- bootstrap 4 -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="/fonts/fontawesome-5.0.13/css/all.css">
+    <link rel="stylesheet" href="/fonts/natuspa-font/css/natuspa-icons.css">
+    <!-- slick -->
+    <link rel="stylesheet" href="/js/slick/slick.css">
+    <link rel="stylesheet" href="/js/slick/slick-theme.css">
+
+    <link rel="stylesheet" href="/js/datetimepicker-master/jquery.datetimepicker.css">
+    <!-- magnific popup -->
+    <link rel="stylesheet" href="/js/Magnific-Popup-master/magnific-popup.css">
+    <!-- favicon -->
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="/css/queries-home-two.css">
+</head>
+
+<body class="preload">
+
+<!-- Loading ......... -->
+<div class="loader" id="loader">
+    <div class="loader-inner">
+        <img src="/image/loader.svg" alt="Loader" class="loader-img">
+    </div>
+</div>
+
+<!-- overlay for focus -->
+<div id="overlay" style="display: none;"></div>
+
+<!-- scroll top -->
+<a class="scroll-top link-text" href="#home">Top</a>
+
+<!-- page wrapper -->
+<div class="page-wrapper">
+    <!-- Header -->
+    <header id="home">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-xl navbar-dark">
+            <!-- logo site -->
+            <a class="navbar-brand main-logo" href="index.html" rel="home">
+                <img src="/image/logo.png" alt="Furama Logo" width="193" height="76">
+            </a>
+            <!--  main nav -->
+            <button class="navbar-toggler mobile-nav-icon" type="button" data-toggle="collapse"
+                    data-target="#main-nav-mobile">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse main-nav">
+                <ul class="navbar-nav menu" id="mainNav">
+                    <li class="nav-item menu-item menu-item-current menu-item-has-child">
+                        <a class="nav-link">Trang chủ</a>
+                    </li>
+                    <li class="nav-item menu-item">
+                        <a class="nav-link" href="#">Nhân viên</a>
+                    </li>
+                    <li class="nav-item menu-item">
+                        <a class="nav-link" href="#">Khách Hàng</a>
+                    </li>
+                    <li class="nav-item menu-item">
+                        <a class="nav-link" href="#">Dịch vụ</a>
+                    </li>
+                    <li class="nav-item menu-item">
+                        <a class="nav-link" href="#">Hợp đồng</a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- nav icon -->
+            <div class="main-nav-icon">
+                <!-- search -->
+                <a class="search-button">
+                    <span class="search-icon nav-icon"><i class="fal fa-search"></i></span>
+                </a>
+                <div class="search-form">
+                    <span class="close-search"><i class="fal fa-times-circle"></i></span>
+                    <form class="search-input" action="#">
+                        <input type="text" name="search" id="searchForm" placeholder="Tìm kiếm dịch vụ..."
+                               autocomplete="off">
+                    </form>
+                </div>
+                <!-- shopping bag -->
+                <a class="bag-button">
+                        <span class="bag-icon nav-icon">
+                            <i class="fal fa-shopping-bag"><span class="badge badge-danger">0</span></i>
+                        </span>
+                    <!--                    <div class="shop-cart">-->
+                    <!--                        <div class="shop-cart-item">-->
+                    <!--                            <img src="/image/products/product-1.jpg" alt="product-1">-->
+                    <!--                            <p class="product-info">-->
+                    <!--                                The Ordinary Coverage Foundation<br>-->
+                    <!--                                <span class="quantity">1 ×-->
+                    <!--                                        <span class="amount">$<span class="price">215.00</span></span>-->
+                    <!--                                    </span>-->
+                    <!--                            </p>-->
+                    <!--                        </div>-->
+                    <!--                        <div class="shop-cart-item">-->
+                    <!--                            <img src="/image/products/product-2.jpg" alt="product-2">-->
+                    <!--                            <p class="product-info">-->
+                    <!--                                SkinStore Holiday Collection<br>-->
+                    <!--                                <span class="quantity">5 ×-->
+                    <!--                                        <span class="amount">$<span class="price">75.99</span></span>-->
+                    <!--                                    </span>-->
+                    <!--                            </p>-->
+                    <!--                        </div>-->
+                    <!--                        <div class="shop-cart-total">-->
+                    <!--                            <strong>Subtotal: </strong><span>$594.95</span>-->
+                    <!--                        </div>-->
+                    <!--                        <div class="shop-cart-button">-->
+                    <!--                            <a href="#" class="btn view-btn">view cart</a>-->
+                    <!--                            <a href="#" class="btn checkout-btn">checkout</a>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
+                </a>
+                <!-- bars icon -->
+                <a class="slide-icon">
+                    <span class="bars-icon nav-icon"><i class="fal fa-bars"></i></span>
+                </a>
+            </div>
+        </nav>
+        <!-- menu popup -->
+        <div class="menu-popup">
+            <span class="close-icon"><i class="fal fa-times"></i></span>
+            <div class="content-wrap">
+                <h1 class="title">Furama Resort</h1>
+                <p class="text">
+                    Đối với chúng tôi, đó là một cuộc hành trình, không phải là một cuộc chạy đua để xây dựng một di sản
+                    và danh tiếng của những người giỏi nhất, mang đến những gì tốt nhất và tạo ra một dịch vụ tốt nhất
+                    mà chúng tôi tự hào mỗi ngày.
+                </p>
+                <span class="menu-popup-img"><img src="/image/summer-sale.jpg" alt="Sale"></span>
+                <div class="contact-popup-info">
+                    <h2 class="title">Liên hệ chúng tôi</h2>
+                    <div class="social-media-icons">
+                        <div class="social-media" style="background-color: #E95950">
+                            <a class="social-popup-icon" target="_blank" href="#"><i
+                                    class="fab fa-instagram"></i></a>
+                        </div>
+                        <div class="social-media" style="background-color: #4b64a6;">
+                            <a class="social-popup-icon" target="_blank" href="https://www.facebook.com/25thh.Nov"><i
+                                    class="fab fa-facebook-f"></i></a>
+                        </div>
+                        <div class="social-media" style="background-color: #0cace4;">
+                            <a class="social-popup-icon" target="_blank" href="#">
+                                <i class="fab fa-twitter"></i></a>
+                        </div>
+                        <div class="social-media" style="background-color: #ec182b;">
+                            <a class="social-popup-icon" target="_blank" href="#"><i
+                                    class="fab fa-google-plus-g"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- slides -->
+        <div class="slide-wrap">
+            <div class="slide-inner">
+                <div class="slide-item active">
+                    <img src="/image/slide_1.jpg" alt="slide one">
+                    <div class="slide-text">
+                        <h3>Chào mừng đến với Furama Việt Nam !</h3>
+                        <h1>BE YOUR BEST</h1>
+                        <p>
+                            Khu nghỉ dưỡng ẩm thực tọa lạc tại bãi biển Đà Nẵng một trong 6 bãi biển đẹp nhất thế giới
+                        </p>
+                        <button class="btn book-now-btn">đặt ngay</button>
+                    </div>
+                </div>
+                <div class="slide-item">
+                    <img height="969px" src="/image/slide_7.jpg" alt="slide two">
+                    <div class="slide-text" style="text-align: left;">
+                        <h3>Chào mừng đến với Furama Việt Nam !</h3>
+                        <h1>BE YOUR BEST</h1>
+                        <p>
+                            Khu nghỉ dưỡng ẩm thực tọa lạc tại bãi biển Đà Nẵng một trong 6 bãi biển đẹp nhất thế giới
+                        </p>
+                        <button class="btn book-now-btn">đặt ngay</button>
+                    </div>
+                </div>
+                <div class="slide-item active">
+                    <img src="/image/slide_2.jpg" alt="slide one">
+                    <div class="slide-text">
+                        <h3>Chào mừng đến với Furama Việt Nam !</h3>
+                        <h1>BE YOUR BEST</h1>
+                        <p>
+                            Khu nghỉ dưỡng ẩm thực tọa lạc tại bãi biển Đà Nẵng một trong 6 bãi biển đẹp nhất thế giới
+                        </p>
+                        <button class="btn book-now-btn">đặt ngay</button>
+                    </div>
+                </div>
+                <div class="slide-item active">
+                    <img src="/image/slide_4.jpg" alt="slide one">
+                    <div class="slide-text">
+                        <h3>Chào mừng đến với Furama Việt Nam !</h3>
+                        <h1>BE YOUR BEST</h1>
+                        <p>
+                            Khu nghỉ dưỡng ẩm thực tọa lạc tại bãi biển Đà Nẵng một trong 6 bãi biển đẹp nhất thế giới
+                        </p>
+                        <button class="btn book-now-btn">đặt ngay</button>
+                    </div>
+                </div>
+                <div class="slide-item">
+                    <img height="969px" src="/image/slide_8.jpg" alt="slide three">
+                    <div class="slide-text" style="text-align: right;">
+                        <h3>Chào mừng đến với Furama Việt Nam !</h3>
+                        <h1>BE YOUR BEST</h1>
+                        <p>
+                            Khu nghỉ dưỡng ẩm thực tọa lạc tại bãi biển Đà Nẵng một trong 6 bãi biển đẹp nhất thế giới
+                        </p>
+                        <button class="btn book-now-btn">đặt ngay</button>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="slide-control" id="prev-slide"></a>
+            <a href="#" class="slide-control" id="next-slide"></a>
+            <ol class="slide-dot">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </div>
+    </header>
+
+    <!-- service section -->
+    <div class="services-section container" id="services">
+        <div class="row">
+            <div class="spacer-clearfix" style="height: 80px;"></div>
+            <div class="services-info col-md-12">
+                <h2 class="section-title">Dịch vụ tốt nhất của chúng tôi</h2>
+                <p class="services-main-text">Khu nghỉ dưỡng Furama Đà Nẵng là một khu nghỉ dưỡng 5 sao sang trọng, có
+                    uy tín và được xem là một trong những biểu tượng của ngành du lịch Việt Nam.
+                </p>
+            </div>
+            <div class="service col-lg-4 col-md-6 col-sm-12">
+                <div class="services-icon-wrap">
+                    <i class="natuspa-icon-massage-1"></i>
+                </div>
+                <div class="heading text-linear-effect">Trị liệu Signature</div>
+                <div class="description">Với ý tưởng về một không gian Spa nằm giữa thiên nhiên xanh mát hoàn toàn biệt
+                    lập bổ sung những tinh chất có lợi cho cơ thể.
+                    <div class="spacer-clearfix" style="height: 50px;">
+
+                    </div>
+                </div>
+            </div>
+            <div class="service col-lg-4 col-md-6 col-sm-12">
+                <div class="services-icon-wrap">
+                    <i class="natuspa-icon-herbal"></i>
+                </div>
+                <div class="heading text-linear-effect">Trẻ hóa cơ thể và tinh thần</div>
+                <div class="description">Làm trẻ hóa cơ thể và tinh thần với muối thanh lọc cơ thể và liệu pháp mát
+                    xa toàn thân bằng tinh dầu
+                </div>
+                <div class="spacer-clearfix" style="height: 0px;"></div>
+            </div>
+            <div class="service col-lg-4 col-md-6 col-sm-12">
+                <div class="services-icon-wrap">
+                    <i class="natuspa-icon-stone"></i>
+                </div>
+                <div class="heading text-linear-effect">Liệu pháp xông hơi</div>
+                <div class="description">Xông hơi khô và xông ướt giúp cải thiện vẻ ngoài đem
+                    lại sức sống mới và tràn đầy năng lượng.
+                </div>
+                <div class="spacer-clearfix" style="height: 0px;"></div>
+            </div>
+            <div class="spacer-clearfix" style="height: 80px;"></div>
+        </div>
+    </div>
+
+    <!-- about-section -->
+    <div class="about-section container-fluid" id="about">
+        <div class="row">
+            <div class="video-box col-lg-6 col-md-12">
+                <div class="play-btn">
+                    <i class="fas fa-play"></i>
+                </div>
+            </div>
+            <div class="about-main-text col-lg-6 col-md-12">
+                <h2 class="section-title">Về chúng tôi !</h2>
+                <div class="sub-heading">
+                    <em>KHU NGHỈ DƯỠNG ĐẲNG CẤP THẾ GIỚI FURAMA ĐÀ NẴNG, TỰ HÀO LÀ KHU NGHỈ DƯỠNG ẨM THỰC TẠI VIỆT
+                        NAM</em>
+                </div>
+                <p class="text-box">Hướng ra bãi biển Đà Nẵng trải dài cát trắng, Furama Resort Đà Nẵng là cửa ngõ
+                    đến
+                    với 3 di sản văn hoá thế giới: Hội An (20 phút), Mỹ Sơn (90 phút) và Huế (2 tiếng. 196 phòng
+                    hạng
+                    sang cùng với 70 căn biệt thự từ hai đến bốn phòng ngủ có hồ bơi riêng đều được trang trí trang
+                    nhã,
+                    theo phong cách thiết kế truyền thống của Việt Nam và kiến trúc thuộc địa của Pháp, biến Furama
+                    thành khu nghỉ dưỡng danh giá nhất tại Việt Nam – vinh dự được đón tiếp nhiều người nổi tiếng,
+                    giới
+                    hoàng gia, chính khách, ngôi sao điện ảnh và các nhà lãnh đạo kinh doanh quốc tế.
+                </p>
+                <a class="link-text text-linear-effect">Chi Tiết</a>
+            </div>
+        </div>
+        <iframe src="https://www.youtube.com/embed/NYgCEn8Q3AE"
+                frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen class="video-embed"></iframe>
+        <span class="close-btn"><i class="fal fa-times"></i></span>
+        <div class="spacer-clearfix" style="height: 80px;"></div>
+    </div>
+
+
+    <!-- appointment & form section -->
+    <div class="appointment-section container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="appointment-form col-12">
+                    <form action="#">
+                        <div class="row">
+                            <div class="form-input col-lg-4 col-md-6 col-sm-12 your-name">
+                                <input type="text" name="name" id="name" placeholder="Họ Tên">
+                                <div class="error">( <span>*</span> )</div>
+                            </div>
+                            <div class="form-input col-lg-4 col-md-6 col-sm-12 your-email">
+                                <input type="text" name="email" id="email" placeholder="Địa chỉ E-mail">
+                                <div class="error">( <span>*</span> )</div>
+                            </div>
+                            <div class="form-input col-lg-4 col-md-6 col-sm-12 your-phone-number">
+                                <input type="text" name="phone-number" id="phone-number"
+                                       placeholder="Số điện thoại">
+                                <div class="error">( <span>*</span> )</div>
+                            </div>
+                            <div class="form-input col-lg-4 col-md-6 col-sm-12 preferred-date">
+                                <input type="text" name="preferred-date" id="datepicker"
+                                       placeholder="Preferred Date" autocomplete="off">
+                                <div class="error">( <span>*</span> )</div>
+                            </div>
+                            <div class="form-input col-lg-4 col-md-6 col-sm-12 your-service">
+                                <div class="current-option" data-value="0">Loại dịch vụ</div>
+                                <div class="error">( <span>*</span> )</div>
+                                <span class="dropdown-icon"><i class="fal fa-chevron-down down"></i></span>
+                                <ul class="option-menu">
+                                    <li class="option" data-value="0">Loại dịch vụ</li>
+                                    <li class="option" data-value="1">PHÒNG SUITE HƯỚNG BIỂN</li>
+                                    <li class="option" data-value="1">PHÒNG STUDIO SUITE HƯỚNG BIỂN</li>
+                                    <li class="option" data-value="1">PHÒNG DELUXE HƯỚNG BIỂN</li>
+                                    <li class="option" data-value="1">PHÒNG PRESIDENTIAL SUITE</li>
+                                    <li class="option" data-value="1">PHÒNG SUPERIOR HƯỚNG VƯỜN</li>
+                                </ul>
+                            </div>
+                            <div class="form-input col-lg-4 col-md-6 col-sm-12 submit-btn">
+                                <input value="ĐẶT PHÒNG" id="appointment-submit" name="submit"
+                                       class="btn book-now-btn" disabled="disabled" style="opacity: 1;">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="spacer-clearfix" style="height: 80px;"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- collection section -->
+    <div class="collection">
+        <a href="/image/collection/gallery-1.jpg" class="collect-item">
+            <img src="/image/collection/gallery-1.jpg" alt="Gallery-1" class="collect-img" id="gallery-1">
+            <span class="plus-icon"><i class="fal fa-plus"></i></span>
+        </a>
+        <a href="/image/collection/gallery-2.jpg" class="collect-item">
+            <img src="/image/collection/gallery-2.jpg" alt="Gallery-2" class="collect-img" id="gallery-2">
+            <span class="plus-icon"><i class="fal fa-plus"></i></span>
+        </a>
+        <a href="/image/collection/gallery-3.jpg" class="collect-item">
+            <img src="/image/collection/gallery-3.jpg" alt="Gallery-3" class="collect-img" id="gallery-3">
+            <span class="plus-icon"><i class="fal fa-plus"></i></span>
+        </a>
+        <a href="/image/collection/gallery-4.jpg" class="collect-item">
+            <img src="/image/collection/gallery-4.jpg" alt="Gallery-4" class="collect-img" id="gallery-4">
+            <span class="plus-icon"><i class="fal fa-plus"></i></span>
+        </a>
+    </div>
+
+    <!-- day spa packages -->
+    <div class="spa-packages container-fluid">
+        <div class="spacer-clearfix" style="height: 70px;"></div>
+        <div class="container">
+            <div class="row">
+                <div class="heading col-12">
+                    <h2 class="main-heading section-title">Ưu Đãi tại Furama</h2>
+                    <div class="sub-heading">
+                        <p>Chào mừng bạn đén với furama
+                            Khu nghỉ dưỡng Furama Đà Nẵng là một khu nghỉ dưỡng 5 sao sang trọng, có uy tín và được
+                            xem
+                            là một trong những biểu tượng của ngành du lịch Việt Nam.
+                        </p>
+                    </div>
+                </div>
+                <div class="package-box col-lg-4 col-md-6 col-sm-12">
+                    <h2 class="section-title name-price-package">Be cool on DaNang beach<br><span
+                            class="price">11.500.000 VNĐ</span>
+                    </h2>
+                    <ul class="features">
+                        <li class="feature-item"> Tặng 1.150.000 VNĐ sử dụng cho các dịch vụ ăn uống</li>
+                        <li class="feature-item">30 phút mát xa khi đặt Gói nghỉ dưỡng 02 đêm</li>
+                        <li class="feature-item">Miễn phí đưa đón sân bay Đà Nẵng</li>
+                    </ul>
+                    <a class="link-text text-linear-effect purchase-btn">đặt ngay</a>
+                </div>
+                <div class="package-box center col-lg-4 col-md-6 col-sm-12">
+                    <h2 class="section-title name-price-package">Brilliant on DaNang beach<br><span
+                            class="price">15.990.000 VNĐ</span>
+                    </h2>
+                    <ul class="features">
+                        <li class="feature-item">Tặng 1.150.000 VNĐ sử dụng cho cấc dịch vụ Spa</li>
+                        <li class="feature-item">Tặng thêm 2.300.000 VNĐ sử dụng cho các dịch vụ ăn uống</li>
+                        <li class="feature-item">Lựa chọn gói trị liệu 60 phút Furama Signature</li>
+                        <li class="feature-item">Miễn Phí đưa đón sân bay Đà Nẵng khi đặt gói nghỉ dưỡng 04 đêm</li>
+                        <li class="feature-item">Trang trí trăng mật với hoa, trái cây và sô cô la</li>
+                    </ul>
+                    <a class="link-text text-linear-effect purchase-btn">đặt ngay</a>
+                </div>
+                <div class="package-box col-lg-4 col-md-6 col-sm-12">
+                    <h2 class="section-title name-price-package">VIP on Furama Resort<br><span class="price">20.990.000 VNĐ</span>
+                    </h2>
+                    <ul class="features">
+                        <li class="feature-item">Phiếu Ẩm Thực trị giá 100USD sử dụng cho các dịch vụ ăn uống</li>
+                        <li class="feature-item">Miễn phí đồ uống chào mừng, trái cây trong phòng mỗi ngày</li>
+                        <li class="feature-item">Miễn phí sử dụng hồ bơi, phòng giải trí,phòng tắm hơi và sauna, lớp
+                            học
+                            Tai-chi mỗi sáng
+                        </li>
+                        <li class="feature-item">Trị liệu tại Spa gói trị liệu 60 phút Massage Aroma bằng tinh dầu
+                        </li>
+                        <li class="feature-item">Trang trí trăng mật với hoa, trái cây và sô cô la</li>
+                    </ul>
+                    <a class="link-text text-linear-effect purchase-btn">đặt ngay</a>
+                </div>
+            </div>
+        </div>
+        <div class="spacer-clearfix" style="height: 80px;"></div>
+    </div>
+
+
+    <!-- maps section -->
+    <div class="maps container-fluid">
+        <div class="spacer-clearfix" style="height: 80px;"></div>
+        <div class="row">
+            <div class="maps-embed col-md-12 col-lg-6 p-0">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7893.660905755563!2d108.24808276569445!3d16.04098060242721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31420fdbc8cc38ef%3A0x9a6a3e31121225d2!2sFurama%20Resort%20Danang!5e0!3m2!1svi!2s!4v1638629251407!5m2!1svi!2s"
+                        width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+            </div>
+            <div class="maps-contact col-md-12 col-lg-6">
+                <div class="spacer-clearfix" style="height: 80px;"></div>
+                <div class="inner">
+                    <div class="row">
+                        <div class="contact col-lg-12">
+                            <div class="contact-popup-info">
+                                <h2 class="section-title">Văn phòng Đà Nẵng</h2>
+                                <div class="address">
+                                    <span>103 – 105 Đường Võ Nguyên Giáp, Phường Khuê Mỹ, Quận Ngũ hành Sơn, Tp. Đà Nẵng, Việt Nam</span>
+                                </div>
+                                <div class="email">
+                                    <span>furamavietnam@email.com</span>
+                                </div>
+                                <div class="email">
+                                    <span>84-236-3847 333/888</span>
+                                </div>
+                            </div>
+                        </div>
+                        <form action="#" class="maps-form col-sm-12">
+                            <div class="row">
+                                <div class="form-input col-sm-6 your-name">
+                                    <input type="text" name="name" id="name2" placeholder="Họ tên">
+                                    <div class="error">( <span>*</span> )</div>
+                                </div>
+                                <div class="form-input col-sm-6 your-email">
+                                    <input type="text" name="email" id="email2" placeholder="Địa chỉ E-mail">
+                                    <div class="error">( <span>*</span> )</div>
+                                </div>
+                                <div class="form-input col-sm-6 your-phone-number">
+                                    <input type="text" name="phone-number" id="phone-number2"
+                                           placeholder="Số điện thoại">
+                                    <div class="error">( <span>*</span> )</div>
+                                </div>
+                                <div class="form-input col-sm-6 your-service">
+                                    <div class="current-option" data-value="0">Loại dịch vụ</div>
+                                    <div class="error">( <span>*</span> )</div>
+                                    <span class="dropdown-icon"><i class="fal fa-chevron-down down"></i></span>
+                                    <ul class="option-menu">
+                                        <li class="option" data-value="0">Type Of Services</li>
+                                        <li class="option" data-value="1">PHÒNG SUITE HƯỚNG BIỂN</li>
+                                        <li class="option" data-value="1">PHÒNG STUDIO SUITE HƯỚNG BIỂN</li>
+                                        <li class="option" data-value="1">PHÒNG DELUXE HƯỚNG BIỂN</li>
+                                        <li class="option" data-value="1">PHÒNG PRESIDENTIAL SUITE</li>
+                                        <li class="option" data-value="1">PHÒNG SUPERIOR HƯỚNG VƯỜN</li>
+                                    </ul>
+                                </div>
+                                <textarea name="your-message" id="yourMessage"
+                                          placeholder="Tin nhắn của bạn"></textarea>
+                                <div class="form-input col-12 submit-btn">
+                                    <input value="Liên hệ chúng tôi" id="submit" name="submit"
+                                           class="btn book-now-btn" disabled="disabled" style="opacity: 1;">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+ footer
+<footer id="footer">
+    <div class="footer-content" style="background-color: #addccf">
+        <img style="padding-left: 100px" width="700px" height="100px" src="/image/footer-logo.png" alt="footer-logo">
+        <div class="sub-heading">Furama Resort DaNang</div>
+        <div class="slogan">Design by @VanPhuoc</div>
+        <ul class="footer-social">
+            <li class="social-media" style="background-color: #4b64a6;">
+                <a class="social-popup-icon" target="_blank" href="https://www.facebook.com/25thh.Nov">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </li>
+            <li class="social-media" style="background-color: #0cace4;">
+                <a class="social-popup-icon" target="_blank" href="#">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </li>
+            <li class="social-media" style="background-color: #ec182b;">
+                <a class="social-popup-icon" target="_blank" href="https://www.instagram.com/_vphuocc/">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="footer-bottom">Copyright © 2021 BunBoFullTopping All Rights Reserved.</div>
+</footer>
+
+
+<!-- modal dialog box popup -->
+<div class="modal-dialog-box" style="display: none;">
+    <div class="inner">
+        <div class="dialog-img"><img src="/image/popup-img.jpg" alt="Dialog Img" style="height: 410px;"></div>
+        <span class="close-icon"><i class="fal fa-times"></i></span>
+        <div class="content">
+            <h5 class="pre-heading">Ưu đãi từ chúng tôi</h5>
+            <h3 class="heading">E-voucher độc quyền</h3>
+            <p class="sub-heading">Được giảm giá thêm tới 60% cho ưu đãi đầu tiên của bạn Sử dụng mã CHÀO MỪNG lúc
+                thanh
+                toán để được giảm giá thêm 20% tại địa phương và các chuyến đi xa, hoặc giảm giá thêm 10% cho hàng
+                hóa.
+            </p>
+            <form action="#">
+                <input type="text" placeholder="Địa chỉ E-mail của bạn">
+                <button class="btn book-now-btn">Đăng ký</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="/js/jquery-v3.4.1.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.waypoints.min.js"></script>
+<script src="/js/slick/slick.min.js"></script>
+<script src="/js/datetimepicker-master/build/jquery.datetimepicker.full.js"></script>
+<script src="/js/Magnific-Popup-master/jquery.magnific-popup.min.js"></script>
+<script src="/js/script.js"></script>
+</body>
+
+</html>
