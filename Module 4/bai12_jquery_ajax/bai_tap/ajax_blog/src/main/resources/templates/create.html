@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="/css/bootstrap.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<form th:object="${blog}" action="/create" method="post">
+    <div class="form-row">
+        <div class="form-group col-md-4" hidden="hidden">
+            <label for="inputEmail4">Blog ID</label>
+            <input type="number" class="form-control" th:field="*{blogId}" id="inputEmail4" placeholder="Blog ID">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <label for="inputEmail66">Blog Name</label>
+            <input type="text" class="form-control" th:field="*{blogName}"  id="inputEmail66" placeholder="Blog Name">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Content</label>
+            <input  type="text" class="form-control" th:field="*{content}"   placeholder="Content">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputEmail6">Author</label>
+            <input  type="text" class="form-control" th:field="*{author}"  id="inputEmail6" placeholder="Author">
+        </div>
+    </div>
+    <select th:field="*{category}" th:name="categoryId">
+        <option value="" disabled selected> Choose here</option>
+        <th:block th:each = "category : ${categories}">
+            <option th:value="${category.categoryId}" th:text="${category.categoryName}"> </option>
+        </th:block>
+    </select>
+
+    <button type="submit" class="btn btn-primary">add blog</button>
+</form>
+</body>
+</html>
