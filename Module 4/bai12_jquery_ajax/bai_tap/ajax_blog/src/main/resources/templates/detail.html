@@ -10,21 +10,20 @@
     <input type="hidden" th:field="*{blogId}"/>
     <div>
         <label>Blog name</label>
-        <input type="text" th:field="*{blogName}"/>
+        <input disabled type="text" th:field="*{blogName}"/>
     </div>
     <div>
         <label>Content</label>
-        <input type="text" th:field="*{content}"/>
+        <input disabled type="text" th:field="*{content}"/>
     </div>
     <div>
         <label>Author</label>
-        <input type="text" th:field="*{author}"/>
+        <input disabled type="text" th:field="*{author}"/>
     </div>
     <div>
         <label>Category</label>
-        <input type="text" th:field="*{category.categoryName}"/>
+        <input disabled type="text" th:field="*{category.categoryName}"/>
     </div>
-    <a href="/" class="btn btn-danger">Back to list</a>
 </form>
 </body>
 </html>
