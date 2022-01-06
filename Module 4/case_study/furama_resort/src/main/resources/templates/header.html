@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="shortcut icon" href="https://furamavietnam.com/wp-content/uploads/2018/07/favicon.png"
+          type="image/x-icon">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/queries.css">
+    <link rel="stylesheet" href="/css/animation.css">
+    <!-- bootstrap 4 -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="/fonts/fontawesome-5.0.13/css/all.css">
+    <link rel="stylesheet" href="/fonts/natuspa-font/css/natuspa-icons.css">
+    <!-- slick -->
+    <link rel="stylesheet" href="/js/slick/slick.css">
+    <link rel="stylesheet" href="/js/slick/slick-theme.css">
+
+    <link rel="stylesheet" href="/js/datetimepicker-master/jquery.datetimepicker.css">
+    <!-- magnific popup -->
+    <link rel="stylesheet" href="/js/Magnific-Popup-master/magnific-popup.css">
+    <!-- favicon -->
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="/css/queries-home-two.css">
+</head>
+<body>
+<header id="home" th:fragment="header">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-xl navbar-dark nav-sticky">
+        <!-- logo site -->
+        <a class="navbar-brand main-logo" href="index.html" rel="home">
+            <img src="/image/logo.png" alt="Furama Logo" width="193" height="76">
+        </a>
+        <!--  main nav -->
+        <button class="navbar-toggler mobile-nav-icon" type="button" data-toggle="collapse"
+                data-target="#main-nav-mobile">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse main-nav">
+            <ul class="navbar-nav menu" id="mainNav">
+                <li class="nav-item menu-item ">
+                    <a class="nav-link" href="/">Trang chủ</a>
+                </li>
+                <li class="nav-item menu-item">
+                    <a class="nav-link" href="/employee/">Nhân viên</a>
+                </li>
+                <li class="nav-item menu-item">
+                    <a class="nav-link" href="/customer/">Khách Hàng</a>
+                </li>
+                <li class="nav-item menu-item">
+                    <a class="nav-link" href="/service/">Dịch vụ</a>
+                </li>
+                <li class="nav-item menu-item">
+                    <a class="nav-link" href="/contract/">Hợp đồng</a>
+                </li>
+
+            </ul>
+        </div>
+        <!-- nav icon -->
+        <div class="main-nav-icon">
+            <!-- shopping bag -->
+            <a class="bag-button">
+                        <span class="bag-icon nav-icon">
+                            <i class="fal fa-shopping-bag"><span class="badge badge-danger">0</span></i>
+                        </span>
+                <!--                    <div class="shop-cart">-->
+                <!--                        <div class="shop-cart-item">-->
+                <!--                            <img src="/image/products/product-1.jpg" alt="product-1">-->
+                <!--                            <p class="product-info">-->
+                <!--                                The Ordinary Coverage Foundation<br>-->
+                <!--                                <span class="quantity">1 ×-->
+                <!--                                        <span class="amount">$<span class="price">215.00</span></span>-->
+                <!--                                    </span>-->
+                <!--                            </p>-->
+                <!--                        </div>-->
+                <!--                        <div class="shop-cart-item">-->
+                <!--                            <img src="/image/products/product-2.jpg" alt="product-2">-->
+                <!--                            <p class="product-info">-->
+                <!--                                SkinStore Holiday Collection<br>-->
+                <!--                                <span class="quantity">5 ×-->
+                <!--                                        <span class="amount">$<span class="price">75.99</span></span>-->
+                <!--                                    </span>-->
+                <!--                            </p>-->
+                <!--                        </div>-->
+                <!--                        <div class="shop-cart-total">-->
+                <!--                            <strong>Subtotal: </strong><span>$594.95</span>-->
+                <!--                        </div>-->
+                <!--                        <div class="shop-cart-button">-->
+                <!--                            <a href="#" class="btn view-btn">view cart</a>-->
+                <!--                            <a href="#" class="btn checkout-btn">checkout</a>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+            </a>
+            <!-- bars icon -->
+            <a class="slide-icon">
+                <span class="bars-icon nav-icon"><i class="fal fa-bars"></i></span>
+            </a>
+        </div>
+    </nav>
+    <!-- menu popup -->
+    <div class="menu-popup">
+        <span class="close-icon"><i class="fal fa-times"></i></span>
+        <div class="content-wrap">
+            <h1 class="title">Furama Resort</h1>
+            <p class="text">
+                Đối với chúng tôi, đó là một cuộc hành trình, không phải là một cuộc chạy đua để xây dựng một di sản
+                và danh tiếng của những người giỏi nhất, mang đến những gì tốt nhất và tạo ra một dịch vụ tốt nhất
+                mà chúng tôi tự hào mỗi ngày.
+            </p>
+            <span class="menu-popup-img"><img src="/image/summer-sale.jpg" alt="Sale"></span>
+            <div class="contact-popup-info">
+                <h2 class="title">Liên hệ chúng tôi</h2>
+                <div class="social-media-icons">
+                    <div class="social-media" style="background-color: #E95950">
+                        <a class="social-popup-icon" target="_blank" href="#"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                    <div class="social-media" style="background-color: #4b64a6;">
+                        <a class="social-popup-icon" target="_blank" href="https://www.facebook.com/25thh.Nov"><i
+                                class="fab fa-facebook-f"></i></a>
+                    </div>
+                    <div class="social-media" style="background-color: #0cace4;">
+                        <a class="social-popup-icon" target="_blank" href="#">
+                            <i class="fab fa-twitter"></i></a>
+                    </div>
+                    <div class="social-media" style="background-color: #ec182b;">
+                        <a class="social-popup-icon" target="_blank" href="#"><i
+                                class="fab fa-google-plus-g"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- slides -->
+<!--    <div class="slide-wrap">-->
+<!--        <div class="slide-inner">-->
+<!--            <div class="slide-item active">-->
+<!--                <img src="/image/slide_1.jpg" alt="slide one">-->
+<!--                <div class="slide-text">-->
+<!--                    <h3>Chào mừng đến với Furama Việt Nam !</h3>-->
+<!--                    <h1>BE YOUR BEST</h1>-->
+<!--                    <p>-->
+<!--                        Khu nghỉ dưỡng ẩm thực tọa lạc tại bãi biển Đà Nẵng một trong 6 bãi biển đẹp nhất thế giới-->
+<!--                    </p>-->
+<!--                    <button class="btn book-now-btn">đặt ngay</button>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="slide-item">-->
+<!--                <img height="969px" src="/image/slide_7.jpg" alt="slide two">-->
+<!--                <div class="slide-text" style="text-align: left;">-->
+<!--                    <h3>Chào mừng đến với Furama Việt Nam !</h3>-->
+<!--                    <h1>BE YOUR BEST</h1>-->
+<!--                    <p>-->
+<!--                        Khu nghỉ dưỡng ẩm thực tọa lạc tại bãi biển Đà Nẵng một trong 6 bãi biển đẹp nhất thế giới-->
+<!--                    </p>-->
+<!--                    <button class="btn book-now-btn">đặt ngay</button>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="slide-item">-->
+<!--                <img src="/image/slide_2.jpg" alt="slide one">-->
+<!--                <div class="slide-text">-->
+<!--                    <h3>Chào mừng đến với Furama Việt Nam !</h3>-->
+<!--                    <h1>BE YOUR BEST</h1>-->
+<!--                    <p>-->
+<!--                        Khu nghỉ dưỡng ẩm thực tọa lạc tại bãi biển Đà Nẵng một trong 6 bãi biển đẹp nhất thế giới-->
+<!--                    </p>-->
+<!--                    <button class="btn book-now-btn">đặt ngay</button>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="slide-item">-->
+<!--                <img src="/image/slide_4.jpg" alt="slide one">-->
+<!--                <div class="slide-text">-->
+<!--                    <h3>Chào mừng đến với Furama Việt Nam !</h3>-->
+<!--                    <h1>BE YOUR BEST</h1>-->
+<!--                    <p>-->
+<!--                        Khu nghỉ dưỡng ẩm thực tọa lạc tại bãi biển Đà Nẵng một trong 6 bãi biển đẹp nhất thế giới-->
+<!--                    </p>-->
+<!--                    <button class="btn book-now-btn">đặt ngay</button>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="slide-item">-->
+<!--                <img height="969px" src="/image/slide_8.jpg" alt="slide three">-->
+<!--                <div class="slide-text" style="text-align: right;">-->
+<!--                    <h3>Chào mừng đến với Furama Việt Nam !</h3>-->
+<!--                    <h1>BE YOUR BEST</h1>-->
+<!--                    <p>-->
+<!--                        Khu nghỉ dưỡng ẩm thực tọa lạc tại bãi biển Đà Nẵng một trong 6 bãi biển đẹp nhất thế giới-->
+<!--                    </p>-->
+<!--                    <button class="btn book-now-btn">đặt ngay</button>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <a href="#" class="slide-control" id="prev-slide"></a>-->
+<!--        <a href="#" class="slide-control" id="next-slide"></a>-->
+<!--        <ol class="slide-dot">-->
+<!--            <li class="active"></li>-->
+<!--            <li></li>-->
+<!--            <li></li>-->
+<!--        </ol>-->
+<!--    </div>-->
+</header>
+</body>
+<script src="/js/jquery-v3.4.1.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.waypoints.min.js"></script>
+<script src="/js/slick/slick.min.js"></script>
+<script src="/js/datetimepicker-master/build/jquery.datetimepicker.full.js"></script>
+<script src="/js/Magnific-Popup-master/jquery.magnific-popup.min.js"></script>
+<script src="/js/script.js"></script>
+</html>

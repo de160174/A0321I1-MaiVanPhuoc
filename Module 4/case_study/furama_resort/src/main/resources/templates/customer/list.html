@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Furama Resort Danang – A Culinary Beach Resort In Vietnam</title>
+    <link rel="shortcut icon" href="https://furamavietnam.com/wp-content/uploads/2018/07/favicon.png"
+          type="image/x-icon">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/queries.css">
+    <link rel="stylesheet" href="/css/animation.css">
+    <!-- bootstrap 4 -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="/fonts/fontawesome-5.0.13/css/all.css">
+    <link rel="stylesheet" href="/fonts/natuspa-font/css/natuspa-icons.css">
+    <!-- slick -->
+    <link rel="stylesheet" href="/js/slick/slick.css">
+    <link rel="stylesheet" href="/js/slick/slick-theme.css">
+
+    <link rel="stylesheet" href="/js/datetimepicker-master/jquery.datetimepicker.css">
+    <!-- magnific popup -->
+    <link rel="stylesheet" href="/js/Magnific-Popup-master/magnific-popup.css">
+    <!-- favicon -->
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="/css/queries-home-two.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body class="preload">
+<div id="list">
+    <!-- Loading ......... -->
+    <!--    <div class="loader" id="loader">-->
+    <!--        <div class="loader-inner">-->
+    <!--            <img src="/image/loader.svg" alt="Loader" class="loader-img">-->
+    <!--        </div>-->
+    <!--    </div>-->
+
+    <!-- overlay for focus -->
+    <div id="overlay" style="display: none;"></div>
+
+    <!-- scroll top -->
+    <a class="scroll-top link-text" href="#home">Top</a>
+
+    <!-- page wrapper -->
+    <div class="page-wrapper">
+        <!-- Header -->
+        <header th:replace="~{/header::header}"></header>
+
+        <!-- service section -->
+        <div class="services-section container-fluid" id="services">
+            <div class="row">
+                <div class="spacer-clearfix" style="height: 80px;"></div>
+                <div class="services-info col-md-12">
+                    <h2 class="section-title">Quản lý thông tin khách hàng</h2>
+                    <p class="services-main-text">Khu nghỉ dưỡng Furama Đà Nẵng là một khu nghỉ dưỡng 5 sao sang trọng,
+                        có
+                        uy tín và được xem là một trong những biểu tượng của ngành du lịch Việt Nam.
+                    </p>
+                </div>
+                <div class="spacer-clearfix" style="height: 40px;"></div>
+            </div>
+            <div class="row px-5">
+                <div class="col-lg-6">
+                    <a href="/customer/showCreate" class="btn btn-success">
+                        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                        Thêm mới khách hàng
+                    </a>
+                </div>
+                <div class="col-lg-6">
+                    <div>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" id="search" placeholder="Nhập tên khách hàng...">
+                            <button type="submit" id="submitSearch" class="btn btn-light">Tìm kiếm</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="container-fluid" align="center">
+                <div class="col-lg-12">
+                    <div class="alert alert-primary" th:if="${message}" th:text="${message}"></div>
+                    <table id="customer" class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col">Mã khách hàng</th>
+                            <th scope="col">Loại KH</th>
+                            <th scope="col">Họ Tên</th>
+                            <th scope="col">Ngày Sinh</th>
+                            <th scope="col">Giới tính</th>
+                            <th scope="col">CMND</th>
+                            <th scope="col">SĐT</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Địa chỉ</th>
+                            <th scope="col" colspan="2">Tác vụ</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="customer:${customers}">
+                            <td th:text="${customer.customerId}"></td>
+                            <td th:text="${customer.customerType.customerTypeName}"></td>
+                            <td th:text="${customer.customerName}"></td>
+                            <td th:text="${#dates.format(customer.customerBirthDay,'dd-MM-yyyy')}"></td>
+                            <td th:switch="${customer.customerGender}">
+                                <p th:case="0">Nam</p>
+                                <p th:case="1">Nữ</p>
+                            </td>
+                            <td th:text="${customer.customerIdCard}"></td>
+                            <td th:text="${customer.customerPhone}"></td>
+                            <td th:text="${customer.customerEmail}"></td>
+                            <td th:text="${customer.customerAddress}"></td>
+                            <td><a th:href="@{/customer/edit/__${customer.customerId}__}" class="btn btn-secondary">
+                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                                Sửa
+                            </a></td>
+                            <td><a th:href="@{/customer/delete/__${customer.customerId}__}"
+                                   onclick="return confirm('Are you sure to delete?')" class="btn btn-danger btnDelete">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                    Xóa
+                                </a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <a class="btn btn-light" th:href="@{'/customer/'(page=${customers.number - 1})}"
+                   th:if="${customers.hasPrevious()}">Previous</a>
+                <span th:text="${customers.number+1}"></span>/<span th:text="${customers.totalPages}"></span>
+                <a class="btn btn-light" th:href="@{'/customer/'(page=${customers.number + 1})}"
+                   th:if="${customers.hasNext()}">Next</a>
+                <div class="spacer-clearfix" style="height: 40px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer style="height: 0" th:replace="~{/footer::footer}"></footer>
+
+    <!-- modal dialog box popup -->
+    <div class="modal-dialog-box" style="display: none;">
+        <div class="inner">
+            <div class="dialog-img"><img src="/image/popup-img.jpg" alt="Dialog Img" style="height: 410px;"></div>
+            <span class="close-icon"><i class="fal fa-times"></i></span>
+            <div class="content">
+                <h5 class="pre-heading">Ưu đãi từ chúng tôi</h5>
+                <h3 class="heading">E-voucher độc quyền</h3>
+                <p class="sub-heading">Được giảm giá thêm tới 60% cho ưu đãi đầu tiên của bạn Sử dụng mã CHÀO MỪNG lúc
+                    thanh
+                    toán để được giảm giá thêm 20% tại địa phương và các chuyến đi xa, hoặc giảm giá thêm 10% cho hàng
+                    hóa.
+                </p>
+                <form action="#">
+                    <input type="text" placeholder="Địa chỉ E-mail của bạn">
+                    <button class="btn book-now-btn">Đăng ký</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--    Modal delete-->
+    <div class="modal fade" id="idModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Bạn có muốn xóa?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger">Xóa</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/jquery-v3.4.1.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.waypoints.min.js"></script>
+<script src="/js/slick/slick.min.js"></script>
+<script src="/js/datetimepicker-master/build/jquery.datetimepicker.full.js"></script>
+<script src="/js/Magnific-Popup-master/jquery.magnific-popup.min.js"></script>
+<script src="/js/script.js"></script>
+
+</body>
+<script>
+    $(document).ready(function () {
+        $("#submitSearch").click(function () {
+            let search = $("#search").val();
+            $.ajax({
+                url: "/customer/search",
+                type: "GET",
+                data: {"name": search},
+                dataType: "HTML",
+                success: function (data) {
+                    $("#list").html(data);
+                }
+            })
+        })
+    })
+</script>
+<!--<script>-->
+<!--    $(".btnDelete").click(function () {-->
+<!--        let id = $(this).next().val();-->
+<!--        $.ajax({-->
+<!--            url: "/customer/delete/" +id,-->
+<!--            type: "GET",-->
+<!--            dataType: "HTML",-->
+<!--            success: function (data) {-->
+<!--                $(".modal-body").html(data);-->
+<!--                $("#idModal").modal("show");-->
+<!--            }-->
+<!--        })-->
+<!--    })-->
+<!--</script>-->
+</html>

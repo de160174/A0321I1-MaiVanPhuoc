@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="shortcut icon" href="https://furamavietnam.com/wp-content/uploads/2018/07/favicon.png"
+          type="image/x-icon">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/queries.css">
+    <link rel="stylesheet" href="/css/animation.css">
+    <!-- bootstrap 4 -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="/fonts/fontawesome-5.0.13/css/all.css">
+    <link rel="stylesheet" href="/fonts/natuspa-font/css/natuspa-icons.css">
+    <!-- slick -->
+    <link rel="stylesheet" href="/js/slick/slick.css">
+    <link rel="stylesheet" href="/js/slick/slick-theme.css">
+
+    <link rel="stylesheet" href="/js/datetimepicker-master/jquery.datetimepicker.css">
+    <!-- magnific popup -->
+    <link rel="stylesheet" href="/js/Magnific-Popup-master/magnific-popup.css">
+    <!-- favicon -->
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="/css/queries-home-two.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<header th:replace="~{/header::header}"></header>
+
+<form action="/service/create" method="post" th:object="${service}">
+    <div class="container" align="center">
+        <div class="row">
+            <div class="spacer-clearfix" style="height: 40px;"></div>
+            <div class="services-info col-md-12">
+                <h2 class="section-title">Tạo mới dịch vụ</h2>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-lg-3 col-form-label">Loại dịch vụ</label>
+            <select th:field="*{serviceType}" style="margin-left: 15px">
+                <th:block th:each="s : ${serviceType}">
+                    <option th:value="${s.serviceTypeId}" th:text="${s.serviceTypeName}"></option>
+                </th:block>
+            </select>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-lg-3 col-form-label" for="inputEmail66">Tên dịch vụ</label>
+            <div class="col-lg-9">
+                <input type="text" class="form-control" th:field="*{serviceName}" id="inputEmail66"
+                       placeholder="Tên dịch vụ...">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-lg-3 col-form-label">Diện tích dịch vụ</label>
+            <div class="col-lg-9">
+                <input type="number" class="form-control" th:field="*{serviceArea}" placeholder="diện tích dv...">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-lg-3 col-form-label">Số tầng</label>
+            <div class="col-lg-9">
+                <input type="number" class="form-control" th:field="*{numberOfFloor}" placeholder="Số tầng...">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-lg-3 col-form-label">Loại phòng</label>
+            <select th:field="*{standardRoom}" style="margin-left: 15px">
+                <option value="standard">Standard</option>
+                <option value="vip">VIP</option>
+            </select>
+        </div>
+        <div class="form-group row">
+            <label class="col-lg-3 col-form-label">Diện tích hồ bơi</label>
+            <div class="col-lg-9">
+                <input type="number" class="form-control" th:field="*{poolArea}" placeholder="diện tích hồ bơi...">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-lg-3 col-form-label">Chi phí thuê</label>
+            <div class="col-lg-9">
+                <input type="number" class="form-control" th:field="*{serviceCost}" placeholder="chi phí thuê...">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-lg-3 col-form-label">Số người</label>
+            <div class="col-lg-9">
+                <input type="number" class="form-control" th:field="*{serviceMaxPeople}" placeholder="số lượng người tối đa...">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-lg-3 col-form-label">Kiểu thuê</label>
+            <select th:field="*{rentType}" style="margin-left: 15px">
+                <th:block th:each="r : ${rentType}">
+                    <option th:value="${r.rentTypeId}" th:text="${r.rentTypeName}"></option>
+                </th:block>
+            </select>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-lg-3 col-form-label">Mô tả</label>
+            <div class="col-lg-9">
+                <textarea class="form-control" th:field="*{description}" rows="3"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6" align="right">
+                <a href="/service/" class="btn btn-warning">
+                    <i class="fa fa-repeat" aria-hidden="true"></i>
+                    Quay lại
+                </a>
+            </div>
+            <div class="col-lg-6" align="left">
+                <button type="submit" class="btn btn-success">
+                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                    Thêm dịch vụ
+                </button>
+            </div>
+        </div>
+
+
+        <div class="spacer-clearfix" style="height: 40px;"></div>
+    </div>
+</form>
+
+
+<footer style="height: 0" th:replace="~{/footer::footer}"></footer>
+</body>
+<script src="/js/jquery-v3.4.1.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.waypoints.min.js"></script>
+<script src="/js/slick/slick.min.js"></script>
+<script src="/js/datetimepicker-master/build/jquery.datetimepicker.full.js"></script>
+<script src="/js/Magnific-Popup-master/jquery.magnific-popup.min.js"></script>
+<script src="/js/script.js"></script>
+</html>

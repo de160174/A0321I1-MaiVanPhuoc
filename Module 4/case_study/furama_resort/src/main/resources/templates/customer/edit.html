@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Furama Resort Danang – A Culinary Beach Resort In Vietnam</title>
+    <link rel="shortcut icon" href="https://furamavietnam.com/wp-content/uploads/2018/07/favicon.png"
+          type="image/x-icon">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/queries.css">
+    <link rel="stylesheet" href="/css/animation.css">
+    <!-- bootstrap 4 -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="/fonts/fontawesome-5.0.13/css/all.css">
+    <link rel="stylesheet" href="/fonts/natuspa-font/css/natuspa-icons.css">
+    <!-- slick -->
+    <link rel="stylesheet" href="/js/slick/slick.css">
+    <link rel="stylesheet" href="/js/slick/slick-theme.css">
+
+    <link rel="stylesheet" href="/js/datetimepicker-master/jquery.datetimepicker.css">
+    <!-- magnific popup -->
+    <link rel="stylesheet" href="/js/Magnific-Popup-master/magnific-popup.css">
+    <!-- favicon -->
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="/css/queries-home-two.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<header th:replace="~{/header::header}"></header>
+<form action="/customer/edit" th:object="${customer}" method="post">
+        <input type="hidden" th:field="*{customerId}"/>
+    <div class="container" align="center">
+        <div class="row">
+            <div class="spacer-clearfix" style="height: 40px;"></div>
+            <div class="services-info col-md-12">
+                <h2 class="section-title">Sửa thông tin khách hàng</h2>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-lg-3 col-form-label">Loại khách hàng</label>
+            <select th:field="*{customerType}" style="margin-left: 15px">
+                <th:block th:each="c : ${customerType}">
+                    <option th:value="${c.customerTypeId}" th:text="${c.customerTypeName}"></option>
+                </th:block>
+            </select>
+        </div>
+        <div class="form-group row">
+            <label class="col-lg-3 col-form-label">Tên khách hàng</label>
+            <div class="col-lg-9">
+                <input type="text" class="form-control" th:field="*{customerName}">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-lg-3 col-form-label">Ngày Sinh</label>
+            <div class="col-lg-9">
+                <input type="date" class="form-control" th:field="*{customerBirthDay}" placeholder="Ngày Sinh...">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-lg-3 col-form-label">Giới tính</label>
+            <select th:field="*{customerGender}" style="margin-left: 15px">
+                <option value="0">Nam</option>
+                <option value="1">Nữ</option>
+                <option value="2">Khác</option>
+            </select>
+        </div>
+        <div class="form-group row">
+            <label class="col-lg-3 col-form-label">Chứng minh thư</label>
+            <div class="col-lg-9">
+                <input type="text" class="form-control" th:field="*{customerIdCard}">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-lg-3 col-form-label">Số điện thoại</label>
+            <div class="col-lg-9">
+                <input type="text" class="form-control" th:field="*{customerPhone}">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-lg-3 col-form-label">Email</label>
+            <div class="col-lg-9">
+                <input type="text" class="form-control" th:field="*{customerEmail}">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-lg-3 col-form-label">Địa chỉ</label>
+            <div class="col-lg-9">
+                <input type="text" class="form-control" th:field="*{customerAddress}">
+            </div>
+        </div>
+        <!--    <select th:field="*{category}" th:name="categoryId">-->
+        <!--        <option value="" disabled selected> Choose here</option>-->
+        <!--        <th:block th:each = "category : ${categories}">-->
+        <!--            <option th:value="${category.categoryId}" th:text="${category.categoryName}"> </option>-->
+        <!--        </th:block>-->
+        <!--    </select>-->
+        <button type="submit" class="btn btn-success">
+            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            Sửa thông tin
+        </button>
+        <a href="/customer/" class="btn btn-warning">
+            <i class="fa fa-repeat" aria-hidden="true"></i>
+            Quay lại
+        </a>
+        <div class="spacer-clearfix" style="height: 40px;"></div>
+    </div>
+</form>
+<footer style="height: 0" th:replace="~{/footer::footer}"></footer>
+</body>
+<script src="/js/jquery-v3.4.1.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.waypoints.min.js"></script>
+<script src="/js/slick/slick.min.js"></script>
+<script src="/js/datetimepicker-master/build/jquery.datetimepicker.full.js"></script>
+<script src="/js/Magnific-Popup-master/jquery.magnific-popup.min.js"></script>
+<script src="/js/script.js"></script>
+</html>

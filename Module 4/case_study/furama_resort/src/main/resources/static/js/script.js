@@ -685,7 +685,7 @@ $(document).ready(function () {
         windows.on('keypress', () => { freeTime = 0; });
         ++freeTime;
         // if it's 10 seconds then open
-        if (freeTime >= 10 && windows.width() > 855) {
+        if (freeTime >= 30 && windows.width() > 855) {
             $('#overlay').css('display', 'block');
             $('.modal-dialog-box').show(350);
             clearInterval(idFreeTimeInterval);
