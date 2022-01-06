@@ -1,6 +1,8 @@
 package com.example.demo.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
 import java.util.Set;
 
 @Entity
@@ -10,13 +12,20 @@ public class Service {
     @Column(name = "service_id")
     private int serviceId;
 
+    @NotEmpty(message = "tên không được để trống")
     private String serviceName;
+    @Min(value = 0,message = "phải là giá trị dương")
     private double serviceArea;
+    @Min(value = 0,message = "phải là giá trị dương")
     private double serviceCost;
+    @Min(value = 0,message = "phải là giá trị dương")
     private int serviceMaxPeople;
+    @NotEmpty(message = "tiêu chuẩn phòng không được để trống")
     private String standardRoom;
     private String description;
+    @Min(value = 0,message = "phải là giá trị dương")
     private double poolArea;
+    @Min(value = 0,message = "phải là giá trị dương")
     private int numberOfFloor;
 
     @OneToMany(mappedBy = "service")

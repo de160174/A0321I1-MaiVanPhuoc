@@ -8,8 +8,12 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/contract")
@@ -40,7 +44,14 @@ public class ContractController {
         return "contract/create";
     }
     @PostMapping("/create")
-    public String create(@ModelAttribute Contract contract, RedirectAttributes redirectAttributes){
+    public String create(@Validated @ModelAttribute Contract contract, BindingResult bindingResult,
+                         RedirectAttributes redirectAttributes, Model model){
+        if(bindingResult.hasErrors()){
+            model.addAttribute("employee",employeeService.findAll());
+            model.addAttribute("customer",customerService.findAll());
+            model.addAttribute("service",service.findAll());
+            return "contract/create";
+        }
         contractService.save(contract);
         redirectAttributes.addFlashAttribute("message", "thêm mới hợp đồng thành công");
         return "redirect:/contract/";
@@ -53,7 +64,13 @@ public class ContractController {
         return "contract/create_detail";
     }
     @PostMapping("/createDetail")
-    public String createDetail(@ModelAttribute ContractDetail contractDetail, RedirectAttributes redirectAttributes){
+    public String createDetail(@Validated @ModelAttribute ContractDetail contractDetail,BindingResult bindingResult,
+                               RedirectAttributes redirectAttributes,Model model){
+        if(bindingResult.hasErrors()){
+            model.addAttribute("contract",contractService.findAll());
+            model.addAttribute("attach",attachService.findAll());
+            return "contract/create_detail";
+        }
         contractDetailService.save(contractDetail);
         redirectAttributes.addFlashAttribute("message", "thêm hợp đồng chi tiết thành công");
         return "redirect:/contract/";

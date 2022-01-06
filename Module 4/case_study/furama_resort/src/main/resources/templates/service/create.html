@@ -52,6 +52,7 @@
             <div class="col-lg-9">
                 <input type="text" class="form-control" th:field="*{serviceName}" id="inputEmail66"
                        placeholder="Tên dịch vụ...">
+                <p th:if="${#fields.hasErrors('serviceName')}" th:errorclass="error" th:errors="*{serviceName}" />
             </div>
         </div>
 
@@ -59,12 +60,14 @@
             <label class="col-lg-3 col-form-label">Diện tích dịch vụ</label>
             <div class="col-lg-9">
                 <input type="number" class="form-control" th:field="*{serviceArea}" placeholder="diện tích dv...">
+                <p th:if="${#fields.hasErrors('serviceArea')}" th:errorclass="error" th:errors="*{serviceArea}" />
             </div>
         </div>
         <div class="form-group row">
             <label class="col-lg-3 col-form-label">Số tầng</label>
             <div class="col-lg-9">
                 <input type="number" class="form-control" th:field="*{numberOfFloor}" placeholder="Số tầng...">
+                <p th:if="${#fields.hasErrors('numberOfFloor')}" th:errorclass="error" th:errors="*{numberOfFloor}" />
             </div>
         </div>
         <div class="form-group row">
@@ -78,18 +81,21 @@
             <label class="col-lg-3 col-form-label">Diện tích hồ bơi</label>
             <div class="col-lg-9">
                 <input type="number" class="form-control" th:field="*{poolArea}" placeholder="diện tích hồ bơi...">
+                <p th:if="${#fields.hasErrors('poolArea')}" th:errorclass="error" th:errors="*{poolArea}" />
             </div>
         </div>
         <div class="form-group row">
             <label class="col-lg-3 col-form-label">Chi phí thuê</label>
             <div class="col-lg-9">
                 <input type="number" class="form-control" th:field="*{serviceCost}" placeholder="chi phí thuê...">
+                <p th:if="${#fields.hasErrors('serviceCost')}" th:errorclass="error" th:errors="*{serviceCost}" />
             </div>
         </div>
         <div class="form-group row">
             <label class="col-lg-3 col-form-label">Số người</label>
             <div class="col-lg-9">
                 <input type="number" class="form-control" th:field="*{serviceMaxPeople}" placeholder="số lượng người tối đa...">
+                <p th:if="${#fields.hasErrors('serviceMaxPeople')}" th:errorclass="error" th:errors="*{serviceMaxPeople}" />
             </div>
         </div>
         <div class="form-group row">

@@ -52,6 +52,7 @@
             <div class="col-lg-9">
                 <input type="text" class="form-control" th:field="*{customerName}" id="inputEmail66"
                        placeholder="Họ Tên...">
+                <p th:if="${#fields.hasErrors('customerName')}" th:errorclass="error" th:errors="*{customerName}" />
             </div>
         </div>
 
@@ -74,24 +75,28 @@
             <label class="col-lg-3 col-form-label">Chứng minh thư</label>
             <div class="col-lg-9">
                 <input type="text" class="form-control" th:field="*{customerIdCard}" placeholder="Số CMND...">
+                <p th:if="${#fields.hasErrors('customerIdCard')}" th:errorclass="error" th:errors="*{customerIdCard}" />
             </div>
         </div>
         <div class="form-group row">
             <label class="col-lg-3 col-form-label">Số điện thoại</label>
             <div class="col-lg-9">
                 <input type="text" class="form-control" th:field="*{customerPhone}" placeholder="Số điện thoại...">
+                <p th:if="${#fields.hasErrors('customerPhone')}" th:errorclass="error" th:errors="*{customerPhone}" />
             </div>
         </div>
         <div class="form-group row">
             <label class="col-lg-3 col-form-label">Email</label>
             <div class="col-lg-9">
                 <input type="text" class="form-control" th:field="*{customerEmail}" placeholder="địa chỉ email...">
+                <p th:if="${#fields.hasErrors('customerEmail')}" th:errorclass="error" th:errors="*{customerEmail}" />
             </div>
         </div>
         <div class="form-group row">
             <label class="col-lg-3 col-form-label">Địa chỉ</label>
             <div class="col-lg-9">
                 <input type="text" class="form-control" th:field="*{customerAddress}" placeholder="địa chỉ...">
+                <p th:if="${#fields.hasErrors('customerAddress')}" th:errorclass="error" th:errors="*{customerAddress}" />
             </div>
         </div>
         <div class="row">

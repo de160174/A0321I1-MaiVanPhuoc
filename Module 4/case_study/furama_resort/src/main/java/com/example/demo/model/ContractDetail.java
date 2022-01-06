@@ -1,6 +1,7 @@
 package com.example.demo.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
 
 @Entity
 public class ContractDetail {
@@ -8,6 +9,8 @@ public class ContractDetail {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "contract_detail_id")
     private int contractDetailId;
+
+    @Min(value = 0,message = "phải là giá trị dương")
     private int quantity;
     @ManyToOne
     @JoinColumn(name = "contract_id")

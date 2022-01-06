@@ -3,6 +3,10 @@ package com.example.demo.model;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 import java.util.Date;
 import java.util.Set;
 
@@ -13,14 +17,20 @@ public class Employee {
     @Column(name = "employee_id")
     private int employeeId;
 
+    @NotEmpty(message = "tên không được để trống")
     private String employeeName;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date employeeBirthDay;
+    @Pattern(regexp = "^[0-9]{9}$", message = "Số CMND phải đúng định dạng XXXXXXXXX ")
     private String employeeIdCard;
+    @Min(value = 0,message = "phải là giá trị dương")
     private double employeeSalary;
+    @Pattern(regexp = "^090[0-9]{7}|091[0-9]{7}$",message = "Số điện thoại phải đúng định dạng 090xxxxxxx hoặc 091xxxxxxx")
     private String employeePhone;
+    @Email(message = "email chưa hợp lệ")
     private String employeeEmail;
+    @NotEmpty(message = "địa chỉ không được để trống")
     private String employeeAddress;
 
     @ManyToOne()

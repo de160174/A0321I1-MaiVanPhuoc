@@ -3,6 +3,8 @@ package com.example.demo.model;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import java.util.Date;
 import java.util.Set;
 
@@ -18,7 +20,10 @@ public class Contract {
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date contractEndDate;
+
+    @Min(value = 0,message = "phải là giá trị dương")
     private double contractDeposit;
+    @Min(value = 0,message = "phải là giá trị dương")
     private double contractTotalMoney;
 
     @ManyToOne()

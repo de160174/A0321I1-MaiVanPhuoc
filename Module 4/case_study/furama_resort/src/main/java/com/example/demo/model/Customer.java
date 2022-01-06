@@ -3,6 +3,9 @@ package com.example.demo.model;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 import java.util.Date;
 import java.util.Set;
 
@@ -13,6 +16,7 @@ public class Customer {
     @Column(name = "customer_id")
     private int customerId;
 
+    @NotEmpty(message = "tên không được để trống")
     private String customerName;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -20,12 +24,16 @@ public class Customer {
 
     private int customerGender;
 
+    @Pattern(regexp = "^[0-9]{9}$", message = "Số CMND phải đúng định dạng XXXXXXXXX ")
     private String customerIdCard;
 
+    @Pattern(regexp = "^090[0-9]{7}|091[0-9]{7}$",message = "Số điện thoại phải đúng định dạng 090xxxxxxx hoặc 091xxxxxxx")
     private String customerPhone;
 
+    @Email(message = "email chưa hợp lệ")
     private String customerEmail;
 
+    @NotEmpty(message = "địa chỉ không được để trống")
     private String customerAddress;
     @ManyToOne
     @JoinColumn(name = "customer_type_id")

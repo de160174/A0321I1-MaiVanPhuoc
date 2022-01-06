@@ -7,6 +7,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -43,7 +45,15 @@ public class EmployeeController {
         return "employee/create";
     }
     @PostMapping("/create")
-    public String create(@ModelAttribute Employee employee, RedirectAttributes redirectAttributes){
+    public String create(@Validated @ModelAttribute Employee employee, BindingResult bindingResult,
+                         RedirectAttributes redirectAttributes,Model model){
+        if(bindingResult.hasErrors()){
+            model.addAttribute("position",positionService.findAll());
+            model.addAttribute("division",divisionService.findAll());
+            model.addAttribute("degree",degreeService.findAll());
+            model.addAttribute("user",userService.findAll());
+            return "employee/create";
+        }
         employeeService.save(employee);
         redirectAttributes.addFlashAttribute("message","thêm mới nhân viên thành công");
         return "redirect:/employee/";
@@ -58,7 +68,15 @@ public class EmployeeController {
         return "employee/edit";
     }
     @PostMapping("/edit")
-    public String edit(@ModelAttribute Employee employee, RedirectAttributes redirectAttributes){
+    public String edit(@Validated @ModelAttribute Employee employee,BindingResult bindingResult,
+                       RedirectAttributes redirectAttributes,Model model){
+        if(bindingResult.hasErrors()){
+            model.addAttribute("position",positionService.findAll());
+            model.addAttribute("division",divisionService.findAll());
+            model.addAttribute("degree",degreeService.findAll());
+            model.addAttribute("user",userService.findAll());
+            return "employee/edit";
+        }
         employeeService.save(employee);
         redirectAttributes.addFlashAttribute("message","sửa nhân viên thành công");
         return "redirect:/employee/";

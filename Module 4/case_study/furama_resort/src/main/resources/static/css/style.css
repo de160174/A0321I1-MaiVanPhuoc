@@ -1057,12 +1057,12 @@ input::placeholder {
 }
 
 .error {
-    position: absolute;
+    /*position: absolute;*/
     color: red;
-    top: 12px;
-    right: 44px;
-    font-weight: 500;
-    display: none;
+    /*top: 12px;*/
+    /*right: 44px;*/
+    /*font-weight: 500;*/
+    /*display: none;*/
 }
 
 .error span {

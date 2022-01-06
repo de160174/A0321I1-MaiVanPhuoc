@@ -44,6 +44,7 @@
             <label class="col-lg-3 col-form-label">Tên Nhân viên</label>
             <div class="col-lg-9">
                 <input type="text" class="form-control" th:field="*{employeeName}">
+                <p th:if="${#fields.hasErrors('employeeName')}" th:errorclass="error" th:errors="*{employeeName}" />
             </div>
         </div>
         <div class="form-group row">
@@ -57,29 +58,34 @@
             <label class="col-lg-3 col-form-label">Lương</label>
             <div class="col-lg-9">
                 <input type="text" class="form-control" th:field="*{employeeSalary}">
+                <p th:if="${#fields.hasErrors('employeeSalary')}" th:errorclass="error" th:errors="*{employeeSalary}" />
             </div>
         </div>
         <div class="form-group row">
             <label class="col-lg-3 col-form-label">Chứng minh thư</label>
             <div class="col-lg-9">
                 <input type="text" class="form-control" th:field="*{employeeIdCard}" placeholder="Số CMND...">
+                <p th:if="${#fields.hasErrors('employeeIdCard')}" th:errorclass="error" th:errors="*{employeeIdCard}" />
             </div>
         </div><div class="form-group row">
         <label class="col-lg-3 col-form-label">Số điện thoại</label>
         <div class="col-lg-9">
             <input type="text" class="form-control" th:field="*{employeePhone}" placeholder="Số điện thoại...">
+            <p th:if="${#fields.hasErrors('employeePhone')}" th:errorclass="error" th:errors="*{employeePhone}" />
         </div>
     </div>
         <div class="form-group row">
             <label class="col-lg-3 col-form-label">Email</label>
             <div class="col-lg-9">
                 <input type="text" class="form-control" th:field="*{employeeEmail}">
+                <p th:if="${#fields.hasErrors('employeeEmail')}" th:errorclass="error" th:errors="*{employeeEmail}" />
             </div>
         </div>
         <div class="form-group row">
             <label class="col-lg-3 col-form-label">Địa chỉ</label>
             <div class="col-lg-9">
                 <input type="text" class="form-control" th:field="*{employeeAddress}">
+                <p th:if="${#fields.hasErrors('employeeAddress')}" th:errorclass="error" th:errors="*{employeeAddress}" />
             </div>
         </div>
         <div class="form-group row">

@@ -59,6 +59,7 @@
             <label class="col-lg-3 col-form-label">số lượng</label>
             <div class="col-lg-9">
                 <input type="number" class="form-control" th:field="*{quantity}" placeholder="số lượng...">
+                <p th:if="${#fields.hasErrors('quantity')}" th:errorclass="error" th:errors="*{quantity}" />
             </div>
         </div>
         <div class="row">
