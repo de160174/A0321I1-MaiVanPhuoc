@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng nhập</title>
+    <link rel="shortcut icon" href="https://furamavietnam.com/wp-content/uploads/2018/07/favicon.png"
+          type="image/x-icon">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/fonts/fontawesome-5.0.13/css/all.css">
+</head>
+<body>
+<div class="container" id="container">
+    <div class="form-container sign-up-container">
+        <form action="#">
+            <h1>Tạo tài khoản</h1>
+            <div class="social-container">
+                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <span>hoặc sử dụng email của bạn để đăng ký</span>
+            <input type="text" placeholder="Họ Tên" />
+            <input type="email" placeholder="Địa chỉ Email" />
+            <input type="password" placeholder="Mật khẩu" />
+            <button>Đăng ký</button>
+        </form>
+    </div>
+    <div class="form-container sign-in-container">
+        <form th:action="@{/doLogin}" method="post">
+            <h1>Đăng nhập</h1>
+            <div class="social-container">
+                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <span>hoặc sử dụng tài khoản của bạn</span>
+            <input type="text" placeholder="Tên đăng nhập" name="username"/>
+            <input type="password" placeholder="Mật khẩu" name="password"/>
+            <input type="checkbox" name="remember-me" />
+            <span>Nhớ tôi</span>
+            <a href="#">Quên mật khẩu?</a>
+            <button>Đăng Nhập</button>
+        </form>
+    </div>
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                <h1>Chào mừng trở lại!</h1>
+                <p>Để kết nối với chúng tôi, vui lòng đăng nhập bằng thông tin cá nhân của bạn</p>
+                <button class="ghost" id="signIn">Đăng nhập</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+                <h1>Chào, Bạn!</h1>
+                <p>Nhập thông tin cá nhân của bạn và bắt đầu với chúng tôi</p>
+                <button class="ghost" id="signUp">Đăng ký</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    const signUpButton = document.getElementById('signUp');
+    const signInButton = document.getElementById('signIn');
+    const container = document.getElementById('container');
+
+    signUpButton.addEventListener('click', () => {
+        container.classList.add("right-panel-active");
+    });
+
+    signInButton.addEventListener('click', () => {
+        container.classList.remove("right-panel-active");
+    });
+</script>
+</body>
+</html>

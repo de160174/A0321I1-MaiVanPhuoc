@@ -16,13 +16,14 @@ $(document).ready(function () {
                 'visibility': 'visible',
                 'opacity': '1'
             });
-        } else {
-            $('nav').removeClass('nav-sticky');
-            $('.scroll-top').css({
-                'visibility': 'hidden',
-                'opacity': '0'
-            });
         }
+        // } else {
+        //     $('nav').removeClass('nav-sticky');
+        //     $('.scroll-top').css({
+        //         'visibility': 'hidden',
+        //         'opacity': '0'
+        //     });
+        // }
     }, {
         offset: '0px'
     });

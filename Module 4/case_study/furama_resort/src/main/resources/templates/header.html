@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -64,35 +65,34 @@
             <!-- shopping bag -->
             <a class="bag-button">
                         <span class="bag-icon nav-icon">
-                            <i class="fal fa-shopping-bag"><span class="badge badge-danger">0</span></i>
+                            <div sec:authorize="isAuthenticated()">
+                                <span sec:authentication="principal.username"></span>
+                            </div>
+                            <i class="fal fa-sort-down"></i>
                         </span>
-                <!--                    <div class="shop-cart">-->
-                <!--                        <div class="shop-cart-item">-->
-                <!--                            <img src="/image/products/product-1.jpg" alt="product-1">-->
-                <!--                            <p class="product-info">-->
-                <!--                                The Ordinary Coverage Foundation<br>-->
-                <!--                                <span class="quantity">1 ×-->
-                <!--                                        <span class="amount">$<span class="price">215.00</span></span>-->
-                <!--                                    </span>-->
-                <!--                            </p>-->
-                <!--                        </div>-->
-                <!--                        <div class="shop-cart-item">-->
-                <!--                            <img src="/image/products/product-2.jpg" alt="product-2">-->
-                <!--                            <p class="product-info">-->
-                <!--                                SkinStore Holiday Collection<br>-->
-                <!--                                <span class="quantity">5 ×-->
-                <!--                                        <span class="amount">$<span class="price">75.99</span></span>-->
-                <!--                                    </span>-->
-                <!--                            </p>-->
-                <!--                        </div>-->
-                <!--                        <div class="shop-cart-total">-->
-                <!--                            <strong>Subtotal: </strong><span>$594.95</span>-->
-                <!--                        </div>-->
-                <!--                        <div class="shop-cart-button">-->
-                <!--                            <a href="#" class="btn view-btn">view cart</a>-->
-                <!--                            <a href="#" class="btn checkout-btn">checkout</a>-->
-                <!--                        </div>-->
-                <!--                    </div>-->
+                <div class="shop-cart">
+                    <div class="shop-cart-item">
+                        <form th:action="@{/logout}" method="post">
+                            <input type="submit" class="btn btn-warning my-3" value="Đăng xuất"/>
+                        </form>
+                    </div>
+                    <!--                                        <div class="shop-cart-item">-->
+                    <!--                                            <img src="/image/products/product-2.jpg" alt="product-2">-->
+                    <!--                                            <p class="product-info">-->
+                    <!--                                                SkinStore Holiday Collection<br>-->
+                    <!--                                                <span class="quantity">5 ×-->
+                    <!--                                                        <span class="amount">$<span class="price">75.99</span></span>-->
+                    <!--                                                    </span>-->
+                    <!--                                            </p>-->
+                    <!--                                        </div>-->
+                    <!--                                        <div class="shop-cart-total">-->
+                    <!--                                            <strong>Subtotal: </strong><span>$594.95</span>-->
+                    <!--                                        </div>-->
+                    <!--                                        <div class="shop-cart-button">-->
+                    <!--                                            <a href="#" class="btn view-btn">view cart</a>-->
+                    <!--                                            <a href="#" class="btn checkout-btn">checkout</a>-->
+                    <!--                                        </div>-->
+                </div>
             </a>
             <!-- bars icon -->
             <a class="slide-icon">
@@ -135,72 +135,72 @@
         </div>
     </div>
     <!-- slides -->
-<!--    <div class="slide-wrap">-->
-<!--        <div class="slide-inner">-->
-<!--            <div class="slide-item active">-->
-<!--                <img src="/image/slide_1.jpg" alt="slide one">-->
-<!--                <div class="slide-text">-->
-<!--                    <h3>Chào mừng đến với Furama Việt Nam !</h3>-->
-<!--                    <h1>BE YOUR BEST</h1>-->
-<!--                    <p>-->
-<!--                        Khu nghỉ dưỡng ẩm thực tọa lạc tại bãi biển Đà Nẵng một trong 6 bãi biển đẹp nhất thế giới-->
-<!--                    </p>-->
-<!--                    <button class="btn book-now-btn">đặt ngay</button>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="slide-item">-->
-<!--                <img height="969px" src="/image/slide_7.jpg" alt="slide two">-->
-<!--                <div class="slide-text" style="text-align: left;">-->
-<!--                    <h3>Chào mừng đến với Furama Việt Nam !</h3>-->
-<!--                    <h1>BE YOUR BEST</h1>-->
-<!--                    <p>-->
-<!--                        Khu nghỉ dưỡng ẩm thực tọa lạc tại bãi biển Đà Nẵng một trong 6 bãi biển đẹp nhất thế giới-->
-<!--                    </p>-->
-<!--                    <button class="btn book-now-btn">đặt ngay</button>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="slide-item">-->
-<!--                <img src="/image/slide_2.jpg" alt="slide one">-->
-<!--                <div class="slide-text">-->
-<!--                    <h3>Chào mừng đến với Furama Việt Nam !</h3>-->
-<!--                    <h1>BE YOUR BEST</h1>-->
-<!--                    <p>-->
-<!--                        Khu nghỉ dưỡng ẩm thực tọa lạc tại bãi biển Đà Nẵng một trong 6 bãi biển đẹp nhất thế giới-->
-<!--                    </p>-->
-<!--                    <button class="btn book-now-btn">đặt ngay</button>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="slide-item">-->
-<!--                <img src="/image/slide_4.jpg" alt="slide one">-->
-<!--                <div class="slide-text">-->
-<!--                    <h3>Chào mừng đến với Furama Việt Nam !</h3>-->
-<!--                    <h1>BE YOUR BEST</h1>-->
-<!--                    <p>-->
-<!--                        Khu nghỉ dưỡng ẩm thực tọa lạc tại bãi biển Đà Nẵng một trong 6 bãi biển đẹp nhất thế giới-->
-<!--                    </p>-->
-<!--                    <button class="btn book-now-btn">đặt ngay</button>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="slide-item">-->
-<!--                <img height="969px" src="/image/slide_8.jpg" alt="slide three">-->
-<!--                <div class="slide-text" style="text-align: right;">-->
-<!--                    <h3>Chào mừng đến với Furama Việt Nam !</h3>-->
-<!--                    <h1>BE YOUR BEST</h1>-->
-<!--                    <p>-->
-<!--                        Khu nghỉ dưỡng ẩm thực tọa lạc tại bãi biển Đà Nẵng một trong 6 bãi biển đẹp nhất thế giới-->
-<!--                    </p>-->
-<!--                    <button class="btn book-now-btn">đặt ngay</button>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <a href="#" class="slide-control" id="prev-slide"></a>-->
-<!--        <a href="#" class="slide-control" id="next-slide"></a>-->
-<!--        <ol class="slide-dot">-->
-<!--            <li class="active"></li>-->
-<!--            <li></li>-->
-<!--            <li></li>-->
-<!--        </ol>-->
-<!--    </div>-->
+    <!--    <div class="slide-wrap">-->
+    <!--        <div class="slide-inner">-->
+    <!--            <div class="slide-item active">-->
+    <!--                <img src="/image/slide_1.jpg" alt="slide one">-->
+    <!--                <div class="slide-text">-->
+    <!--                    <h3>Chào mừng đến với Furama Việt Nam !</h3>-->
+    <!--                    <h1>BE YOUR BEST</h1>-->
+    <!--                    <p>-->
+    <!--                        Khu nghỉ dưỡng ẩm thực tọa lạc tại bãi biển Đà Nẵng một trong 6 bãi biển đẹp nhất thế giới-->
+    <!--                    </p>-->
+    <!--                    <button class="btn book-now-btn">đặt ngay</button>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            <div class="slide-item">-->
+    <!--                <img height="969px" src="/image/slide_7.jpg" alt="slide two">-->
+    <!--                <div class="slide-text" style="text-align: left;">-->
+    <!--                    <h3>Chào mừng đến với Furama Việt Nam !</h3>-->
+    <!--                    <h1>BE YOUR BEST</h1>-->
+    <!--                    <p>-->
+    <!--                        Khu nghỉ dưỡng ẩm thực tọa lạc tại bãi biển Đà Nẵng một trong 6 bãi biển đẹp nhất thế giới-->
+    <!--                    </p>-->
+    <!--                    <button class="btn book-now-btn">đặt ngay</button>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            <div class="slide-item">-->
+    <!--                <img src="/image/slide_2.jpg" alt="slide one">-->
+    <!--                <div class="slide-text">-->
+    <!--                    <h3>Chào mừng đến với Furama Việt Nam !</h3>-->
+    <!--                    <h1>BE YOUR BEST</h1>-->
+    <!--                    <p>-->
+    <!--                        Khu nghỉ dưỡng ẩm thực tọa lạc tại bãi biển Đà Nẵng một trong 6 bãi biển đẹp nhất thế giới-->
+    <!--                    </p>-->
+    <!--                    <button class="btn book-now-btn">đặt ngay</button>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            <div class="slide-item">-->
+    <!--                <img src="/image/slide_4.jpg" alt="slide one">-->
+    <!--                <div class="slide-text">-->
+    <!--                    <h3>Chào mừng đến với Furama Việt Nam !</h3>-->
+    <!--                    <h1>BE YOUR BEST</h1>-->
+    <!--                    <p>-->
+    <!--                        Khu nghỉ dưỡng ẩm thực tọa lạc tại bãi biển Đà Nẵng một trong 6 bãi biển đẹp nhất thế giới-->
+    <!--                    </p>-->
+    <!--                    <button class="btn book-now-btn">đặt ngay</button>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            <div class="slide-item">-->
+    <!--                <img height="969px" src="/image/slide_8.jpg" alt="slide three">-->
+    <!--                <div class="slide-text" style="text-align: right;">-->
+    <!--                    <h3>Chào mừng đến với Furama Việt Nam !</h3>-->
+    <!--                    <h1>BE YOUR BEST</h1>-->
+    <!--                    <p>-->
+    <!--                        Khu nghỉ dưỡng ẩm thực tọa lạc tại bãi biển Đà Nẵng một trong 6 bãi biển đẹp nhất thế giới-->
+    <!--                    </p>-->
+    <!--                    <button class="btn book-now-btn">đặt ngay</button>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--        <a href="#" class="slide-control" id="prev-slide"></a>-->
+    <!--        <a href="#" class="slide-control" id="next-slide"></a>-->
+    <!--        <ol class="slide-dot">-->
+    <!--            <li class="active"></li>-->
+    <!--            <li></li>-->
+    <!--            <li></li>-->
+    <!--        </ol>-->
+    <!--    </div>-->
 </header>
 </body>
 <script src="/js/jquery-v3.4.1.min.js"></script>
