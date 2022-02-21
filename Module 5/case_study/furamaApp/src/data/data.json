@@ -1,0 +1,75 @@
+{
+  "customer": [
+    {
+      "id": 1,
+      "fullName": "Mai Văn Phước",
+      "birthDay": "25/11/2000",
+      "gender": "Nam",
+      "identity": "1111111",
+      "phone": "090555555",
+      "email": "vanphuoc@gmail.com",
+      "customerType": {
+        "id": 1,
+        "name": "VIP"
+      },
+      "address": "Đà Nẵng"
+    },
+    {
+      "id": 2,
+      "fullName": "Hoàng Vũ",
+      "birthDay": "15/08/1999",
+      "gender": "Nam",
+      "identity": "22222222",
+      "phone": "090555555",
+      "email": "hoangvu@gmail.com",
+      "customerType": {
+        "id": 2,
+        "name": "normal"
+      },
+      "address": "Đà Nẵng"
+    },
+    {
+      "fullName": "Thanh Ngân",
+      "birthDay": "2013-06-20",
+      "gender": "Nữ",
+      "identity": "201111111",
+      "phone": "0905321456",
+      "email": "thanhngan@gmail.com",
+      "customerType": "VIP",
+      "address": "Hà Nội",
+      "id": 3
+    },
+    {
+      "fullName": "Văn Lâm",
+      "birthDay": "2022-02-10",
+      "gender": "Nam",
+      "identity": "222222222",
+      "phone": "0905123456",
+      "email": "lam@email.com",
+      "customerType": "normal",
+      "address": "Quảng Nam",
+      "id": 4
+    },
+    {
+      "fullName": "Ngân Hà",
+      "birthDay": "2000-02-26T17:00:00.000Z",
+      "gender": "Nữ",
+      "identity": "200000000",
+      "phone": "0901234568",
+      "email": "ha@email.com",
+      "customerType": "VIP",
+      "address": "Huế",
+      "id": 5
+    }
+  ],
+  "customerType": [
+    {
+      "id": 1,
+      "name": "VIP"
+    },
+    {
+      "id": 2,
+      "name": "normal"
+    }
+  ]
+}

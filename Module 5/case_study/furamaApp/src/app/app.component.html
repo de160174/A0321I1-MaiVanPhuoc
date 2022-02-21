@@ -1,0 +1,110 @@
+<!--header-->
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light" style="background: #046056;">
+    <!-- Container wrapper -->
+    <div class="container">
+      <!-- Navbar brand -->
+      <a class="navbar-brand me-2" href="">
+        <img
+          src="/assets/image/logo.png"
+          height="60"
+          alt="Furama Logo"
+        />
+      </a>
+
+      <!-- Toggle button -->
+      <button
+        class="navbar-toggler"
+        type="button"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse" id="navbarButtonsExample">
+        <!-- Left links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link text-white" [routerLink]="['']">Trang Chủ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#">Hội Nghị & Sự Kiện</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#">Loại Phòng</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#">E-Voucher</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle text-white"
+              href="#"
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-mdb-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Dịch Vụ
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li>
+                <a class="dropdown-item">Nhân Viên</a>
+              </li>
+              <li>
+                <a class="dropdown-item" [routerLink]="['customerList']">Khách Hàng</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Hợp Đồng</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <!-- Left links -->
+
+        <div class="d-flex align-items-center">
+          <button type="button" class="btn btn-dark px-3 me-2">
+            Đăng nhập
+          </button>
+<!--          <a-->
+<!--            class="btn btn-dark px-3"-->
+<!--            href="https://github.com/mdbootstrap/mdb-ui-kit"-->
+<!--            role="button"-->
+<!--          ><i class="fab fa-github"></i-->
+<!--          ></a>-->
+        </div>
+      </div>
+      <!-- Collapsible wrapper -->
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+</header>
+<!--header-->
+<router-outlet></router-outlet>
+<!--footer-->
+<footer id="footer">
+  <div class="footer-content" style="background-color: #addccf">
+    <img style="padding-left: 120px" width="700px" height="100px" src="assets/image/footer-logo.png" alt="footer-logo">
+    <div class="sub-heading">Furama Resort DaNang</div>
+    <div class="slogan">Design by @VanPhuoc</div>
+    <ul class="footer-social">
+      <li class="social-media" style="background-color: #4b64a6;">
+        <a class="social-popup-icon" target="_blank" href="https://www.facebook.com/25thh.Nov">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </li>
+      <li class="social-media" style="background-color: #0cace4;">
+        <a class="social-popup-icon" target="_blank" href="#">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+      <li class="social-media" style="background-color: #ec182b;">
+        <a class="social-popup-icon" target="_blank" href="https://www.instagram.com/_vphuocc/">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="footer-bottom">Copyright © 2021 BunBoFullTopping All Rights Reserved.</div>
+</footer>
+<!--footer-->

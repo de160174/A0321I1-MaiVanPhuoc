@@ -1,0 +1,117 @@
+<form [formGroup]="formAdd">
+  <div class="container" align="center">
+    <div class="row">
+      <div class="spacer-clearfix" style="height: 40px;"></div>
+      <div class="services-info col-md-12">
+        <h2 class="section-title">Tạo khách hàng</h2>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-lg-3 col-form-label">Tên khách hàng</label>
+      <div class="col-lg-9">
+        <input type="text" class="form-control"
+               placeholder="Họ Tên..." formControlName="fullName">
+        <p class="text-danger float-start p-2"
+           *ngIf="formAdd.controls.fullName.errors?.required && formAdd.controls.fullName.touched">
+          Vui lòng nhập họ tên
+        </p>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-lg-3 col-form-label">Ngày Sinh</label>
+      <div class="col-lg-9">
+<!--        <input type="date" class="form-control" placeholder="Ngày Sinh..." formControlName="birthDay">-->
+        <mat-form-field class="float-start">
+          <input [max]="maxDate" [min]="minDate" formControlName="birthDay" matInput [matDatepicker]="picker" placeholder="Chọn ngày sinh">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <p class="text-danger float-start p-2"
+           *ngIf="formAdd.controls.birthDay.errors?.required && formAdd.controls.birthDay.touched">Vui lòng chọn ngày sinh</p>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-lg-3 col-form-label">Giới tính</label>
+      <div class="col-lg-9">
+        <input type="text" class="form-control" placeholder="Giới tính..." formControlName="gender">
+        <p class="text-danger float-start p-2"
+           *ngIf="formAdd.controls.gender.errors?.required && formAdd.controls.gender.touched">Vui lòng nhập giới
+          tính</p>
+      </div>
+    </div>
+    <!--    <div class="form-group row">-->
+    <!--      <label class="col-lg-3 col-form-label">Giới tính</label>-->
+    <!--      <select style="margin-left: 15px" class="col-lg-8">-->
+    <!--        <option value="-1" disabled selected>&#45;&#45;chọn giới tính&#45;&#45;</option>-->
+    <!--        <option value="0">Nam</option>-->
+    <!--        <option value="1">Nữ</option>-->
+    <!--        <option value="2">Khác</option>-->
+    <!--      </select>-->
+    <!--    </div>-->
+    <div class="form-group row">
+      <label class="col-lg-3 col-form-label">Chứng minh thư</label>
+      <div class="col-lg-9">
+        <input type="text" class="form-control" placeholder="Số CMND..." formControlName="identity">
+        <p class="text-danger float-start p-2"
+           *ngIf="formAdd.controls.identity.errors?.required && formAdd.controls.identity.touched">Vui lòng nhập số CMND</p>
+        <p class="text-danger float-start p-2"
+           *ngIf="formAdd.controls.identity.errors?.pattern && formAdd.controls.identity.touched">Số CMND phải bao gồm 9 số</p>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-lg-3 col-form-label">Số điện thoại</label>
+      <div class="col-lg-9">
+        <input type="text" class="form-control" placeholder="Số điện thoại..." formControlName="phone">
+        <p class="text-danger float-start p-2"
+           *ngIf="formAdd.controls.phone.errors?.required && formAdd.controls.phone.touched">Vui lòng nhập số điện thoại</p>
+        <p class="text-danger float-start p-2"
+           *ngIf="formAdd.controls.phone.errors?.pattern && formAdd.controls.phone.touched">
+          Số điện thoại phải bắt đầu bằng 090, 091, (84)+90... hoặc (84)+91... và có 10 số</p>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-lg-3 col-form-label">Email</label>
+      <div class="col-lg-9">
+        <input type="text" class="form-control" placeholder="địa chỉ email..." formControlName="email">
+        <p class="text-danger float-start p-2"
+           *ngIf="formAdd.controls.email.errors?.required && formAdd.controls.email.touched">Vui lòng nhập địa chỉ email</p>
+        <p class="text-danger float-start p-2"
+           *ngIf="formAdd.controls.email.errors?.email && formAdd.controls.email.touched">Email không đúng định dạng</p>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-lg-3 col-form-label">Loại khách hàng</label>
+      <div class="col-lg-9">
+        <input type="text" class="form-control" placeholder="Loại khách hàng..." formControlName="customerType">
+        <p class="text-danger float-start p-2"
+           *ngIf="formAdd.controls.customerType.errors?.required && formAdd.controls.customerType.touched">Vui lòng nhập loại
+          khách hàng</p>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-lg-3 col-form-label">Địa chỉ</label>
+      <div class="col-lg-9">
+        <input type="text" class="form-control" placeholder="địa chỉ..." formControlName="address">
+        <p class="text-danger float-start p-2"
+           *ngIf="formAdd.controls.address.errors?.required && formAdd.controls.address.touched">Vui lòng nhập địa
+          chỉ</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6" align="right">
+        <a [routerLink]="['/customerList']" class="btn btn-warning">
+          <i class="fa fa-repeat" aria-hidden="true"></i>
+          Quay lại
+        </a>
+      </div>
+      <div class="col-lg-6" align="left">
+        <button [disabled]="formAdd.invalid" (click)="addNewCustomer()" class="btn btn-success">
+          <i class="fa fa-plus-circle" aria-hidden="true"></i>
+          Thêm khách hàng
+        </button>
+      </div>
+    </div>
+    <div class="spacer-clearfix" style="height: 40px;"></div>
+  </div>
+</form>

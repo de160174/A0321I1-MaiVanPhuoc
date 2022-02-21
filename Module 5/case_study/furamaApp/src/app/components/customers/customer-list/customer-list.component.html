@@ -1,0 +1,52 @@
+<div class="container-fluid p-4">
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Danh sách khách hàng</h2>
+    </div>
+    <div class="col-md-6">
+      <div class="input-group">
+        <input type="text" class="form-control" [(ngModel)]="search" placeholder="Nhập tên khách hàng..."/>
+        <button id="search-button" type="button" class="btn btn-sm btn-outline-primary ml-2">
+          Tìm kiếm
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <button type="button" class="btn btn-success col-1 m-2" [routerLink]="['/customerAdd']">Thêm mới</button>
+    <table class="table table-striped table-hover">
+      <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Họ Tên</th>
+        <th scope="col">Ngày Sinh</th>
+        <th scope="col">Giới Tính</th>
+        <th scope="col">Số CMND</th>
+        <th scope="col">Số Điện Thoại</th>
+        <th scope="col">Email</th>
+        <th scope="col">Loại Khách</th>
+        <th scope="col">Địa Chỉ</th>
+        <th scope="col">Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let customer of customers | filter:search | paginate: { itemsPerPage: 5, currentPage: p }">
+        <th scope="row">{{customer.id}}</th>
+        <td>{{customer.fullName}}</td>
+        <td>{{customer.birthDay}}</td>
+        <td>{{customer.gender}}</td>
+        <td>{{customer.identity}}</td>
+        <td>{{customer.phone}}</td>
+        <td>{{customer.email}}</td>
+        <td>{{customer.customerType.name}}</td>
+        <td>{{customer.address}}</td>
+        <td>
+          <button type="button" class="btn btn-info ">Sửa</button>
+          <button class="btn btn-danger ml-1" (click)="openDialog()">Xóa</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+</div>
