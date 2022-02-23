@@ -1,32 +1,32 @@
 {
   "customer": [
     {
-      "id": 1,
       "fullName": "Mai Văn Phước",
-      "birthDay": "25/11/2000",
+      "birthDay": "2000-11-24T17:00:00.000Z",
       "gender": "Nam",
-      "identity": "1111111",
-      "phone": "090555555",
+      "identity": "201817111",
+      "phone": "0905555562",
       "email": "vanphuoc@gmail.com",
       "customerType": {
         "id": 1,
-        "name": "VIP"
+        "name": "Platinum"
       },
-      "address": "Đà Nẵng"
+      "address": "Đà Nẵng",
+      "id": 1
     },
     {
-      "id": 2,
       "fullName": "Hoàng Vũ",
-      "birthDay": "15/08/1999",
+      "birthDay": "2022-01-31T17:00:00.000Z",
       "gender": "Nam",
-      "identity": "22222222",
-      "phone": "090555555",
+      "identity": "222222222",
+      "phone": "0905555551",
       "email": "hoangvu@gmail.com",
       "customerType": {
-        "id": 2,
-        "name": "normal"
+        "id": 4,
+        "name": "Silver"
       },
-      "address": "Đà Nẵng"
+      "address": "Đà Nẵng",
+      "id": 2
     },
     {
       "fullName": "Thanh Ngân",
@@ -35,7 +35,10 @@
       "identity": "201111111",
       "phone": "0905321456",
       "email": "thanhngan@gmail.com",
-      "customerType": "VIP",
+      "customerType": {
+        "id": 1,
+        "name": "Platinum"
+      },
       "address": "Hà Nội",
       "id": 3
     },
@@ -46,7 +49,10 @@
       "identity": "222222222",
       "phone": "0905123456",
       "email": "lam@email.com",
-      "customerType": "normal",
+      "customerType": {
+        "id": 5,
+        "name": "Bronze"
+      },
       "address": "Quảng Nam",
       "id": 4
     },
@@ -54,22 +60,79 @@
       "fullName": "Ngân Hà",
       "birthDay": "2000-02-26T17:00:00.000Z",
       "gender": "Nữ",
-      "identity": "200000000",
+      "identity": "201817111",
       "phone": "0901234568",
-      "email": "ha@email.com",
-      "customerType": "VIP",
+      "email": "nganha@email.com",
+      "customerType": {
+        "id": 1,
+        "name": "Platinum"
+      },
       "address": "Huế",
       "id": 5
+    },
+    {
+      "fullName": "Trúc Linh",
+      "birthDay": "2022-01-31T17:00:00.000Z",
+      "gender": "Nữ",
+      "identity": "201222222",
+      "phone": "0901546978",
+      "email": "linh@email.com",
+      "customerType": {
+        "id": 2,
+        "name": "normal"
+      },
+      "address": "đà nẵng",
+      "id": 6
+    },
+    {
+      "fullName": "Hulk",
+      "birthDay": "2022-02-09T17:00:00.000Z",
+      "gender": "Nam",
+      "identity": "201555555",
+      "phone": "0905555558",
+      "email": "ab@gmail.com",
+      "customerType": {
+        "id": 2,
+        "name": "Diamond"
+      },
+      "address": "marvel",
+      "id": 7
+    },
+    {
+      "fullName": "CR7",
+      "birthDay": "2022-02-07T17:00:00.000Z",
+      "gender": "Nam",
+      "identity": "201817777",
+      "phone": "0905146987",
+      "email": "cr7@email.com",
+      "customerType": {
+        "id": 1,
+        "name": "VIP"
+      },
+      "address": "bồ đào nha",
+      "id": 8
     }
   ],
   "customerType": [
     {
       "id": 1,
-      "name": "VIP"
+      "name": "Platinum"
     },
     {
       "id": 2,
-      "name": "normal"
+      "name": "Diamond"
+    },
+    {
+      "id": 3,
+      "name": "Gold"
+    },
+    {
+      "id": 4,
+      "name": "Silver"
+    },
+    {
+      "id": 5,
+      "name": "Bronze"
     }
   ]
 }

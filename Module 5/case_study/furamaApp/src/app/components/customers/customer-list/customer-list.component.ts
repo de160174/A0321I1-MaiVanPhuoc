@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CustomerService} from '../../../services/customer.service';
-import {MatDialog} from '@angular/material';
+import {MatDialog} from '@angular/material/dialog';
 import {CustomerDeleteComponent} from '../customer-delete/customer-delete.component';
 
 @Component({
@@ -22,14 +22,24 @@ export class CustomerListComponent implements OnInit {
     });
   }
 
-  openDialog() {
-    const dialogRef = this.dialog.open(CustomerDeleteComponent, {
-      width: '500px',
-      data: {name: this.name},
-    });
+  openDialog(customerId) {
+    // this.dialog.open(CustomerDeleteComponent);
+    this.customerService.getCustomerById(customerId).subscribe(dataCustomer => {
+      const dialogRef = this.dialog.open(CustomerDeleteComponent, {
+        width: '500px',
+        data: {name: dataCustomer},
+        disableClose: true
+      });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      dialogRef.afterClosed().subscribe(result => {
+        this.ngOnInit();
+      });
+    });
+  }
+
+  onSearch() {
+    this.customerService.searchCustomer(this.search.trim()).subscribe(data => {
+      this.customers = data;
     });
   }
 }

@@ -6,7 +6,7 @@
     <div class="col-md-6">
       <div class="input-group">
         <input type="text" class="form-control" [(ngModel)]="search" placeholder="Nhập tên khách hàng..."/>
-        <button id="search-button" type="button" class="btn btn-sm btn-outline-primary ml-2">
+        <button (click)="onSearch()" type="button" class="btn btn-sm btn-outline-primary ml-2">
           Tìm kiếm
         </button>
       </div>
@@ -30,7 +30,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let customer of customers | filter:search | paginate: { itemsPerPage: 5, currentPage: p }">
+      <tr *ngFor="let customer of customers | paginate: { itemsPerPage: 5, currentPage: p }">
         <th scope="row">{{customer.id}}</th>
         <td>{{customer.fullName}}</td>
         <td>{{customer.birthDay}}</td>
@@ -41,8 +41,8 @@
         <td>{{customer.customerType.name}}</td>
         <td>{{customer.address}}</td>
         <td>
-          <button type="button" class="btn btn-info ">Sửa</button>
-          <button class="btn btn-danger ml-1" (click)="openDialog()">Xóa</button>
+          <button type="button" class="btn btn-info" [routerLink]="['/customerEdit/'+customer.id]">Sửa</button>
+          <button class="btn btn-danger ml-1" (click)="openDialog(customer.id)">Xóa</button>
         </td>
       </tr>
       </tbody>

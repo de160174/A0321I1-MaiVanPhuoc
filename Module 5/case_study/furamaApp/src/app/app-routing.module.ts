@@ -10,12 +10,14 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { CustomerAddComponent } from './components/customers/customer-add/customer-add.component';
 import {MaterialModule} from './material.module';
 import { CustomerDeleteComponent } from './components/customers/customer-delete/customer-delete.component';
+import { CustomerEditComponent } from './components/customers/customer-edit/customer-edit.component';
 
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'customerList', component: CustomerListComponent},
   {path: 'customerAdd', component: CustomerAddComponent},
+  {path: 'customerEdit/:id', component: CustomerEditComponent},
   {path: '**', component: ErrorComponent}
 ];
 
@@ -30,7 +32,8 @@ const routes: Routes = [
     MaterialModule
   ],
   exports: [RouterModule],
-  declarations: [CustomerListComponent, HomeComponent, ErrorComponent, CustomerAddComponent, CustomerDeleteComponent]
+  entryComponents: [CustomerDeleteComponent],
+  declarations: [CustomerListComponent, HomeComponent, ErrorComponent, CustomerAddComponent, CustomerDeleteComponent, CustomerEditComponent]
 })
 export class AppRoutingModule {
 }

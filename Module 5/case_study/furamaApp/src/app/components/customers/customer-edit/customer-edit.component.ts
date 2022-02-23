@@ -1,29 +1,35 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {CustomerService} from '../../../services/customer.service';
-import {Router} from '@angular/router';
+import {Router, ActivatedRoute} from '@angular/router';
 
 @Component({
-  selector: 'app-customer-add',
-  templateUrl: './customer-add.component.html',
-  styleUrls: ['./customer-add.component.css']
+  selector: 'app-customer-edit',
+  templateUrl: './customer-edit.component.html',
+  styleUrls: ['./customer-edit.component.css']
 })
-export class CustomerAddComponent implements OnInit {
-  public formAdd: FormGroup;
+export class CustomerEditComponent implements OnInit {
+
+  public formEdit: FormGroup;
+  public customer;
   public customerTypes;
   public customerType;
   public id;
   public name;
   public maxDate = new Date();
   public minDate = new Date(1920, 0, 1);
-  constructor(public formBuilder: FormBuilder, public customerService: CustomerService, public router: Router) { }
+
+  constructor(public formBuilder: FormBuilder,
+              public customerService: CustomerService,
+              public router: Router,
+              public activatedRoute: ActivatedRoute) {
+  }
 
   ngOnInit(): void {
     this.customerService.getAllCustomerType().subscribe(data => {
       this.customerTypes = data;
     });
-
-    this.formAdd = this.formBuilder.group({
+    this.formEdit = this.formBuilder.group({
       fullName: ['', [Validators.required]],
       birthDay: ['', [Validators.required]],
       gender: ['', [Validators.required]],
@@ -37,11 +43,17 @@ export class CustomerAddComponent implements OnInit {
       }),
       address: ['', [Validators.required]]
     });
+    this.activatedRoute.params.subscribe(data => {
+      this.customer = data.id;
+      this.customerService.getCustomerById(this.customer).subscribe(data1 => {
+        this.formEdit.patchValue(data1);
+      });
+    });
   }
 
-  addNewCustomer() {
-    this.customerService.addNewCustomer(this.formAdd.value).subscribe(data => {
-      this.router.navigateByUrl('/customerList');
+  editCustomer() {
+    this.customerService.editCustomer(this.customer, this.formEdit.value).subscribe(data => {
+      this.router.navigateByUrl('customerList');
     });
   }
 
