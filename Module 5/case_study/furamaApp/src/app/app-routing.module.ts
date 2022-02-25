@@ -11,6 +11,10 @@ import { CustomerAddComponent } from './components/customers/customer-add/custom
 import {MaterialModule} from './material.module';
 import { CustomerDeleteComponent } from './components/customers/customer-delete/customer-delete.component';
 import { CustomerEditComponent } from './components/customers/customer-edit/customer-edit.component';
+import { EmployeeListComponent } from './components/employees/employee-list/employee-list.component';
+import { EmployeeAddComponent } from './components/employees/employee-add/employee-add.component';
+import { EmployeeEditComponent } from './components/employees/employee-edit/employee-edit.component';
+import { EmployeeDeleteComponent } from './components/employees/employee-delete/employee-delete.component';
 
 
 const routes: Routes = [
@@ -18,6 +22,9 @@ const routes: Routes = [
   {path: 'customerList', component: CustomerListComponent},
   {path: 'customerAdd', component: CustomerAddComponent},
   {path: 'customerEdit/:id', component: CustomerEditComponent},
+  {path: 'employeeList', component: EmployeeListComponent},
+  {path: 'employeeAdd', component: EmployeeAddComponent},
+  {path: 'employeeEdit/:id', component: EmployeeEditComponent},
   {path: '**', component: ErrorComponent}
 ];
 
@@ -33,7 +40,16 @@ const routes: Routes = [
   ],
   exports: [RouterModule],
   entryComponents: [CustomerDeleteComponent],
-  declarations: [CustomerListComponent, HomeComponent, ErrorComponent, CustomerAddComponent, CustomerDeleteComponent, CustomerEditComponent]
+  declarations: [CustomerListComponent,
+    HomeComponent,
+    ErrorComponent,
+    CustomerAddComponent,
+    CustomerDeleteComponent,
+    CustomerEditComponent,
+    EmployeeListComponent,
+    EmployeeAddComponent,
+    EmployeeEditComponent,
+    EmployeeDeleteComponent]
 })
 export class AppRoutingModule {
 }

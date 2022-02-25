@@ -134,5 +134,157 @@
       "id": 5,
       "name": "Bronze"
     }
+  ],
+  "position": [
+    {
+      "id": 1,
+      "name": "Giám Đốc"
+    },
+    {
+      "id": 2,
+      "name": "Quản Lý"
+    },
+    {
+      "id": 3,
+      "name": "Giám Sát"
+    },
+    {
+      "id": 4,
+      "name": "Chuyên Viên"
+    },
+    {
+      "id": 5,
+      "name": "Phục Vụ"
+    },
+    {
+      "id": 6,
+      "name": "Lễ Tân"
+    }
+  ],
+  "educationDegree": [
+    {
+      "id": 1,
+      "name": "Trung Cấp"
+    },
+    {
+      "id": 2,
+      "name": "Cao Đẳng"
+    },
+    {
+      "id": 3,
+      "name": "Đại Học"
+    },
+    {
+      "id": 4,
+      "name": "Sau Đại Học"
+    }
+  ],
+  "division": [
+    {
+      "id": 1,
+      "name": "Sale – Marketing"
+    },
+    {
+      "id": 2,
+      "name": "Hành Chính"
+    },
+    {
+      "id": 3,
+      "name": "Phục vụ"
+    },
+    {
+      "id": 4,
+      "name": "Quản lý"
+    }
+  ],
+  "employee": [
+    {
+      "fullName": "Mai Văn Phước",
+      "birthDay": "2000-11-24T17:00:00.000Z",
+      "identity": "201817111",
+      "salary": 10000000,
+      "phone": "0905555562",
+      "email": "vanphuoc@gmail.com",
+      "address": "Đà Nẵng",
+      "position": {
+        "id": 1,
+        "name": "Giám Đốc"
+      },
+      "educationDegree": {
+        "id": 4,
+        "name": "Sau Đại Học"
+      },
+      "division": {
+        "id": 4,
+        "name": "Quản lý"
+      },
+      "id": 1
+    },
+    {
+      "fullName": "Captain",
+      "birthDay": "2022-02-15T17:00:00.000Z",
+      "identity": "222222222",
+      "salary": 3,
+      "phone": "09052222222",
+      "email": "ab@email.com",
+      "address": "dn",
+      "position": {
+        "id": 5,
+        "name": "Phục Vụ"
+      },
+      "educationDegree": {
+        "id": 2,
+        "name": "Cao Đẳng"
+      },
+      "division": {
+        "id": 3,
+        "name": "Phục vụ"
+      },
+      "id": 2
+    },
+    {
+      "fullName": "bbb",
+      "birthDay": "2022-02-08T17:00:00.000Z",
+      "identity": "121456667",
+      "salary": 2,
+      "phone": "09051234567",
+      "email": "ab@gmail.com",
+      "address": "dn",
+      "position": {
+        "id": 2,
+        "name": "Quản Lý"
+      },
+      "educationDegree": {
+        "id": 3,
+        "name": "Đại Học"
+      },
+      "division": {
+        "id": 1,
+        "name": "Sale – Marketing"
+      },
+      "id": 3
+    },
+    {
+      "fullName": "Iron Man",
+      "birthDay": "2008-02-05T17:00:00.000Z",
+      "identity": "201788899",
+      "salary": 7000000,
+      "phone": "0901233660",
+      "email": "marvel@email.com",
+      "address": "earth",
+      "position": {
+        "id": 3,
+        "name": "Giám Sát"
+      },
+      "educationDegree": {
+        "id": 3,
+        "name": "Đại Học"
+      },
+      "division": {
+        "id": 4,
+        "name": "Quản lý"
+      },
+      "id": 5
+    }
   ]
 }

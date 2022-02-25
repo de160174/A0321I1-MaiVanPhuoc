@@ -1,0 +1,58 @@
+<div class="container-fluid p-4">
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Danh sách nhân viên</h2>
+    </div>
+    <div class="col-md-6">
+      <div class="input-group">
+        <input type="text" class="form-control" [(ngModel)]="searchName" placeholder="Nhập tên nhân viên..."/>
+        <input type="text" class="form-control" [(ngModel)]="searchEmail" placeholder="Nhập email nhân viên..."/>
+        <button (click)="onSearch()" type="button" class="btn btn-sm btn-outline-primary ml-2">
+          Tìm kiếm
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <button type="button" class="btn btn-success col-1 m-2" [routerLink]="['/employeeAdd']">Thêm mới</button>
+    <table class="table table-striped table-hover">
+      <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Họ Tên</th>
+        <th scope="col">Ngày Sinh</th>
+        <th scope="col">Số CMND</th>
+        <th scope="col">Lương</th>
+        <th scope="col">Số Điện Thoại</th>
+        <th scope="col">Email</th>
+        <th scope="col">Địa Chỉ</th>
+        <th scope="col">Bộ Phận</th>
+        <th scope="col">Trình độ</th>
+        <th scope="col">Vị Trí</th>
+        <th scope="col">Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let employee of employees | paginate: { itemsPerPage: 2, currentPage: page }">
+        <th scope="row">{{employee.id}}</th>
+        <td>{{employee.fullName}}</td>
+        <td>{{employee.birthDay}}</td>
+        <td>{{employee.identity}}</td>
+        <td>{{employee.salary}}</td>
+        <td>{{employee.phone}}</td>
+        <td>{{employee.email}}</td>
+        <td>{{employee.address}}</td>
+        <td>{{employee.division.name}}</td>
+        <td>{{employee.educationDegree.name}}</td>
+        <td>{{employee.position.name}}</td>
+        <td>
+          <button type="button" class="btn btn-info" [routerLink]="['/employeeEdit/'+employee.id]">Sửa</button>
+          <button class="btn btn-danger ml-1" (click)="openDialog(employee.id)">Xóa</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
+  </div>
+</div>
+
